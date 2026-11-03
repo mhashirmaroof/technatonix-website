@@ -315,7 +315,7 @@
 }
 
 .presenceContent {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -339,11 +339,11 @@
 
 .regions {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
   text-align: center;
 
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -368,16 +368,6 @@
   span {
     color: $dk-muted;
     font-size: 0.9rem;
-  }
-}
-
-.presenceMap {
-  text-align: center;
-
-  img {
-    width: 100%;
-    max-width: 500px;
-    height: auto;
   }
 }
 

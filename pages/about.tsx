@@ -232,6 +232,10 @@ const About: React.FC<AboutProps> = ({ seo }) => {
               </p>
               <div className={styles.regions}>
                 <div className={styles.region}>
+                  <strong>North America</strong>
+                  <span>USA, Canada</span>
+                </div>
+                <div className={styles.region}>
                   <strong>Europe</strong>
                   <span>United Kingdom, Germany, Switzerland</span>
                 </div>
