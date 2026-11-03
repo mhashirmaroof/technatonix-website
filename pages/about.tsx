@@ -129,7 +129,7 @@ const About: React.FC<AboutProps> = ({ seo }) => {
                 alt="Technatonix, our story in Lahore"
                 width={1672}
                 height={941}
-                sizes="(max-width: 1100px) 100vw, 1100px"
+                sizes="(max-width: 968px) 100vw, 650px"
                 quality={85}
               />
             </div>
