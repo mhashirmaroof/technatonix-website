@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { GetServerSideProps } from 'next';
 import Layout from '@/components/Layout';
@@ -123,7 +124,14 @@ const About: React.FC<AboutProps> = ({ seo }) => {
               </p>
             </div>
             <div className={styles.storyImage}>
-              <img src="/images/about/our-story.jpg" alt="Our Story" />
+              <Image
+                src="/images/about/our-story.png"
+                alt="Technatonix, our story in Lahore"
+                width={1672}
+                height={941}
+                sizes="(max-width: 1100px) 100vw, 1100px"
+                quality={85}
+              />
             </div>
           </div>
         </div>
