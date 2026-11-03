@@ -464,7 +464,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
         contactPoint: [
           {
             '@type': 'ContactPoint',
-            telephone: '03448515675',
+            telephone: '+923027163067',
             contactType: 'customer service',
             areaServed: 'PK'
           }

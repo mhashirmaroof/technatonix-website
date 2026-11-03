@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
       { platform: 'Facebook', url: 'https://www.facebook.com/thetechnatonix', icon: 'FaFacebook' }
     ],
     phoneNumbers: [
-      { number: '03448515675', country: 'Pakistan' }
+      { number: '+92 302 7163067', country: 'Pakistan' }
     ],
     contactEmail: 'info@technatonix.com',
     offices: [

@@ -129,7 +129,7 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
       region: 'South Asia',
       city: 'Lahore, Pakistan',
       address: 'International Market, M Block, Model Town\nLahore, Pakistan',
-      phone: '03448515675',
+      phone: '+92 302 7163067',
       email: 'info@technatonix.com',
       hours: 'Mon-Fri 9AM-6PM PKT'
     }
@@ -297,7 +297,7 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
                   <FaPhone className={styles.contactIcon} />
                   <div>
                     <strong>Phone</strong>
-                    <p>Pakistan: 03448515675</p>
+                    <p>+92 302 7163067</p>
                   </div>
                 </div>
                 <div className={styles.contactItem}>
