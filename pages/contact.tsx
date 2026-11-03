@@ -14,7 +14,7 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
     name: '',
     email: '',
     company: '',
-    country: 'United States',
+    country: '',
     phone: '',
     shortMessage: '',
     details: ''
@@ -40,7 +40,7 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
     }
 
     if (!formData.country.trim()) {
-      newErrors.country = 'Country is required';
+      newErrors.country = 'State and country are required';
     }
 
     if (!formData.shortMessage.trim()) {
@@ -95,7 +95,7 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
           name: '',
           email: '',
           company: '',
-          country: 'United States',
+          country: '',
           phone: '',
           shortMessage: '',
           details: ''
@@ -219,27 +219,17 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
                       />
                     </div>
                     <div className={styles.formGroup}>
-                      <label htmlFor="country">Country *</label>
-                      <select
+                      <label htmlFor="country">State &amp; Country *</label>
+                      <input
+                        type="text"
                         id="country"
                         name="country"
                         value={formData.country}
                         onChange={handleChange}
                         required
+                        placeholder="e.g. Texas, United States"
                         className={errors.country ? styles.error : ''}
-                      >
-                        <option value="">Select your country</option>
-                        <option value="United States">United States</option>
-                        <option value="Canada">Canada</option>
-                        <option value="United Kingdom">United Kingdom</option>
-                        <option value="Germany">Germany</option>
-                        <option value="France">France</option>
-                        <option value="Australia">Australia</option>
-                        <option value="Singapore">Singapore</option>
-                        <option value="India">India</option>
-                        <option value="Japan">Japan</option>
-                        <option value="Other">Other</option>
-                      </select>
+                      />
                       {errors.country && <span className={styles.errorMessage}>{errors.country}</span>}
                     </div>
                   </div>

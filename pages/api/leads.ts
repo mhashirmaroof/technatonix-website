@@ -1,27 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { initializeApp, getApps } from 'firebase/app';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
-// Firebase config from environment variables
-const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
-};
-
-// Initialize Firebase app if not already initialized
-let app;
-if (getApps().length === 0) {
-  app = initializeApp(firebaseConfig, 'api-leads');
-} else {
-  app = getApps().find((a: any) => a.name === 'api-leads') || getApps()[0];
-}
-
-const db = getFirestore(app);
+const FIRESTORE_TIMEOUT_MS = 8000;
 
 interface LeadData {
   name: string;
@@ -66,7 +45,7 @@ const validateLeadData = (data: any): { isValid: boolean; errors: string[] } => 
   }
   
   if (!data.country || typeof data.country !== 'string' || data.country.trim().length === 0) {
-    errors.push('Country is required');
+    errors.push('State and country are required');
   }
   
   return {
@@ -103,44 +82,61 @@ const checkRateLimit = (ip: string): boolean => {
   return true;
 };
 
-// Save lead data with fallback handling
-const saveLeadData = async (leadData: any): Promise<{ success: boolean; id?: string; error?: string }> => {
-  try {
-    console.log('🔄 Attempting to save lead to Firebase...');
-    
-    const docRef = await addDoc(collection(db, 'contact-us'), leadData);
-    console.log('✅ Lead saved to Firebase with ID:', docRef.id);
-    
-    return { success: true, id: docRef.id };
-  } catch (error: any) {
-    console.error('❌ Firebase Error:', error);
-    
-    // If it's a permission error, use fallback logging
-    if (error.code === 'permission-denied') {
-      console.log('🔄 Firebase permissions denied, using fallback logging...');
-      
-      // Log to console as fallback (in production, you might want to log to a file or external service)
-      console.log('📝 LEAD SUBMISSION (Fallback Log):');
-      console.log('=====================================');
-      console.log('Name:', leadData.name);
-      console.log('Email:', leadData.email);
-      console.log('Company:', leadData.company);
-      console.log('Country:', leadData.country);
-      console.log('Phone:', leadData.phone);
-      console.log('Message:', leadData.shortMessage);
-      console.log('Details:', leadData.details);
-      console.log('Source:', leadData.source);
-      console.log('IP:', leadData.utm?.ip);
-      console.log('Timestamp:', new Date().toISOString());
-      console.log('=====================================');
-      
-      // Generate a fallback ID
-      const fallbackId = 'fallback_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-      
-      return { success: true, id: fallbackId };
+const toFirestoreValue = (value: any): any => {
+  if (value === null || value === undefined) return { nullValue: null };
+  if (value instanceof Date) return { timestampValue: value.toISOString() };
+  if (typeof value === 'string') return { stringValue: value };
+  if (typeof value === 'number') return { doubleValue: value };
+  if (typeof value === 'boolean') return { booleanValue: value };
+  return {
+    mapValue: {
+      fields: Object.fromEntries(
+        Object.entries(value).map(([k, v]) => [k, toFirestoreValue(v)])
+      )
     }
-    
-    return { success: false, error: error.message };
+  };
+};
+
+// Uses the Firestore REST API so the request cannot hang on a streaming connection
+const saveLeadData = async (leadData: any): Promise<{ success: boolean; id?: string; error?: string }> => {
+  const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
+  const apiKey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
+
+  if (!projectId || !apiKey) {
+    return { success: false, error: 'Firebase is not configured' };
+  }
+
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), FIRESTORE_TIMEOUT_MS);
+
+  try {
+    const response = await fetch(
+      `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/contact-us?key=${apiKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fields: Object.fromEntries(
+            Object.entries(leadData).map(([k, v]) => [k, toFirestoreValue(v)])
+          )
+        }),
+        signal: controller.signal
+      }
+    );
+
+    if (!response.ok) {
+      const body = await response.text();
+      console.error('❌ Firestore REST error:', response.status, body);
+      return { success: false, error: `Firestore error ${response.status}` };
+    }
+
+    const doc = await response.json();
+    return { success: true, id: String(doc.name).split('/').pop() };
+  } catch (error: any) {
+    console.error('❌ Firestore request failed:', error);
+    return { success: false, error: error.name === 'AbortError' ? 'Request timed out' : error.message };
+  } finally {
+    clearTimeout(timer);
   }
 };
 
@@ -182,7 +178,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     
     const message = req.body.shortMessage || req.body.message || '';
     
-    const leadData: LeadData & { createdAt: any; status: string; id: string } = {
+    const leadData: LeadData & { createdAt: Date; status: string; id: string } = {
       id: leadId,
       name: name.trim(),
       email: req.body.email.trim().toLowerCase(),
@@ -198,7 +194,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         referer: req.headers.referer || '',
         localId: leadId // Keep local ID for reference
       },
-      createdAt: serverTimestamp(),
+      createdAt: new Date(),
       status: 'new'
     };
     
