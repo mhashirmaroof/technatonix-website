@@ -464,26 +464,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
         contactPoint: [
           {
             '@type': 'ContactPoint',
-            telephone: '+923448515675',
-            contactType: 'customer service',
-            areaServed: 'US'
-          },
-          {
-            '@type': 'ContactPoint',
             telephone: '03448515675',
             contactType: 'customer service',
             areaServed: 'PK'
           }
         ],
         address: [
-          {
-            '@type': 'PostalAddress',
-            streetAddress: '123 Business Park Drive',
-            addressLocality: 'New York',
-            addressRegion: 'NY',
-            postalCode: '10001',
-            addressCountry: 'US'
-          },
           {
             '@type': 'PostalAddress',
             streetAddress: 'International Market, M Block, Model Town',

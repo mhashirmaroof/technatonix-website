@@ -114,14 +114,6 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
 
   const offices = [
     {
-      region: 'North America',
-      city: 'New York, USA',
-      address: '123 Business Park Drive\nNew York, NY 10001',
-      phone: '+923448515675',
-      email: 'info@technatonix.com',
-      hours: 'Mon-Fri 9AM-6PM EST'
-    },
-    {
       region: 'South Asia',
       city: 'Lahore, Pakistan',
       address: 'International Market, M Block, Model Town\nLahore, Pakistan',
@@ -227,7 +219,7 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
                         value={formData.country}
                         onChange={handleChange}
                         required
-                        placeholder="e.g. Texas, United States"
+                        placeholder="e.g. Punjab, Pakistan"
                         className={errors.country ? styles.error : ''}
                       />
                       {errors.country && <span className={styles.errorMessage}>{errors.country}</span>}
@@ -292,8 +284,7 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
                 <div className={styles.contactItem}>
                   <FaPhone className={styles.contactIcon} />
                   <div>
-                    <strong>Global Hotlines</strong>
-                    <p>USA: +923448515675</p>
+                    <strong>Phone</strong>
                     <p>Pakistan: 03448515675</p>
                   </div>
                 </div>
@@ -413,7 +404,7 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
 export const getServerSideProps: GetServerSideProps<ContactProps> = async () => {
   const seo: SEOProps = {
     title: 'Contact Technatonix - Leading Software House | Get Custom Software Development Quote',
-    description: 'Contact Technatonix for custom software development, SaaS products, web and mobile apps, CRM, ERP and IT services. Free consultation, 24-hour response. Offices in USA and Pakistan.',
+    description: 'Contact Technatonix for custom software development, SaaS products, web and mobile apps, CRM, ERP and IT services. Free consultation, 24-hour response. Based in Lahore, Pakistan.',
     canonical: 'https://technatonix.com/contact',
     openGraph: {
       title: 'Contact Leading Software House - Technatonix | Software Development Services',

@@ -113,7 +113,7 @@ const About: React.FC<AboutProps> = ({ seo }) => {
               </p>
               <p>
                 What started as a small team of passionate developers has grown into a global software house 
-                serving clients across the US, UK, Germany, Switzerland, Singapore, UAE, and beyond. Today, 
+                serving clients across the UK, Germany, Switzerland, Singapore, UAE, and beyond. Today, 
                 we're proud to be the trusted technology partner for businesses that demand excellence.
               </p>
               <p>
@@ -229,10 +229,6 @@ const About: React.FC<AboutProps> = ({ seo }) => {
                 local knowledge allows us to deliver solutions that work in any business environment.
               </p>
               <div className={styles.regions}>
-                <div className={styles.region}>
-                  <strong>North America</strong>
-                  <span>United States, Canada</span>
-                </div>
                 <div className={styles.region}>
                   <strong>Europe</strong>
                   <span>United Kingdom, Germany, Switzerland</span>
