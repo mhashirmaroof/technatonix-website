@@ -293,6 +293,10 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
                   <div>
                     <strong>General Inquiries</strong>
                     <p>info@technatonix.com</p>
+                    <strong>Demo Requests</strong>
+                    <p>demo@technatonix.com</p>
+                    <strong>Business Inquiries</strong>
+                    <p>business@technatonix.com</p>
                   </div>
                 </div>
                 <div className={styles.contactItem}>

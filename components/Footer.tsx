@@ -115,6 +115,14 @@ const Footer: React.FC = () => {
                 <FaEnvelope />
                 <span>{siteSettings.contactEmail}</span>
               </div>
+              <div className={styles.contactItem}>
+                <FaEnvelope />
+                <span>demo@technatonix.com</span>
+              </div>
+              <div className={styles.contactItem}>
+                <FaEnvelope />
+                <span>business@technatonix.com</span>
+              </div>
               {siteSettings.offices.map((office, index) => (
                 <div key={index} className={styles.officeInfo}>
                   <div className={styles.contactItem}>
