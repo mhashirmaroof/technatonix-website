@@ -315,18 +315,13 @@
 }
 
 .presenceContent {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-
-  @media (max-width: 968px) {
-    grid-template-columns: 1fr;
-    gap: 3rem;
-  }
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .presenceText {
+  text-align: center;
+
   h2 {
     font-size: 2.5rem;
     font-weight: 700;
@@ -344,8 +339,13 @@
 
 .regions {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
+  text-align: center;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+  }
 
   @media (max-width: 500px) {
     grid-template-columns: 1fr;

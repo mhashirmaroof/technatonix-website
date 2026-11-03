@@ -245,9 +245,6 @@ const About: React.FC<AboutProps> = ({ seo }) => {
                 </div>
               </div>
             </div>
-            <div className={styles.presenceMap}>
-              <img src="/images/about/global-map.svg" alt="Global Presence" />
-            </div>
           </div>
         </div>
       </section>
