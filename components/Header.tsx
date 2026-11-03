@@ -5,6 +5,9 @@ import { useRouter } from 'next/router';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import styles from './Header.module.scss';
 
+// Request Demo is hidden for now; flip to true to show it again
+const SHOW_REQUEST_DEMO = false;
+
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
@@ -61,10 +64,12 @@ const Header: React.FC = () => {
 
             {/* CTA Buttons */}
             <div className={styles.ctaButtons}>
-              <Link href="/contact" className="btn-secondary">
-                Request Demo
-              </Link>
-              <Link href="/contact" className="btn-primary">
+              {SHOW_REQUEST_DEMO && (
+                <Link href="/contact" className="btn-secondary">
+                  Request Demo
+                </Link>
+              )}
+              <Link href="/contact?inquiry=quote" className="btn-primary">
                 Get Quote
               </Link>
             </div>
@@ -93,10 +98,12 @@ const Header: React.FC = () => {
                 </Link>
               ))}
               <div className={styles.mobileCta}>
-                <Link href="/contact" className="btn-secondary">
-                  Request Demo
-                </Link>
-                <Link href="/contact" className="btn-primary">
+                {SHOW_REQUEST_DEMO && (
+                  <Link href="/contact" className="btn-secondary">
+                    Request Demo
+                  </Link>
+                )}
+                <Link href="/contact?inquiry=quote" className="btn-primary" onClick={() => setIsMenuOpen(false)}>
                   Get Quote
                 </Link>
               </div>

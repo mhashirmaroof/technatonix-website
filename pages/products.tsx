@@ -15,6 +15,9 @@ interface ProductsProps {
   seo: SEOProps;
 }
 
+// Request Demo is hidden for now; flip to true to show it again
+const SHOW_REQUEST_DEMO = false;
+
 const Products: React.FC<ProductsProps> = ({ products, seo }) => {
   const krevixProduct = products[0]; // Main product
   const [activeTab, setActiveTab] = useState<'krevix' | 'efwrsx'>('krevix');
@@ -83,9 +86,11 @@ const Products: React.FC<ProductsProps> = ({ products, seo }) => {
                   {krevixProduct.longDescription}
                 </p>
                 <div className={styles.heroButtons}>
-                  <Link href="/contact" className="btn-primary">
-                    <FaPlay /> Request Demo
-                  </Link>
+                  {SHOW_REQUEST_DEMO && (
+                    <Link href="/contact" className="btn-primary">
+                      <FaPlay /> Request Demo
+                    </Link>
+                  )}
                   {krevixProduct.datasheetUrl && (
                     <Link href={krevixProduct.datasheetUrl} className="btn-secondary" target="_blank">
                       <FaDownload /> Download Datasheet

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
 import Layout from '@/components/Layout';
 import { SEOProps } from '@/types';
@@ -19,6 +20,17 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
     shortMessage: '',
     details: ''
   });
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!router.isReady || router.query.inquiry !== 'quote') return;
+    setFormData(prev => ({
+      ...prev,
+      shortMessage: prev.shortMessage || 'I would like to request a quote for my project.'
+    }));
+    document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }, [router.isReady, router.query.inquiry]);
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -166,7 +178,7 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
               )}
 
               {submitStatus !== 'success' && (
-                <form onSubmit={handleSubmit} className={styles.contactForm}>
+                <form id="contact-form" onSubmit={handleSubmit} className={styles.contactForm}>
                   <div className={styles.formRow}>
                     <div className={styles.formGroup}>
                       <label htmlFor="name">Full Name *</label>
