@@ -218,32 +218,32 @@ const Home: React.FC<HomeProps> = ({ caseStudies, seo }) => {
               <span className={styles.pulse} /> Software Development &amp; IT Services
             </span>
             <h1 className={styles.heroTitle}>
-              We Build <span className={styles.gradientText}>Software</span> That Powers Modern Business
+              Custom <span className={styles.gradientText}>Software</span> Solutions Built Around Your Business
             </h1>
             <p className={styles.heroSubtitle}>
-              Custom software, SaaS products, web and mobile apps, CRM, ERP, HRTech, PropTech, Fintech
-              and healthcare solutions, backed by cloud, AI and IoT expertise.
+              We design and develop custom software, business applications and intelligent automation
+              solutions that help businesses streamline operations, connect systems and scale with confidence.
             </p>
             <div className={styles.heroButtons}>
               <Link href="/contact" className={styles.btnGlow}>
                 Start Your Project <FaArrowRight />
               </Link>
-              <Link href="/products" className={styles.btnGhost}>
-                <FaPlay /> Explore Products
+              <Link href="/services" className={styles.btnGhost}>
+                <FaPlay /> Explore Services
               </Link>
             </div>
             <div className={styles.heroStats}>
               <div className={styles.heroStat}>
-                <strong><CountUp end={500} suffix="+" /></strong>
+                <strong><CountUp end={28} suffix="+" /></strong>
                 <span>Projects Delivered</span>
               </div>
               <div className={styles.heroStat}>
-                <strong><CountUp end={15} suffix="+" /></strong>
+                <strong><CountUp end={8} suffix="+" /></strong>
                 <span>Industries Served</span>
               </div>
               <div className={styles.heroStat}>
                 <strong><CountUp end={5} suffix="+" /></strong>
-                <span>Years of Experience</span>
+                <span>Years in Services</span>
               </div>
             </div>
           </div>

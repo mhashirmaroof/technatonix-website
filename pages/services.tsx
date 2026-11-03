@@ -184,15 +184,15 @@ const Services: React.FC<ServicesProps> = ({ seo }) => {
             </p>
             <div className={styles.heroStats}>
               <div className={styles.stat}>
-                <span className={styles.statValue}>500+</span>
+                <span className={styles.statValue}>28+</span>
                 <span className={styles.statLabel}>Projects Delivered</span>
               </div>
               <div className={styles.stat}>
-                <span className={styles.statValue}>15+</span>
+                <span className={styles.statValue}>8+</span>
                 <span className={styles.statLabel}>Industries Served</span>
               </div>
               <div className={styles.stat}>
-                <span className={styles.statValue}>50+</span>
+                <span className={styles.statValue}>14+</span>
                 <span className={styles.statLabel}>Global Clients</span>
               </div>
             </div>
@@ -314,7 +314,7 @@ const Services: React.FC<ServicesProps> = ({ seo }) => {
             <div className={styles.benefitCard}>
               <FaRocket className={styles.benefitIcon} />
               <h3>Proven Track Record</h3>
-              <p>500+ successful projects delivered across 15+ industries with 99% client satisfaction</p>
+              <p>28+ successful projects delivered across 8+ industries</p>
             </div>
             <div className={styles.benefitCard}>
               <FaShieldAlt className={styles.benefitIcon} />

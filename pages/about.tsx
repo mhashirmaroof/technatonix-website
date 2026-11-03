@@ -12,9 +12,9 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ seo }) => {
   const stats = [
-    { value: '500+', label: 'Projects Delivered', icon: <FaRocket /> },
-    { value: '15+', label: 'Industries Served', icon: <FaGlobeAmericas /> },
-    { value: '50+', label: 'Global Clients', icon: <FaUsers /> },
+    { value: '28+', label: 'Projects Delivered', icon: <FaRocket /> },
+    { value: '8+', label: 'Industries Served', icon: <FaGlobeAmericas /> },
+    { value: '14+', label: 'Global Clients', icon: <FaUsers /> },
     { value: '99%', label: 'Client Satisfaction', icon: <FaAward /> }
   ];
 
@@ -176,7 +176,8 @@ const About: React.FC<AboutProps> = ({ seo }) => {
         </div>
       </section>
 
-      {/* Our Team */}
+      {/* Our Team (hidden for now) */}
+      {false && (
       <section className={styles.team}>
         <div className="container">
           <div className={styles.sectionHeader}>
@@ -216,6 +217,7 @@ const About: React.FC<AboutProps> = ({ seo }) => {
           </div>
         </div>
       </section>
+      )}
 
       {/* Global Presence */}
       <section className={styles.globalPresence}>
@@ -235,7 +237,7 @@ const About: React.FC<AboutProps> = ({ seo }) => {
                 </div>
                 <div className={styles.region}>
                   <strong>Asia Pacific</strong>
-                  <span>Singapore, Australia, Japan</span>
+                  <span>Singapore, Australia, Pakistan</span>
                 </div>
                 <div className={styles.region}>
                   <strong>Middle East</strong>
@@ -276,11 +278,11 @@ const About: React.FC<AboutProps> = ({ seo }) => {
 export const getServerSideProps: GetServerSideProps<AboutProps> = async () => {
   const seo: SEOProps = {
     title: 'About Technatonix - Leading Software House | Software Development Company',
-    description: 'Technatonix is a premier software house and software development company delivering custom software development, SaaS products, web and mobile apps, CRM, ERP and IT services across industries. Trusted by 500+ clients worldwide.',
+    description: 'Technatonix is a premier software house and software development company delivering custom software development, SaaS products, web and mobile apps, CRM, ERP and IT services across industries. Trusted by 14+ clients worldwide.',
     canonical: 'https://technatonix.com/about',
     openGraph: {
       title: 'About Technatonix - Premier Software House & Development Company',
-      description: 'Full-service software house providing custom software, SaaS, web and mobile apps and IT services. Serving 500+ clients globally.',
+      description: 'Full-service software house providing custom software, SaaS, web and mobile apps and IT services. Serving 14+ clients globally.',
       image: '/images/about-og.jpg',
       type: 'website'
     }
