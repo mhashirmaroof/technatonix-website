@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import EfwrsxProduct from '@/components/EfwrsxProduct';
 import { GetServerSideProps } from 'next';
 import Layout from '@/components/Layout';
@@ -104,7 +105,15 @@ const Products: React.FC<ProductsProps> = ({ products, seo }) => {
               <div className={styles.heroImage}>
                 <div className={styles.productPreview}>
                   <div className={styles.screenshot}>
-                    <img src="/images/krevix-dashboard-preview.jpg" alt="KREVIX ERP Dashboard" />
+                    <Image
+                      src="/images/products/krevix-dashboard.png"
+                      alt="KREVIX ERP Manufacturing Dashboard"
+                      width={1672}
+                      height={941}
+                      sizes="(max-width: 968px) 100vw, 600px"
+                      quality={85}
+                      priority
+                    />
                   </div>
                 </div>
               </div>
@@ -198,7 +207,8 @@ const Products: React.FC<ProductsProps> = ({ products, seo }) => {
           </div>
         </section>
 
-        {/* Screenshots */}
+        {/* Screenshots (hidden for now) */}
+        {false && (
         <section className={styles.screenshots}>
           <div className="container">
             <div className={styles.sectionHeader}>
@@ -214,6 +224,7 @@ const Products: React.FC<ProductsProps> = ({ products, seo }) => {
             </div>
           </div>
         </section>
+        )}
 
         {/* Feature Matrix */}
         <section className={styles.featureMatrix}>
