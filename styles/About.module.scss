@@ -1,0 +1,421 @@
+@import './variables';
+
+.hero {
+  background: $dk-hero-bg;
+  color: $white;
+  padding: 5rem 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #cbd5e1;
+    line-height: 1.6;
+  }
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stat {
+  text-align: center;
+
+  .statIcon {
+    font-size: 2rem;
+    color: $accent-color;
+    margin-bottom: 1rem;
+  }
+
+  .statValue {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .statLabel {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: $dk-text;
+  }
+
+  p {
+    font-size: 1.125rem;
+    color: $dk-muted;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.storyContent {
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: $dk-text;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: $dk-text-2;
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.storyImage {
+  img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.missionVision {
+  background: $dk-surface;
+  padding: 80px 0;
+}
+
+.mvGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.mvCard {
+  background: $dk-surface;
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid $dk-line;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: $dk-text;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: $dk-text-2;
+  }
+}
+
+.mvIcon {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, $primary-color, $secondary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem;
+
+  svg {
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.valueCard {
+  background: $dk-surface;
+  padding: 2.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid $dk-line;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $dk-text;
+  }
+
+  p {
+    color: $dk-muted;
+    line-height: 1.6;
+  }
+}
+
+.valueIcon {
+  width: 60px;
+  height: 60px;
+  background: $primary-color;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+
+  svg {
+    font-size: 1.5rem;
+    color: white;
+  }
+}
+
+.team {
+  background: $dk-surface;
+  padding: 80px 0;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.teamCard {
+  background: $dk-surface;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid $dk-line;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.memberImage {
+  img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+  }
+}
+
+.memberInfo {
+  padding: 2rem;
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: $dk-text;
+  }
+}
+
+.memberRole {
+  color: $dk-accent;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.memberBio {
+  color: $dk-muted;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.memberSocial {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  a {
+    width: 40px;
+    height: 40px;
+    background: $dk-bg-1;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $dk-muted;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $primary-color;
+      color: white;
+    }
+
+    svg {
+      font-size: 1rem;
+    }
+  }
+}
+
+.globalPresence {
+  padding: 80px 0;
+}
+
+.presenceContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.presenceText {
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: $dk-text;
+  }
+
+  p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: $dk-text-2;
+    margin-bottom: 2rem;
+  }
+}
+
+.regions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.region {
+  padding: 1rem;
+  background: $dk-bg-1;
+  border-radius: 8px;
+  border: 1px solid $dk-line;
+
+  strong {
+    display: block;
+    font-weight: 600;
+    color: $dk-text;
+    margin-bottom: 0.5rem;
+  }
+
+  span {
+    color: $dk-muted;
+    font-size: 0.9rem;
+  }
+}
+
+.presenceMap {
+  text-align: center;
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+}
+
+.cta {
+  background: $dk-hero-bg;
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}

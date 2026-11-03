@@ -1,0 +1,342 @@
+@import './variables';
+
+.hero {
+  background: $dk-hero-bg;
+  color: $white;
+  padding: 5rem 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #cbd5e1;
+    line-height: 1.6;
+  }
+}
+
+.heroStats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.stat {
+  text-align: center;
+
+  .statValue {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $white;
+  }
+
+  .statLabel {
+    display: block;
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-top: 0.5rem;
+  }
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: $dk-text;
+  }
+
+  p {
+    font-size: 1.125rem;
+    color: $dk-muted;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+.coreServicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.coreServiceCard {
+  background: $dk-surface;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid $dk-line;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    border-color: $primary-color;
+  }
+
+  .serviceIcon {
+    width: 60px;
+    height: 60px;
+    background: $primary-color;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+
+    svg {
+      font-size: 1.5rem;
+      color: white;
+    }
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $dk-text;
+  }
+
+  p {
+    color: $dk-muted;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+}
+
+.serviceFeatures {
+  list-style: none;
+  margin-bottom: 2rem;
+
+  li {
+    padding: 0.5rem 0;
+    color: $dk-text-2;
+    position: relative;
+    padding-left: 1.5rem;
+
+    &:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: $success-color;
+      font-weight: bold;
+    }
+  }
+}
+
+.serviceAction {
+  margin-top: auto;
+}
+
+.additionalServices {
+  background: $dk-surface;
+  padding: 80px 0;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.serviceCard {
+  background: $dk-surface;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid $dk-line;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  .serviceIcon {
+    width: 60px;
+    height: 60px;
+    background: $primary-color;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+
+    svg {
+      font-size: 1.5rem;
+      color: white;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $dk-text;
+  }
+
+  p {
+    color: $dk-muted;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+}
+
+.serviceLink {
+  color: $dk-accent;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $secondary-color;
+  }
+
+  svg {
+    font-size: 0.875rem;
+  }
+}
+
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.processStep {
+  text-align: center;
+  padding: 2rem 1rem;
+
+  .stepNumber {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $dk-text;
+  }
+
+  p {
+    color: $dk-muted;
+    line-height: 1.6;
+  }
+}
+
+.whyChoose {
+  background: $dk-surface;
+  padding: 80px 0;
+}
+
+.benefitsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.benefitCard {
+  background: $dk-surface;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+  border: 1px solid $dk-line;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  .benefitIcon {
+    font-size: 2.5rem;
+    color: $dk-accent;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: $dk-text;
+  }
+
+  p {
+    color: $dk-muted;
+    line-height: 1.6;
+  }
+}
+
+.cta {
+  background: $dk-hero-bg;
+  color: white;
+  padding: 80px 0;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+  }
+}

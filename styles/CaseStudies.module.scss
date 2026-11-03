@@ -1,0 +1,265 @@
+@import './variables';
+
+.caseStudiesPage {
+  min-height: 100vh;
+}
+
+.hero {
+  background: $dk-hero-bg;
+  color: $white;
+  padding: 4rem 0;
+
+  .heroContent {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: $spacing-md;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 2.5rem;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 2rem;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    opacity: 0.9;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.caseStudiesSection {
+  @include section-padding;
+  background: $dk-surface;
+
+  .caseStudiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: $spacing-xl;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
+    }
+  }
+
+  .caseStudyCard {
+    background: $dk-surface;
+    border: 1px solid $dk-line;
+    border-radius: 1rem;
+    padding: $spacing-xl;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .cardHeader {
+      margin-bottom: $spacing-lg;
+      border-bottom: 1px solid $dk-line;
+      padding-bottom: $spacing-md;
+
+      .caseTitle {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $dk-text;
+        margin-bottom: $spacing-xs;
+        line-height: 1.3;
+      }
+
+      .clientName {
+        color: $dk-accent;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+    }
+
+    .cardContent {
+      flex-grow: 1;
+
+      .section {
+        margin-bottom: $spacing-lg;
+
+        h3 {
+          font-size: 1rem;
+          font-weight: 600;
+          color: $dk-text;
+          margin-bottom: $spacing-xs;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        p {
+          color: $dk-text-2;
+          line-height: 1.6;
+          font-size: 0.95rem;
+        }
+      }
+
+      .metrics {
+        background: $dk-bg-1;
+        padding: $spacing-md;
+        border-radius: 0.5rem;
+        margin-bottom: $spacing-lg;
+
+        h3 {
+          font-size: 1rem;
+          font-weight: 600;
+          color: $dk-text;
+          margin-bottom: $spacing-sm;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .metricsGrid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+          gap: $spacing-sm;
+        }
+
+        .metric {
+          text-align: center;
+
+          .metricValue {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: $dk-accent;
+            line-height: 1;
+          }
+
+          .metricLabel {
+            display: block;
+            font-size: 0.7rem;
+            color: $dk-muted;
+            margin-top: 0.25rem;
+            line-height: 1.2;
+          }
+        }
+      }
+
+      .techStack {
+        h4 {
+          font-size: 0.875rem;
+          font-weight: 600;
+          color: $dk-text;
+          margin-bottom: $spacing-xs;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+        }
+
+        .techTags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: $spacing-xs;
+        }
+
+        .techTag {
+          background: #e2e8f0;
+          color: $dk-text-2;
+          padding: 0.25rem 0.5rem;
+          border-radius: 0.25rem;
+          font-size: 0.75rem;
+          font-weight: 500;
+
+          &:last-child {
+            background: $primary-color;
+            color: $white;
+          }
+        }
+      }
+    }
+
+    .cardFooter {
+      margin-top: $spacing-lg;
+      padding-top: $spacing-md;
+      border-top: 1px solid $dk-line;
+
+      .readMoreButton {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $dk-accent;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.2s ease;
+        font-size: 0.95rem;
+
+        &:hover {
+          color: $dk-accent;
+        }
+      }
+    }
+  }
+}
+
+.cta {
+  @include section-padding;
+  background: $dk-cta-bg;
+  color: $white;
+  text-align: center;
+
+  .ctaContent {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: $spacing-md;
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: 2rem;
+      }
+    }
+
+    p {
+      font-size: 1.125rem;
+      margin-bottom: $spacing-xl;
+      opacity: 0.9;
+      line-height: 1.6;
+    }
+  }
+
+  .ctaButtons {
+    display: flex;
+    gap: $spacing-md;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width: $breakpoint-sm) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      border: 2px solid $white;
+      color: $white;
+
+      &:hover {
+        background-color: $dk-surface;
+        color: $dk-accent;
+      }
+    }
+  }
+}

@@ -1,0 +1,326 @@
+@import './variables';
+
+.caseStudyDetail {
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: $spacing-2xl 0;
+
+  .container {
+    max-width: 1200px;
+  }
+
+  .backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: $dk-accent;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: $spacing-lg;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: $dk-accent;
+    }
+  }
+
+  .heroContent {
+    max-width: 800px;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $dk-text;
+    margin-bottom: $spacing-md;
+    line-height: 1.2;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 2rem;
+    }
+  }
+
+  .clientInfo {
+    font-size: 1.125rem;
+    color: $dk-accent;
+    margin-bottom: $spacing-md;
+  }
+
+  .summary {
+    font-size: 1.25rem;
+    color: $dk-text-2;
+    line-height: 1.6;
+
+    @media (max-width: $breakpoint-md) {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.metrics {
+  @include section-padding;
+  background: $dk-surface;
+
+  .metricsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: $spacing-lg;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .metricCard {
+    text-align: center;
+    padding: $spacing-lg;
+    background: $dk-bg-1;
+    border-radius: 1rem;
+    border: 1px solid $dk-line;
+
+    .metricValue {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: $dk-accent;
+      display: block;
+      line-height: 1;
+    }
+
+    .metricLabel {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $dk-text;
+      margin: $spacing-sm 0;
+    }
+
+    .metricDescription {
+      font-size: 0.875rem;
+      color: $dk-muted;
+      line-height: 1.4;
+    }
+  }
+}
+
+.content {
+  @include section-padding;
+  background: $dk-surface;
+
+  .contentGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: $spacing-2xl;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+  }
+
+  .mainContent {
+    .section {
+      margin-bottom: $spacing-2xl;
+
+      h2 {
+        font-size: 1.875rem;
+        font-weight: 600;
+        color: $dk-text;
+        margin-bottom: $spacing-md;
+        border-bottom: 2px solid $primary-color;
+        padding-bottom: $spacing-sm;
+      }
+
+      p {
+        font-size: 1.125rem;
+        line-height: 1.7;
+        color: $dk-text-2;
+        margin-bottom: $spacing-md;
+      }
+    }
+
+    .keyResults {
+      background: $dk-bg-1;
+      padding: $spacing-lg;
+      border-radius: 0.75rem;
+      border-left: 4px solid $primary-color;
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $dk-text;
+        margin-bottom: $spacing-md;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: $spacing-sm;
+          margin-bottom: $spacing-sm;
+          font-size: 1rem;
+          color: $dk-text-2;
+
+          .checkIcon {
+            color: #10b981;
+            font-size: 1.125rem;
+            flex-shrink: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar {
+    .projectDetails {
+      background: $dk-surface;
+      border: 1px solid $dk-line;
+      border-radius: 0.75rem;
+      padding: $spacing-lg;
+      margin-bottom: $spacing-lg;
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $dk-text;
+        margin-bottom: $spacing-md;
+        border-bottom: 1px solid $dk-line;
+        padding-bottom: $spacing-sm;
+      }
+
+      .detail {
+        margin-bottom: $spacing-md;
+
+        strong {
+          display: block;
+          font-weight: 600;
+          color: $dk-text;
+          margin-bottom: $spacing-xs;
+        }
+
+        span {
+          color: $dk-text-2;
+        }
+      }
+
+      .techStack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $spacing-xs;
+
+        .techTag {
+          background: $primary-color;
+          color: $white;
+          padding: 0.25rem 0.5rem;
+          border-radius: 0.25rem;
+          font-size: 0.75rem;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .ctaCard {
+      background: $dk-cta-bg;
+      color: $white;
+      padding: $spacing-lg;
+      border-radius: 0.75rem;
+      text-align: center;
+
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: $spacing-sm;
+      }
+
+      p {
+        margin-bottom: $spacing-md;
+        opacity: 0.9;
+      }
+
+      .btn-primary {
+        background: $dk-surface;
+        color: $dk-accent;
+        border: none;
+
+        &:hover {
+          background: $dk-bg-1;
+          color: $dk-accent;
+        }
+      }
+    }
+  }
+}
+
+.relatedCases {
+  @include section-padding;
+  background: $dk-bg-1;
+
+  h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: $dk-text;
+    margin-bottom: $spacing-xl;
+  }
+
+  .relatedGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: $spacing-lg;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .relatedCard {
+    background: $dk-surface;
+    padding: $spacing-lg;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: $dk-text;
+      margin-bottom: $spacing-xs;
+      line-height: 1.3;
+    }
+
+    .relatedClient {
+      color: $dk-accent;
+      font-weight: 500;
+      margin-bottom: $spacing-sm;
+      font-size: 0.875rem;
+    }
+
+    .relatedExcerpt {
+      color: $dk-muted;
+      line-height: 1.5;
+      margin-bottom: $spacing-md;
+      font-size: 0.875rem;
+    }
+
+    .readMore {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: $dk-accent;
+      font-weight: 500;
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $dk-accent;
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+// Variables
+$primary-color: #0284c7;
+$primary-dark: #0369a1;
+$primary-light: #0ea5e9;
+$secondary-color: #f97316;
+$accent-color: #f59e0b;
+
+$gray-50: #f9fafb;
+$gray-100: #f3f4f6;
+$gray-200: #e5e7eb;
+$gray-300: #d1d5db;
+$gray-400: #9ca3af;
+$gray-500: #6b7280;
+$gray-600: #4b5563;
+$gray-700: #374151;
+$gray-800: #1f2937;
+$gray-900: #111827;
+
+$white: #ffffff;
+$black: #000000;
+
+// Semantic colors
+$dark-color: #111827; // Same as $gray-900
+$text-color: #374151; // Same as $gray-700  
+$background-light: #f9fafb; // Same as $gray-50
+$success-color: #10b981;
+$warning-color: #f59e0b;
+$error-color: #ef4444;
+
+// Typography
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.6;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+$spacing-2xl: 4rem;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1536px;
+
+// Mixins
+@mixin container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-sm;
+  
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-md;
+  }
+  
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-lg;
+  }
+}
+
+@mixin section-padding {
+  padding: $spacing-2xl 0;
+  
+  @media (min-width: $breakpoint-md) {
+    padding: 5rem 0;
+  }
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  border: none;
+  font-size: $font-size-base;
+  line-height: 1.5;
+  
+  &:focus {
+    outline: 2px solid $primary-color;
+    outline-offset: 2px;
+  }
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background-color: $primary-color;
+  color: $white;
+  
+  &:hover:not(:disabled) {
+    background-color: $primary-dark;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background-color: $white;
+  color: $primary-color;
+  border: 2px solid $primary-color;
+  
+  &:hover:not(:disabled) {
+    background-color: $primary-color;
+    color: $white;
+  }
+}
+
+// Dark site theme (public pages)
+$dk-bg-0: #020617;
+$dk-bg-1: #0b1224;
+$dk-surface: #0f172a;
+$dk-surface-2: #1e293b;
+$dk-line: rgba(148, 163, 184, 0.16);
+$dk-text: #f1f5f9;
+$dk-text-2: #cbd5e1;
+$dk-muted: #94a3b8;
+$dk-accent: #38bdf8;
+$dk-green: #34d399;
+$dk-indigo: #818cf8;
+$dk-hero-bg: radial-gradient(ellipse at 70% 40%, #0f1f4a 0%, #020617 60%);
+$dk-cta-bg: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.4), transparent 60%), linear-gradient(180deg, #0b1224, #020617);

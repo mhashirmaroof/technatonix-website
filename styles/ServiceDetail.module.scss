@@ -1,0 +1,440 @@
+@import 'variables';
+
+.serviceDetail {
+  min-height: 100vh;
+}
+
+// Not Found Section
+.notFound {
+  padding: 120px 0;
+  text-align: center;
+  background: $dk-surface;
+  color: $dk-text-2;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: $dk-accent;
+  }
+}
+
+// Hero Section
+.hero {
+  background: $dk-hero-bg;
+  color: $white;
+  padding: 120px 0 80px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 30% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+  }
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba($white, 0.8);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $white;
+    transform: translateX(-5px);
+  }
+
+  svg {
+    font-size: 0.8rem;
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+}
+
+.heroText {
+  max-width: 800px;
+
+  h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    background: $dk-surface;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  > p {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: rgba($white, 0.9);
+    max-width: 600px;
+  }
+}
+
+.serviceTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag {
+  background: rgba($white, 0.1);
+  color: $white;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: 1px solid rgba($white, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba($white, 0.2);
+    border-color: rgba($white, 0.3);
+  }
+}
+
+// Overview Section
+.overview {
+  padding: 80px 0;
+  background: $dk-surface;
+}
+
+.overviewGrid {
+  display: grid;
+  gap: 4rem;
+  align-items: center;
+}
+
+.overviewText {
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $dk-accent;
+    margin-bottom: 1.5rem;
+  }
+
+  > p {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: $dk-text-2;
+    margin-bottom: 3rem;
+    max-width: 600px;
+  }
+}
+
+.highlights {
+  display: grid;
+  gap: 2rem;
+}
+
+.highlight {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: $dk-bg-1;
+  border-radius: 12px;
+  border-left: 4px solid $secondary-color;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba($primary-color, 0.1);
+  }
+}
+
+.highlightIcon {
+  color: $secondary-color;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.highlight h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: $dk-accent;
+  margin-bottom: 0.5rem;
+}
+
+.highlight p {
+  color: $dk-text-2;
+  line-height: 1.6;
+}
+
+// Offerings Section
+.offerings {
+  padding: 80px 0;
+  background: $dk-bg-1;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $dk-accent;
+    margin-bottom: 3rem;
+  }
+}
+
+.offeringsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.offeringCard {
+  background: $dk-surface;
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba($primary-color, 0.08);
+  transition: all 0.3s ease;
+  border: 1px solid rgba($primary-color, 0.1);
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba($primary-color, 0.15);
+    border-color: $secondary-color;
+  }
+}
+
+.offeringIcon {
+  color: $secondary-color;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.offeringCard h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $dk-accent;
+  margin-bottom: 1rem;
+}
+
+.offeringCard p {
+  color: $dk-text-2;
+  line-height: 1.6;
+}
+
+// Process Section
+.process {
+  padding: 80px 0;
+  background: $dk-surface;
+
+  h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $dk-accent;
+    margin-bottom: 3rem;
+  }
+}
+
+.processSteps {
+  display: grid;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    gap: 3rem;
+  }
+}
+
+.processStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 2rem;
+  background: $dk-bg-1;
+  border-radius: 12px;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba($primary-color, 0.1);
+  }
+
+  &:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 2.5rem;
+    bottom: -2rem;
+    width: 2px;
+    height: 2rem;
+    background: linear-gradient(to bottom, $secondary-color, transparent);
+    
+    @media (min-width: 768px) {
+      bottom: -3rem;
+      height: 3rem;
+    }
+  }
+}
+
+.stepNumber {
+  background: linear-gradient(135deg, $secondary-color, #f97316);
+  color: $white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba($secondary-color, 0.3);
+}
+
+.stepContent h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: $dk-accent;
+  margin-bottom: 0.75rem;
+}
+
+.stepContent p {
+  color: $dk-text-2;
+  line-height: 1.6;
+}
+
+// CTA Section
+.cta {
+  padding: 80px 0;
+  background: linear-gradient(135deg, $primary-color 0%, #1e293b 100%);
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 600px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.125rem;
+    color: rgba($white, 0.9);
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.primaryButton {
+  background: $secondary-color;
+  color: $white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba($secondary-color, 0.3);
+
+  &:hover {
+    background: #f97316;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba($secondary-color, 0.4);
+  }
+}
+
+.secondaryButton {
+  background: transparent;
+  color: $white;
+  padding: 1rem 2rem;
+  border: 2px solid rgba($white, 0.3);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba($white, 0.1);
+    border-color: $white;
+    transform: translateY(-2px);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 60px;
+  }
+
+  .heroText h1 {
+    font-size: 2.5rem;
+  }
+
+  .overview,
+  .offerings,
+  .process,
+  .cta {
+    padding: 60px 0;
+  }
+
+  .highlights {
+    gap: 1.5rem;
+  }
+
+  .highlight {
+    padding: 1.25rem;
+  }
+
+  .offeringsGrid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .offeringCard {
+    padding: 1.5rem;
+  }
+
+  .processStep {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+
+  .stepNumber {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+    max-width: 280px;
+  }
+}
