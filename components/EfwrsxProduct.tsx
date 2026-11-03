@@ -71,7 +71,9 @@ const EfwrsxProduct: React.FC = () => (
                 <FaPlay /> Join the Early Access List
               </Link>
             </div>
-            <span className={styles.statusBadge}>In planning &amp; design</span>
+            <span className={styles.statusBadge}>
+              In planning, design, development &amp; testing
+            </span>
           </div>
           <div className={styles.heroImage}>
             <div className={styles.productPreview}>

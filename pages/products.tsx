@@ -92,6 +92,9 @@ const Products: React.FC<ProductsProps> = ({ products, seo }) => {
                     </Link>
                   )}
                 </div>
+                <span className={styles.statusBadge}>
+                  In planning, design, development &amp; testing
+                </span>
               </div>
               <div className={styles.heroImage}>
                 <div className={styles.productPreview}>
