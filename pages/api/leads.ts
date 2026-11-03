@@ -1,4 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { sendLeadNotification } from '@/lib/lead-notification';
 
 const FIRESTORE_TIMEOUT_MS = 8000;
 
@@ -30,8 +31,8 @@ const validateLeadData = (data: any): { isValid: boolean; errors: string[] } => 
   if (!data.email || typeof data.email !== 'string') {
     errors.push('Email is required');
   } else {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
+    const emailRegex = /^[^\s@,;<>]+@[^\s@,;<>]+\.[^\s@,;<>]+$/;
+    if (data.email.length > 254 || !emailRegex.test(data.email.trim())) {
       errors.push('Invalid email format');
     }
   }
@@ -48,6 +49,15 @@ const validateLeadData = (data: any): { isValid: boolean; errors: string[] } => 
     errors.push('State and country are required');
   }
   
+  const maxLengths: Record<string, number> = {
+    name: 120, company: 150, country: 150, phone: 40, shortMessage: 2000, message: 2000, details: 5000
+  };
+  for (const [field, max] of Object.entries(maxLengths)) {
+    if (typeof data[field] === 'string' && data[field].length > max) {
+      errors.push(`${field} is too long`);
+    }
+  }
+
   return {
     isValid: errors.length === 0,
     errors
@@ -140,6 +150,46 @@ const saveLeadData = async (leadData: any): Promise<{ success: boolean; id?: str
   }
 };
 
+// Marks the lead with the email outcome; failure here never affects the response
+const updateNotificationStatus = async (docId: string, status: 'sent' | 'failed', error?: string) => {
+  const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
+  const apiKey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
+  if (!projectId || !apiKey) return;
+
+  const fields: Record<string, any> = {
+    notificationStatus: { stringValue: status },
+    notificationUpdatedAt: { timestampValue: new Date().toISOString() }
+  };
+  if (error) fields.notificationError = { stringValue: error.slice(0, 300) };
+
+  const mask = Object.keys(fields).map((f) => `updateMask.fieldPaths=${f}`).join('&');
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 3000);
+
+  try {
+    const response = await fetch(
+      `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/contact-us/${docId}?${mask}&key=${apiKey}`,
+      {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fields }),
+        signal: controller.signal
+      }
+    );
+    if (!response.ok) {
+      console.error('⚠️ Could not record notification status:', response.status);
+    }
+  } catch (err: any) {
+    console.error('⚠️ Could not record notification status:', err?.message);
+  } finally {
+    clearTimeout(timer);
+  }
+};
+
+// Short-lived guard against the same submission being saved twice (double clicks, retries)
+const recentSubmissions = new Map<string, { id: string; at: number }>();
+const DUPLICATE_WINDOW = 60000;
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   // Only allow POST requests
   if (req.method !== 'POST') {
@@ -198,14 +248,47 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       status: 'new'
     };
     
-    // Save lead data to Firebase (with fallback)
+    const dedupeKey = `${leadData.email}|${leadData.shortMessage}`;
+    const now = Date.now();
+    for (const [key, entry] of recentSubmissions) {
+      if (now - entry.at > DUPLICATE_WINDOW) recentSubmissions.delete(key);
+    }
+    const previous = recentSubmissions.get(dedupeKey);
+    if (previous) {
+      return res.status(200).json({
+        success: true,
+        message: 'Message sent successfully! We\'ll get back to you within 24 hours.',
+        id: previous.id
+      });
+    }
+
+    // Save lead data to Firebase first; email is only attempted after this succeeds
     const result = await saveLeadData(leadData);
     
-    if (!result.success) {
+    if (!result.success || !result.id) {
       throw new Error('Failed to save lead');
     }
+
+    recentSubmissions.set(dedupeKey, { id: result.id, at: now });
+
+    const notification = await sendLeadNotification({
+      name: leadData.name,
+      email: leadData.email,
+      phone: leadData.phone,
+      company: leadData.company,
+      stateCountry: leadData.country,
+      projectType: typeof req.body.projectType === 'string' ? req.body.projectType.trim() : '',
+      message: leadData.shortMessage,
+      details: leadData.details,
+      submittedAt: new Date()
+    });
+
+    if (notification.status === 'failed') {
+      console.error(`❌ Lead notification email failed (lead ${result.id}): ${notification.error}`);
+    }
+    await updateNotificationStatus(result.id, notification.status, notification.error);
     
-    console.log(`✅ Lead processed: ${leadData.email} (ID: ${result.id})`);
+    console.log(`✅ Lead processed (ID: ${result.id}, notification: ${notification.status})`);
     
     // Return success response
     res.status(200).json({ 
