@@ -1,8 +1,8 @@
 @import './variables';
 
 .hero {
-  background: $dk-hero-bg;
-  color: $white;
+  background: linear-gradient(135deg, #f3f9ff, #ffffff);
+  color: $dk-text;
   padding: 5rem 0;
   min-height: 60vh;
   display: flex;
@@ -26,7 +26,7 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    color: #cbd5e1;
+    color: $dk-text-2;
     line-height: 1.6;
   }
 }
@@ -50,7 +50,7 @@
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
-    color: $white;
+    color: $dk-text;
 
     @media (max-width: 480px) {
       font-size: 1.75rem;
@@ -60,7 +60,7 @@
   .statLabel {
     display: block;
     font-size: 0.9rem;
-    color: #cbd5e1;
+    color: $dk-muted;
     margin-top: 0.5rem;
 
     @media (max-width: 480px) {
@@ -90,7 +90,7 @@
 
 .coreServicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   gap: 2rem;
   margin-bottom: 4rem;
 }
@@ -170,7 +170,7 @@
 
 .servicesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 2rem;
 }
 
@@ -226,7 +226,7 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: $secondary-color;
+    color: $primary-dark;
   }
 
   svg {
@@ -247,7 +247,7 @@
   .stepNumber {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, $primary-color, $secondary-color);
+    background: linear-gradient(135deg, #0369a1, #4f46e5);
     color: white;
     border-radius: 50%;
     display: flex;
@@ -346,6 +346,10 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+
+  :global(.btn-secondary) {
+    @include button-secondary-on-dark;
+  }
 
   @media (max-width: 500px) {
     flex-direction: column;

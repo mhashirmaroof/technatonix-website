@@ -1,8 +1,8 @@
 @import './variables';
 
 .hero {
-  background: $dk-hero-bg;
-  color: $white;
+  background: linear-gradient(135deg, #f3f9ff, #ffffff);
+  color: $dk-text;
   padding: 5rem 0;
   min-height: 60vh;
   display: flex;
@@ -26,7 +26,7 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    color: #cbd5e1;
+    color: $dk-text-2;
     line-height: 1.6;
   }
 }
@@ -90,7 +90,7 @@
   position: absolute;
   top: 1rem;
   left: 1rem;
-  background: $accent-color;
+  background: $dk-accent;
   color: white;
   padding: 0.5rem 1rem;
   border-radius: 20px;
@@ -154,7 +154,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  background: $primary-color;
+  background: $dk-accent;
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 15px;
@@ -168,7 +168,7 @@
 
 .postsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
   gap: 2rem;
 }
 
@@ -255,7 +255,7 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: $secondary-color;
+    color: $primary-dark;
   }
 
   svg {
@@ -357,7 +357,7 @@
 
 .postCount {
   display: inline-block;
-  background: $primary-color;
+  background: $dk-accent;
   color: white;
   padding: 0.25rem 0.75rem;
   border-radius: 15px;

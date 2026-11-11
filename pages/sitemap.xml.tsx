@@ -1,4 +1,5 @@
 import { GetServerSideProps } from 'next';
+import { getProjectExperience } from '@/lib/project-experience';
 
 const Sitemap = () => null;
 
@@ -31,6 +32,20 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
   }
 
   try {
+    for (const project of await getProjectExperience()) {
+      sitemap += `
+  <url>
+    <loc>${baseUrl}/case-studies/${project.slug}</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>`;
+    }
+  } catch (error) {
+    console.error('Error fetching projects for sitemap:', error);
+    res.statusCode = 503;
+  }
+
+  try {
     // Fetch blog posts
     const blogResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/admin/blogs`);
     if (blogResponse.ok) {
@@ -48,22 +63,6 @@ export const getServerSideProps: GetServerSideProps = async ({ res }) => {
       }
     }
 
-    // Fetch case studies
-    const caseStudiesResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/admin/case-studies`);
-    if (caseStudiesResponse.ok) {
-      const caseStudiesData = await caseStudiesResponse.json();
-      const caseStudies = caseStudiesData.caseStudies?.filter((cs: any) => cs.published) || [];
-      
-      for (const caseStudy of caseStudies) {
-        sitemap += `
-  <url>
-    <loc>${baseUrl}/case-studies/${caseStudy.slug}</loc>
-    <lastmod>${caseStudy.updatedAt || caseStudy.createdAt}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>`;
-      }
-    }
   } catch (error) {
     console.error('Error generating sitemap:', error);
   }

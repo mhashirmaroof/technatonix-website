@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children, seo }) => {
   return (
     <>
       <SEOHead seo={seo} />
-      <div className="min-h-screen flex flex-col" style={{ background: '#020617' }}>
+      <div className="min-h-screen flex flex-col">
         <Header />
         <main className="flex-grow">
           {children}

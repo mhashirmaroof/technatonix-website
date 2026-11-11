@@ -20,8 +20,8 @@
 
 // Hero Section
 .hero {
-  background: $dk-hero-bg;
-  color: $white;
+  background: linear-gradient(135deg, #f3f9ff, #ffffff);
+  color: $dk-text;
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
@@ -42,14 +42,14 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba($white, 0.8);
+  color: $dk-accent;
   text-decoration: none;
   margin-bottom: 2rem;
   font-size: 0.9rem;
   transition: all 0.3s ease;
 
   &:hover {
-    color: $white;
+    color: $primary-dark;
     transform: translateX(-5px);
   }
 
@@ -71,7 +71,7 @@
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    background: $dk-surface;
+    background: linear-gradient(135deg, #0369a1, #047857);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -81,7 +81,7 @@
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 2rem;
-    color: rgba($white, 0.9);
+    color: $dk-text-2;
     max-width: 600px;
   }
 }
@@ -93,18 +93,18 @@
 }
 
 .tag {
-  background: rgba($white, 0.1);
-  color: $white;
+  background: #eaf5fb;
+  color: $dk-accent;
   padding: 0.5rem 1rem;
   border-radius: 2rem;
   font-size: 0.875rem;
   font-weight: 500;
-  border: 1px solid rgba($white, 0.2);
+  border: 1px solid $dk-line;
   transition: all 0.3s ease;
 
   &:hover {
-    background: rgba($white, 0.2);
-    border-color: rgba($white, 0.3);
+    background: #dceef8;
+    border-color: $primary-light;
   }
 }
 
@@ -149,7 +149,7 @@
   padding: 1.5rem;
   background: $dk-bg-1;
   border-radius: 12px;
-  border-left: 4px solid $secondary-color;
+  border-left: 4px solid $dk-accent;
   transition: all 0.3s ease;
 
   &:hover {
@@ -159,7 +159,7 @@
 }
 
 .highlightIcon {
-  color: $secondary-color;
+  color: $dk-accent;
   font-size: 1.5rem;
   flex-shrink: 0;
   margin-top: 0.25rem;
@@ -193,7 +193,7 @@
 
 .offeringsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 2rem;
 }
 
@@ -209,12 +209,12 @@
   &:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba($primary-color, 0.15);
-    border-color: $secondary-color;
+    border-color: $dk-accent;
   }
 }
 
 .offeringIcon {
-  color: $secondary-color;
+  color: $dk-accent;
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
 }
@@ -278,7 +278,7 @@
     bottom: -2rem;
     width: 2px;
     height: 2rem;
-    background: linear-gradient(to bottom, $secondary-color, transparent);
+    background: linear-gradient(to bottom, $dk-accent, transparent);
     
     @media (min-width: 768px) {
       bottom: -3rem;
@@ -288,7 +288,7 @@
 }
 
 .stepNumber {
-  background: linear-gradient(135deg, $secondary-color, #f97316);
+  background: linear-gradient(135deg, #0369a1, #4f46e5);
   color: $white;
   width: 50px;
   height: 50px;
@@ -299,7 +299,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   flex-shrink: 0;
-  box-shadow: 0 4px 15px rgba($secondary-color, 0.3);
+  box-shadow: 0 4px 15px rgba($primary-dark, 0.25);
 }
 
 .stepContent h3 {
@@ -317,7 +317,7 @@
 // CTA Section
 .cta {
   padding: 80px 0;
-  background: linear-gradient(135deg, $primary-color 0%, #1e293b 100%);
+  background: $dk-cta-bg;
   text-align: center;
 }
 
@@ -348,19 +348,19 @@
 }
 
 .primaryButton {
-  background: $secondary-color;
+  background: linear-gradient(135deg, #0369a1, #4338ca);
   color: $white;
   padding: 1rem 2rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba($secondary-color, 0.3);
+  box-shadow: 0 4px 15px rgba($primary-dark, 0.3);
 
   &:hover {
-    background: #f97316;
+    background: linear-gradient(135deg, #075985, #3730a3);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba($secondary-color, 0.4);
+    box-shadow: 0 8px 25px rgba($primary-dark, 0.4);
   }
 }
 

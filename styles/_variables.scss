@@ -117,17 +117,29 @@ $breakpoint-2xl: 1536px;
   }
 }
 
-// Dark site theme (public pages)
-$dk-bg-0: #020617;
-$dk-bg-1: #0b1224;
-$dk-surface: #0f172a;
-$dk-surface-2: #1e293b;
-$dk-line: rgba(148, 163, 184, 0.16);
-$dk-text: #f1f5f9;
-$dk-text-2: #cbd5e1;
-$dk-muted: #94a3b8;
-$dk-accent: #38bdf8;
-$dk-green: #34d399;
-$dk-indigo: #818cf8;
+@mixin button-secondary-on-dark {
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.6);
+  color: $white;
+
+  &:hover {
+    background: $white;
+    border-color: $white;
+    color: $primary-dark;
+  }
+}
+
+// Public page surfaces and text; dark gradients are retained for hero and CTA areas.
+$dk-bg-0: #ffffff;
+$dk-bg-1: #f4f8fc;
+$dk-surface: #ffffff;
+$dk-surface-2: #eaf2f8;
+$dk-line: #dbe5ed;
+$dk-text: #0f172a;
+$dk-text-2: #334155;
+$dk-muted: #526579;
+$dk-accent: #0369a1;
+$dk-green: #047857;
+$dk-indigo: #4f46e5;
 $dk-hero-bg: radial-gradient(ellipse at 70% 40%, #0f1f4a 0%, #020617 60%);
 $dk-cta-bg: radial-gradient(ellipse at 50% 0%, rgba(99, 102, 241, 0.4), transparent 60%), linear-gradient(180deg, #0b1224, #020617);

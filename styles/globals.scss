@@ -33,14 +33,14 @@ body {
 
 .btn-primary {
   @include button-primary;
-  background: linear-gradient(135deg, #0ea5e9, #6366f1);
+  background: linear-gradient(135deg, #0369a1, #4338ca);
   border: none;
   border-radius: 999px;
   color: #fff;
   box-shadow: 0 8px 28px rgba(56, 189, 248, 0.28);
 
   &:hover {
-    background: linear-gradient(135deg, #38bdf8, #818cf8);
+    background: linear-gradient(135deg, #075985, #3730a3);
     color: #fff;
     box-shadow: 0 10px 34px rgba(56, 189, 248, 0.45);
   }
@@ -48,15 +48,15 @@ body {
 
 .btn-secondary {
   @include button-secondary;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(148, 163, 184, 0.3);
+  background: #fff;
+  border: 1px solid #b6c8d8;
   border-radius: 999px;
-  color: #e2e8f0;
+  color: #075985;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.12);
-    border-color: #38bdf8;
-    color: #fff;
+    background: #eaf5fb;
+    border-color: #0284c7;
+    color: #075985;
   }
 }
 

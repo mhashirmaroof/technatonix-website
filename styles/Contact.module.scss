@@ -1,8 +1,8 @@
 @import './variables';
 
 .hero {
-  background: $dk-hero-bg;
-  color: $white;
+  background: linear-gradient(135deg, #f3f9ff, #ffffff);
+  color: $dk-text;
   padding: 5rem 0;
   min-height: 60vh;
   display: flex;
@@ -26,7 +26,7 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    color: #cbd5e1;
+    color: $dk-text-2;
     line-height: 1.6;
   }
 }
@@ -56,7 +56,7 @@
   gap: 4rem;
 
   @media (max-width: 1024px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
 }
@@ -331,7 +331,7 @@
 
 .officesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 2rem;
 }
 
@@ -396,7 +396,7 @@
 
 .faqGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 2rem;
 }
 

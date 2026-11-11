@@ -74,6 +74,39 @@ private, and do not commit `.env.local` or other environment files.
 
 See [FIREBASE_SETUP.md](./FIREBASE_SETUP.md) for Firebase project setup details.
 
+## Projects and case studies
+
+The homepage, project listing, detail pages and sitemap read published documents
+from the Firestore collection `project-experience` on each request. To add or
+edit a project, use the Firebase console; no website deployment is needed.
+Create a document with these fields:
+
+| Field | Firestore type | Description |
+| --- | --- | --- |
+| Document ID | — | A unique lowercase hyphenated slug, e.g. `example-project` |
+| `slug` | string | Must match the document ID exactly |
+| `title` | string | Project title |
+| `attribution` | string | Relationship, e.g. `Personal experience` or `Technatonix project` |
+| `overview` | string | Project description |
+| `details` | string | Optional longer description displayed on the project page |
+| `industry` | string | Optional industry or target market |
+| `capabilities` | array of strings | Optional product capabilities displayed on the project page |
+| `seoDescription` | string | Optional concise search-engine description; defaults to `overview` |
+| `published` | boolean | Set to `true` to show the project |
+| `order` | number | Optional integer; lower numbers appear first. The first three appear on the homepage. |
+| `website` | string | Optional public `https://` or `http://` project link |
+| `companyWebsite` | string | Optional public `https://` or `http://` company link |
+| `imageUrl` | string | Optional public `https://` or `http://` image link; leave empty to show a placeholder |
+
+Use an image with a 1920 × 1080 (16:9) aspect ratio. The responsive image frame
+shows the entire image without cropping. Firebase Storage download URLs must be
+publicly accessible to visitors. Existing `case-studies` records are not shown
+on the public project pages; their unverified claims have not been deleted.
+
+The Firestore rules must permit public reads of `project-experience` while
+restricting writes to authorized administrators. Firebase web API keys are not
+authentication and do not protect the collection.
+
 ## Useful commands
 
 | Command | Description |

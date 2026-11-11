@@ -4,7 +4,8 @@ import { GetServerSideProps } from 'next';
 import Layout from '@/components/Layout';
 import CountUp from '@/components/home/CountUp';
 import { useReveal } from '@/components/home/useReveal';
-import { SEOProps, CaseStudy } from '@/types';
+import { SEOProps } from '@/types';
+import { getProjectExperience, ProjectExperience } from '@/lib/project-experience';
 import styles from '@/styles/Home.module.scss';
 import Link from 'next/link';
 import { IconType } from 'react-icons';
@@ -18,7 +19,7 @@ import {
 const HeroScene = dynamic(() => import('@/components/home/HeroScene'), { ssr: false });
 
 interface HomeProps {
-  caseStudies: CaseStudy[];
+  caseStudies: ProjectExperience[];
   seo: SEOProps;
 }
 
@@ -379,26 +380,18 @@ const Home: React.FC<HomeProps> = ({ caseStudies, seo }) => {
         <section id="success-stories" className={styles.casesSection}>
           <div className="container">
             <div className={styles.sectionHeader} data-reveal>
-              <span className={styles.kicker}>Success Stories</span>
-              <h2>Results That Speak</h2>
-              <p>See how we've helped businesses across industries transform their operations</p>
+              <span className={styles.kicker}>Project Experience</span>
+              <h2>Projects We've Worked On</h2>
+              <p>Technatonix projects and products, alongside our team's personal experience.</p>
             </div>
             <div className={styles.caseStudiesGrid}>
-              {featuredCaseStudies.map((caseStudy) => (
-                <div key={caseStudy.id} className={styles.caseStudyCard} data-reveal>
-                  <h3>{caseStudy.title}</h3>
-                  <p className={styles.clientName}>{caseStudy.clientName}</p>
-                  <p className={styles.caseStudyExcerpt}>{caseStudy.problem}</p>
-                  <div className={styles.results}>
-                    {caseStudy.metrics?.slice(0, 2).map((metric, index) => (
-                      <div key={index} className={styles.resultMetric}>
-                        <span className={styles.metricValue}>{metric.value}</span>
-                        <span className={styles.metricLabel}>{metric.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                  <Link href={`/case-studies/${caseStudy.slug}`} className={styles.textLink}>
-                    Read Full Story <FaArrowRight />
+              {featuredCaseStudies.map((project) => (
+                <div key={project.slug} className={styles.caseStudyCard} data-reveal>
+                  <h3>{project.title}</h3>
+                  <p className={styles.clientName}>{project.attribution}</p>
+                  <p className={styles.caseStudyExcerpt}>{project.overview}</p>
+                  <Link href={`/case-studies/${project.slug}`} className={styles.textLink}>
+                    View Project <FaArrowRight />
                   </Link>
                 </div>
               ))}
@@ -540,18 +533,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   };
 
   try {
-    // Fetch case studies from API
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/admin/case-studies`);
-    const data = await response.json();
-    
-    // Filter only published case studies
-    const caseStudies: CaseStudy[] = data.caseStudies
-      ?.filter((cs: CaseStudy) => cs.published)
-      ?.map((cs: any) => ({
-        ...cs,
-        createdAt: cs.createdAt,
-        updatedAt: cs.updatedAt,
-      })) || [];
+    const caseStudies = (await getProjectExperience()).slice(0, 3);
 
     return {
       props: {

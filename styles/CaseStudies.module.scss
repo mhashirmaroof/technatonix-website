@@ -5,8 +5,8 @@
 }
 
 .hero {
-  background: $dk-hero-bg;
-  color: $white;
+  background: linear-gradient(135deg, #f3f9ff, #ffffff);
+  color: $dk-text;
   padding: 4rem 0;
 
   .heroContent {
@@ -74,6 +74,7 @@
     }
 
     .cardHeader {
+      margin-top: $spacing-lg;
       margin-bottom: $spacing-lg;
       border-bottom: 1px solid $dk-line;
       padding-bottom: $spacing-md;
@@ -251,15 +252,8 @@
       align-items: center;
     }
 
-    .btn-secondary {
-      background-color: transparent;
-      border: 2px solid $white;
-      color: $white;
-
-      &:hover {
-        background-color: $dk-surface;
-        color: $dk-accent;
-      }
+    :global(.btn-secondary) {
+      @include button-secondary-on-dark;
     }
   }
 }

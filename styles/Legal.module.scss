@@ -5,8 +5,8 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  color: #fff;
+  background: linear-gradient(135deg, #ffffff, #eef6fc);
+  color: $dk-text;
   padding: 5rem 0;
   min-height: 40vh;
   display: flex;
@@ -30,7 +30,7 @@
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    color: #cbd5e1;
+    color: $dk-text-2;
     line-height: 1.6;
 
     @media (max-width: 768px) {
@@ -151,7 +151,7 @@
         h3 {
           margin-top: 0;
           margin-bottom: 1rem;
-          color: #7dd3fc;
+          color: $dk-accent;
         }
 
         ul {
@@ -161,7 +161,7 @@
             margin-bottom: 0.5rem;
 
             strong {
-              color: #7dd3fc;
+              color: $dk-accent;
             }
           }
         }
