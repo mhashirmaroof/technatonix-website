@@ -23,6 +23,7 @@ const Footer: React.FC = () => {
 
   const footerLinks = {
     services: [
+      { name: 'AI Automation & Intelligent Systems', href: '/ai-automation' },
       { name: 'Custom Software Development', href: '/services/custom-software-development' },
       { name: 'SaaS Development', href: '/services' },
       { name: 'Web & Mobile App Development', href: '/services' },

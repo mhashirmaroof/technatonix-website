@@ -12,6 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const staticPages = [
     { url: '', priority: '1.0', changefreq: 'weekly' }, // Homepage - highest priority
     { url: '/services', priority: '0.9', changefreq: 'weekly' }, // Services - very important for software house SEO
+    { url: '/ai-automation', priority: '0.9', changefreq: 'monthly' },
     { url: '/products', priority: '0.9', changefreq: 'monthly' }, // Products/ERP - very important
     { url: '/about', priority: '0.8', changefreq: 'monthly' }, // About - important for trust
     { url: '/contact', priority: '0.8', changefreq: 'monthly' }, // Contact - important for conversion

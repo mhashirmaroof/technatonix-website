@@ -47,7 +47,7 @@
 
   .desktopNav {
     display: flex;
-    gap: 2rem;
+    gap: 1.3rem;
 
     @media (max-width: $breakpoint-lg) {
       display: none;

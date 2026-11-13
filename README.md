@@ -7,6 +7,7 @@ studies, and collecting contact inquiries.
 ## Features
 
 - Marketing pages for the company, services, and products
+- A dedicated AI automation offering at `/ai-automation`, with an automation-specific contact prompt
 - Blog and case study listings and detail pages
 - Contact form with a lead-submission API
 - Admin pages and API routes for managing site content

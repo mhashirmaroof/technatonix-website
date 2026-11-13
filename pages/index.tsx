@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic';
 import { GetServerSideProps } from 'next';
 import Layout from '@/components/Layout';
 import CountUp from '@/components/home/CountUp';
+import AutomationFeature from '@/components/AutomationFeature';
 import { useReveal } from '@/components/home/useReveal';
 import { SEOProps } from '@/types';
 import { getProjectExperience, ProjectExperience } from '@/lib/project-experience';
@@ -251,6 +252,8 @@ const Home: React.FC<HomeProps> = ({ caseStudies, seo }) => {
         </div>
         <div className={styles.scrollHint} aria-hidden="true"><span /></div>
       </section>
+
+      <AutomationFeature />
 
       {/* Tech marquee */}
       <section className={styles.marquee} aria-label="Technologies we work with">

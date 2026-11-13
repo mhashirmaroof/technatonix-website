@@ -24,10 +24,13 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
   const router = useRouter();
 
   useEffect(() => {
-    if (!router.isReady || router.query.inquiry !== 'quote') return;
+    if (!router.isReady || (router.query.inquiry !== 'quote' && router.query.inquiry !== 'automation')) return;
+    const message = router.query.inquiry === 'automation'
+      ? 'I would like to discuss an AI automation project.'
+      : 'I would like to request a quote for my project.';
     setFormData(prev => ({
       ...prev,
-      shortMessage: prev.shortMessage || 'I would like to request a quote for my project.'
+      shortMessage: prev.shortMessage || message
     }));
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, [router.isReady, router.query.inquiry]);
