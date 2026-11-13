@@ -105,6 +105,7 @@ const Privacy: React.FC<PrivacyProps> = ({ seo }) => {
                 <div className={styles.contact}>
                   <p>Email: info@technatonix.com</p>
                   <p>Address: International Market, M Block, Model Town, Lahore, Pakistan</p>
+                  <p>Address: 30 N Gould St Ste N, Sheridan, WY 82801, United States</p>
                 </div>
               </div>
             </div>

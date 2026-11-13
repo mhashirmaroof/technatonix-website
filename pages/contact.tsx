@@ -135,6 +135,12 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
       phone: '+92 302 7163067',
       email: 'info@technatonix.com',
       hours: 'Mon-Fri 9AM-6PM PKT'
+    },
+    {
+      region: 'North America',
+      city: 'Sheridan, Wyoming, United States',
+      address: '30 N Gould St Ste N\nSheridan, WY 82801',
+      email: 'info@technatonix.com'
     }
   ];
 
@@ -370,18 +376,22 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
                     <FaMapMarkerAlt />
                     <span>{office.address}</span>
                   </div>
-                  <div className={styles.officeItem}>
-                    <FaPhone />
-                    <span>{office.phone}</span>
-                  </div>
+                  {office.phone && (
+                    <div className={styles.officeItem}>
+                      <FaPhone />
+                      <span>{office.phone}</span>
+                    </div>
+                  )}
                   <div className={styles.officeItem}>
                     <FaEnvelope />
                     <span>{office.email}</span>
                   </div>
-                  <div className={styles.officeItem}>
-                    <FaClock />
-                    <span>{office.hours}</span>
-                  </div>
+                  {office.hours && (
+                    <div className={styles.officeItem}>
+                      <FaClock />
+                      <span>{office.hours}</span>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

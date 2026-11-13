@@ -471,6 +471,14 @@ export const getServerSideProps: GetServerSideProps = async () => {
             streetAddress: 'International Market, M Block, Model Town',
             addressLocality: 'Lahore',
             addressCountry: 'PK'
+          },
+          {
+            '@type': 'PostalAddress',
+            streetAddress: '30 N Gould St Ste N',
+            addressLocality: 'Sheridan',
+            addressRegion: 'WY',
+            postalCode: '82801',
+            addressCountry: 'US'
           }
         ],
         serviceArea: 'Worldwide'

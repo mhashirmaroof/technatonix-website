@@ -12,12 +12,10 @@ const Footer: React.FC = () => {
       { platform: 'Instagram', url: 'https://www.instagram.com/thetechnatonix/', icon: 'FaInstagram' },
       { platform: 'Facebook', url: 'https://www.facebook.com/thetechnatonix', icon: 'FaFacebook' }
     ],
-    phoneNumbers: [
-      { number: '+92 302 7163067', country: 'Pakistan' }
-    ],
     contactEmail: 'info@technatonix.com',
     offices: [
-      { address: 'International Market, M Block, Model Town', city: 'Lahore, Pakistan', country: 'Pakistan' }
+      { address: 'International Market, M Block, Model Town', city: 'Lahore, Pakistan', country: 'Pakistan', phone: '+92 302 7163067' },
+      { address: '30 N Gould St Ste N', city: 'Sheridan, WY 82801', country: 'United States' }
     ]
   };
 
@@ -124,8 +122,8 @@ const Footer: React.FC = () => {
                 <FaEnvelope />
                 <span>business@technatonix.com</span>
               </div>
-              {siteSettings.offices.map((office, index) => (
-                <div key={index} className={styles.officeInfo}>
+              {siteSettings.offices.map((office) => (
+                <div key={office.country} className={styles.officeInfo}>
                   <div className={styles.contactItem}>
                     <FaMapMarkerAlt />
                     <span>
@@ -134,10 +132,12 @@ const Footer: React.FC = () => {
                       {office.city}
                     </span>
                   </div>
-                  <div className={styles.contactItem}>
-                    <FaPhone />
-                    <span>{siteSettings.phoneNumbers[index]?.number}</span>
-                  </div>
+                  {office.phone && (
+                    <div className={styles.contactItem}>
+                      <FaPhone />
+                      <span>{office.phone}</span>
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
