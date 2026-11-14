@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="tnx-agent-workforce-title tnx-agent-workforce-desc">
+<title id="tnx-agent-workforce-title">The Technatonix — AI Agent Workforce with Human Oversight</title>
+<desc id="tnx-agent-workforce-desc">A supervised multi-agent architecture with a central orchestration brain coordinating sales, support, finance, operations and knowledge agents. Each agent uses approved tools and scoped permissions, escalates sensitive decisions to people and reports actions to a shared monitoring layer.</desc>
+<defs>
+  <linearGradient id="hubGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1649d8"/><stop offset=".55" stop-color="#087fcd"/><stop offset="1" stop-color="#05a8c8"/></linearGradient>
+  <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#164de5"/><stop offset="1" stop-color="#12b9e2"/></linearGradient>
+  <radialGradient id="hubGlow"><stop offset="0" stop-color="#1c86ee" stop-opacity=".23"/><stop offset="1" stop-color="#1c86ee" stop-opacity="0"/></radialGradient>
+  <filter id="softShadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="13" flood-color="var(--shadow)" flood-opacity=".13"/></filter>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="dotGrid" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="var(--grid)" opacity=".72"/></pattern>
+</defs>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f5f8ff;
+  --bg2: #edf3ff;
+  --surface: #ffffff;
+  --surface2: #edf4ff;
+  --surface3: #e4efff;
+  --text: #101c35;
+  --muted: #586985;
+  --soft: #7c8ba5;
+  --line: #d6e2f3;
+  --grid: #dce7f6;
+  --blue: #174de5;
+  --blue2: #167eea;
+  --cyan: #09a9d2;
+  --lime: #78d900;
+  --violet: #7457e8;
+  --green: #17a77a;
+  --shadow: #1e3b70;
+  --darkText: #f4f8ff;
+  --darkMuted: #bac9df;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #071329;
+    --bg2: #0a1b36;
+    --surface: #10213d;
+    --surface2: #142a4b;
+    --surface3: #19365d;
+    --text: #f3f7ff;
+    --muted: #b2c2dc;
+    --soft: #8ea3c2;
+    --line: #294568;
+    --grid: #16304f;
+    --blue: #79aaff;
+    --blue2: #3e9aff;
+    --cyan: #53d5ee;
+    --lime: #9ae72b;
+    --violet: #a99aff;
+    --green: #54d8ad;
+    --shadow: #000814;
+    --darkText: #f5f8ff;
+    --darkMuted: #b9c8df;
+  }
+}
+text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+.bg { fill: var(--bg); }
+.bg2 { fill: var(--bg2); }
+.gridLine { stroke: var(--grid); stroke-width: 1; opacity: .72; }
+.eyebrow { fill: var(--blue2); font-size: 15px; font-weight: 800; letter-spacing: 2.4px; }
+.heading { fill: var(--text); font-size: 48px; font-weight: 780; letter-spacing: -1.8px; }
+.subheading { fill: var(--muted); font-size: 19px; font-weight: 450; }
+.card { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+.cardSoft { fill: var(--surface2); stroke: var(--line); stroke-width: 1.2; }
+.cardStrong { fill: var(--surface3); stroke: var(--line); stroke-width: 1.3; }
+.cardTitle { fill: var(--text); font-size: 19px; font-weight: 760; }
+.body { fill: var(--muted); font-size: 15px; font-weight: 500; }
+.small { fill: var(--muted); font-size: 13px; font-weight: 550; }
+.tiny { fill: var(--soft); font-size: 11px; font-weight: 750; letter-spacing: 1.4px; }
+.brand { fill: var(--text); font-size: 13px; font-weight: 850; letter-spacing: 2px; }
+.pill { fill: var(--surface2); stroke: var(--line); stroke-width: 1; }
+.pillText { fill: var(--muted); font-size: 12px; font-weight: 650; }
+.iconStroke { fill: none; stroke: var(--blue2); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.iconAccent { fill: none; stroke: var(--lime); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.iconFill { fill: var(--blue2); }
+.iconFill2 { fill: var(--surface3); stroke: var(--line); stroke-width: 1; }
+.connector { fill: none; stroke: var(--blue2); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; opacity: .62; }
+.connectorAlt { fill: none; stroke: var(--cyan); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: .58; }
+.flow { fill: none; stroke: var(--cyan); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 8 12; animation: flow 2.1s linear infinite; }
+.flowBlue { fill: none; stroke: var(--blue2); stroke-width: 2.6; stroke-linecap: round; stroke-dasharray: 6 11; animation: flow 2.6s linear infinite; }
+.flowLime { fill: none; stroke: var(--lime); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 4 10; animation: flow 2.2s linear infinite; }
+.nodePulse { animation: pulse 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.floatA { animation: float 4.2s ease-in-out infinite; }
+.floatB { animation: float 5s ease-in-out -1.2s infinite; }
+.hubCore { fill: url(#hubGradient); stroke: var(--blue2); stroke-width: 2; }
+.hubText { fill: #ffffff; font-size: 22px; font-weight: 850; letter-spacing: .5px; }
+.hubSub { fill: #d7eaff; font-size: 13px; font-weight: 600; }
+.badgeBlue { fill: var(--blue); }
+.badgeGreen { fill: var(--lime); }
+.badgeTextLight { fill: #ffffff; font-size: 11px; font-weight: 800; letter-spacing: 1px; }
+.orbit { fill: none; stroke: var(--blue2); stroke-width: 1.5; opacity: .22; stroke-dasharray: 5 10; }
+.separator { stroke: var(--line); stroke-width: 1.2; }
+@keyframes flow { to { stroke-dashoffset: -80; } }
+@keyframes pulse { 0%,100% { opacity: .68; transform: scale(.96); } 50% { opacity: 1; transform: scale(1.06); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) {
+  .flow, .flowBlue, .flowLime, .nodePulse, .floatA, .floatB { animation: none !important; }
+}
+</style>
+<rect width="1600" height="900" class="bg"/>
+<rect width="1600" height="900" fill="url(#dotGrid)" opacity=".52"/>
+<g transform="translate(72 58)">
+  <text class="eyebrow" x="0" y="0">SUPERVISED AGENT SYSTEMS</text>
+  <text class="heading" x="0" y="62">A coordinated team of AI agents. One governed system.</text>
+  <text class="subheading" x="0" y="101">Specialized agents handle defined tasks while shared rules, permissions and human oversight keep work aligned.</text>
+</g><rect x="70" y="220" width="1460" height="565" rx="30" class="card"/>
+<rect x="92" y="242" width="1416" height="521" rx="23" fill="none" stroke="var(--line)" stroke-dasharray="5 9"/>
+<path d="M800 476 L350 370 M800 476 L1250 370 M800 476 L350 620 M800 476 L1250 620 M800 476 L800 690" class="connector"/>
+<path d="M800 476 L350 370 M800 476 L1250 370 M800 476 L350 620 M800 476 L1250 620 M800 476 L800 690" class="flow"/>
+<g filter="url(#softShadow)"><rect x="610" y="352" width="380" height="250" rx="26" class="hubCore"/></g>
+<circle cx="800" cy="426" r="57" fill="#ffffff" opacity=".10"/><circle cx="800" cy="426" r="49" fill="none" stroke="#d6f7ff" stroke-opacity=".65"/>
+<g transform="translate(800 426) scale(0.63)" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-4 -48 C-28 -67 -51 -48 -48 -25 C-69 -9 -59 21 -39 25 C-39 47 -16 55 -1 39"/>
+      <path d="M4 -48 C28 -67 51 -48 48 -25 C69 -9 59 21 39 25 C39 47 16 55 1 39"/>
+      <path d="M0 -48V42 M-38 -20H-17L-8 -7 M38 -20H17L8 -7 M-39 17H-18L-7 7 M39 17H18L7 7"/>
+      <circle cx="-17" cy="-20" r="4" fill="#9ae72b" stroke="none"/><circle cx="17" cy="-20" r="4" fill="#6be2f2" stroke="none"/>
+      <circle cx="-18" cy="17" r="4" fill="#6be2f2" stroke="none"/><circle cx="18" cy="17" r="4" fill="#9ae72b" stroke="none"/>
+      <circle cx="0" cy="-4" r="5" fill="#ffffff" stroke="none"/>
+    </g>
+<text x="800" y="520" text-anchor="middle" class="hubText">AGENT ORCHESTRATOR</text>
+<text x="800" y="548" text-anchor="middle" class="hubSub">Plan · Delegate · Check · Escalate</text>
+<rect x="704" y="565" width="192" height="24" rx="12" fill="#ffffff" opacity=".17"/><text x="800" y="582" text-anchor="middle" fill="#fff" font-size="10.5" font-weight="800" letter-spacing="1">POLICY-AWARE CONTROL</text>
+<g filter="url(#softShadow)"><rect x="130" y="292" width="330" height="156" rx="19" class="card"/></g>
+<rect x="148" y="309" width="42" height="42" rx="13" class="iconFill2"/>
+<circle cx="169" cy="330" r="9" fill="none" stroke="var(--blue2)" stroke-width="2"/><path d="M161 330h16M169 322v16" class="iconStroke"/>
+<text x="206" y="334" class="tiny">SALES AGENT</text>
+<text x="150" y="380" class="body" font-weight="700">Qualify leads · Prepare follow-ups</text>
+<rect x="148" y="400" width="294" height="30" rx="15" class="pill"/><text x="295" y="420" text-anchor="middle" class="pillText">CRM · Email · Calendar</text><g filter="url(#softShadow)"><rect x="1090" y="292" width="330" height="156" rx="19" class="card"/></g>
+<rect x="1108" y="309" width="42" height="42" rx="13" class="iconFill2"/>
+<circle cx="1129" cy="330" r="9" fill="none" stroke="var(--blue2)" stroke-width="2"/><path d="M1121 330h16M1129 322v16" class="iconStroke"/>
+<text x="1166" y="334" class="tiny">SUPPORT AGENT</text>
+<text x="1110" y="380" class="body" font-weight="700">Classify requests · Draft responses</text>
+<rect x="1108" y="400" width="294" height="30" rx="15" class="pill"/><text x="1255" y="420" text-anchor="middle" class="pillText">Helpdesk · Knowledge · Chat</text><g filter="url(#softShadow)"><rect x="130" y="545" width="330" height="156" rx="19" class="card"/></g>
+<rect x="148" y="562" width="42" height="42" rx="13" class="iconFill2"/>
+<circle cx="169" cy="583" r="9" fill="none" stroke="var(--blue2)" stroke-width="2"/><path d="M161 583h16M169 575v16" class="iconStroke"/>
+<text x="206" y="587" class="tiny">FINANCE AGENT</text>
+<text x="150" y="633" class="body" font-weight="700">Read documents · Route approvals</text>
+<rect x="148" y="653" width="294" height="30" rx="15" class="pill"/><text x="295" y="673" text-anchor="middle" class="pillText">Invoices · ERP · Finance tools</text><g filter="url(#softShadow)"><rect x="1090" y="545" width="330" height="156" rx="19" class="card"/></g>
+<rect x="1108" y="562" width="42" height="42" rx="13" class="iconFill2"/>
+<circle cx="1129" cy="583" r="9" fill="none" stroke="var(--blue2)" stroke-width="2"/><path d="M1121 583h16M1129 575v16" class="iconStroke"/>
+<text x="1166" y="587" class="tiny">OPERATIONS AGENT</text>
+<text x="1110" y="633" class="body" font-weight="700">Coordinate tasks · Update systems</text>
+<rect x="1108" y="653" width="294" height="30" rx="15" class="pill"/><text x="1255" y="673" text-anchor="middle" class="pillText">ERP · Projects · Notifications</text><g filter="url(#softShadow)"><rect x="560" y="650" width="480" height="86" rx="18" class="cardSoft"/></g>
+<circle cx="600" cy="693" r="17" fill="var(--surface3)"/><path d="M592 693h16M600 685v16" class="iconStroke"/>
+<text x="632" y="686" class="cardTitle">Knowledge &amp; shared context</text>
+<text x="632" y="710" class="small">Approved data · Retrieval · Memory boundaries</text>
+<g transform="translate(1115 682)"><rect width="340" height="54" rx="16" class="card"/><circle cx="29" cy="27" r="12" fill="var(--surface3)"/><path d="M23 28c2-8 10-8 12 0M29 22v-4" class="iconStroke"/><text x="53" y="24" class="body" font-weight="750">Human review &amp; escalation</text><text x="53" y="42" class="small">Approval for sensitive actions</text></g>
+<text x="95" y="826" class="tiny">SHARED SAFEGUARDS</text>
+<text x="95" y="854" class="body" font-weight="700">Scoped permissions</text><circle cx="260" cy="848" r="3" fill="var(--lime)"/>
+<text x="282" y="854" class="body" font-weight="700">Audit trail</text><circle cx="390" cy="848" r="3" fill="var(--lime)"/>
+<text x="412" y="854" class="body" font-weight="700">Tool allowlists</text><circle cx="560" cy="848" r="3" fill="var(--lime)"/>
+<text x="582" y="854" class="body" font-weight="700">Human approval</text><circle cx="750" cy="848" r="3" fill="var(--lime)"/>
+<text x="772" y="854" class="body" font-weight="700">Monitoring &amp; recovery</text>
+<text x="1504" y="854" text-anchor="end" class="small">Illustrative agent architecture · Roles and tools are project-specific</text>
+</svg>

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="tnx-ecosystem-title tnx-ecosystem-desc">
+<title id="tnx-ecosystem-title">The Technatonix — AI Automation &amp; Intelligent Systems: Connected Intelligence Ecosystem</title>
+<desc id="tnx-ecosystem-desc">A central AI intelligence core orchestrates language models, workflow engines, communication channels, enterprise business applications, databases and documents, APIs, analytics and human approvals. Animated data paths illustrate connected inputs, decisions and business actions.</desc>
+<defs>
+  <linearGradient id="hubGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1649d8"/><stop offset=".55" stop-color="#087fcd"/><stop offset="1" stop-color="#05a8c8"/></linearGradient>
+  <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#164de5"/><stop offset="1" stop-color="#12b9e2"/></linearGradient>
+  <radialGradient id="hubGlow"><stop offset="0" stop-color="#1c86ee" stop-opacity=".23"/><stop offset="1" stop-color="#1c86ee" stop-opacity="0"/></radialGradient>
+  <filter id="softShadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="13" flood-color="var(--shadow)" flood-opacity=".13"/></filter>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="dotGrid" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="var(--grid)" opacity=".72"/></pattern>
+</defs>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f5f8ff;
+  --bg2: #edf3ff;
+  --surface: #ffffff;
+  --surface2: #edf4ff;
+  --surface3: #e4efff;
+  --text: #101c35;
+  --muted: #586985;
+  --soft: #7c8ba5;
+  --line: #d6e2f3;
+  --grid: #dce7f6;
+  --blue: #174de5;
+  --blue2: #167eea;
+  --cyan: #09a9d2;
+  --lime: #78d900;
+  --violet: #7457e8;
+  --green: #17a77a;
+  --shadow: #1e3b70;
+  --darkText: #f4f8ff;
+  --darkMuted: #bac9df;
+}
+text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+.bg { fill: var(--bg); }
+.bg2 { fill: var(--bg2); }
+.gridLine { stroke: var(--grid); stroke-width: 1; opacity: .72; }
+.eyebrow { fill: var(--blue2); font-size: 15px; font-weight: 800; letter-spacing: 2.4px; }
+.heading { fill: var(--text); font-size: 48px; font-weight: 780; letter-spacing: -1.8px; }
+.subheading { fill: var(--muted); font-size: 19px; font-weight: 450; }
+.card { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+.cardSoft { fill: var(--surface2); stroke: var(--line); stroke-width: 1.2; }
+.cardStrong { fill: var(--surface3); stroke: var(--line); stroke-width: 1.3; }
+.cardTitle { fill: var(--text); font-size: 19px; font-weight: 760; }
+.body { fill: var(--muted); font-size: 15px; font-weight: 500; }
+.small { fill: var(--muted); font-size: 13px; font-weight: 550; }
+.tiny { fill: var(--soft); font-size: 11px; font-weight: 750; letter-spacing: 1.4px; }
+.brand { fill: var(--text); font-size: 13px; font-weight: 850; letter-spacing: 2px; }
+.pill { fill: var(--surface2); stroke: var(--line); stroke-width: 1; }
+.pillText { fill: var(--muted); font-size: 12px; font-weight: 650; }
+.iconStroke { fill: none; stroke: var(--blue2); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.iconAccent { fill: none; stroke: var(--lime); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.iconFill { fill: var(--blue2); }
+.iconFill2 { fill: var(--surface3); stroke: var(--line); stroke-width: 1; }
+.connector { fill: none; stroke: var(--blue2); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; opacity: .62; }
+.connectorAlt { fill: none; stroke: var(--cyan); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: .58; }
+.flow { fill: none; stroke: var(--cyan); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 8 12; animation: flow 2.1s linear infinite; }
+.flowBlue { fill: none; stroke: var(--blue2); stroke-width: 2.6; stroke-linecap: round; stroke-dasharray: 6 11; animation: flow 2.6s linear infinite; }
+.flowLime { fill: none; stroke: var(--lime); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 4 10; animation: flow 2.2s linear infinite; }
+.nodePulse { animation: pulse 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.floatA { animation: float 4.2s ease-in-out infinite; }
+.floatB { animation: float 5s ease-in-out -1.2s infinite; }
+.hubCore { fill: url(#hubGradient); stroke: var(--blue2); stroke-width: 2; }
+.hubText { fill: #ffffff; font-size: 22px; font-weight: 850; letter-spacing: .5px; }
+.hubSub { fill: #d7eaff; font-size: 13px; font-weight: 600; }
+.badgeBlue { fill: var(--blue); }
+.badgeGreen { fill: var(--lime); }
+.badgeTextLight { fill: #ffffff; font-size: 11px; font-weight: 800; letter-spacing: 1px; }
+.orbit { fill: none; stroke: var(--blue2); stroke-width: 1.5; opacity: .22; stroke-dasharray: 5 10; }
+.separator { stroke: var(--line); stroke-width: 1.2; }
+@keyframes flow { to { stroke-dashoffset: -80; } }
+@keyframes pulse { 0%,100% { opacity: .68; transform: scale(.96); } 50% { opacity: 1; transform: scale(1.06); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) {
+  .flow, .flowBlue, .flowLime, .nodePulse, .floatA, .floatB { animation: none !important; }
+}
+</style>
+<rect width="1600" height="900" class="bg"/>
+<rect width="1600" height="900" fill="url(#dotGrid)" opacity=".52"/>
+<g transform="translate(72 58)">
+  <text class="eyebrow" x="0" y="0">TECHNATONIX AI · CONNECTED INTELLIGENCE</text>
+  <text class="heading" x="0" y="62">One intelligent core. Your entire business connected.</text>
+  <text class="subheading" x="0" y="101">AI agents, workflow automation and integrations working across the systems your business already uses.</text>
+</g><circle cx="800" cy="503" r="300" fill="url(#hubGlow)"/>
+<ellipse cx="800" cy="500" rx="535" ry="300" class="orbit"/>
+<ellipse cx="800" cy="500" rx="465" ry="250" class="orbit" transform="rotate(-18 800 500)"/>
+<g>
+<path d="M410 280 C520 280 550 350 670 420" class="connector"/><path d="M410 280 C520 280 550 350 670 420" class="flowBlue"/>
+<path d="M800 280 V360" class="connectorAlt"/><path d="M800 280 V360" class="flow"/>
+<path d="M1190 280 C1080 280 1050 350 930 420" class="connector"/><path d="M1190 280 C1080 280 1050 350 930 420" class="flowBlue"/>
+<path d="M410 535 H588" class="connectorAlt"/><path d="M410 535 H588" class="flow"/>
+<path d="M1012 535 H1190" class="connector"/><path d="M1012 535 H1190" class="flowBlue"/>
+<path d="M510 740 C590 680 620 660 700 630" class="connector"/><path d="M510 740 C590 680 620 660 700 630" class="flowLime"/>
+<path d="M800 710 V650" class="connectorAlt"/><path d="M800 710 V650" class="flow"/>
+<path d="M1090 740 C1010 680 980 660 900 630" class="connector"/><path d="M1090 740 C1010 680 980 660 900 630" class="flowBlue"/>
+</g><g filter="url(#softShadow)"><rect x="72" y="220" width="338" height="132" rx="20" class="card"/></g>
+<rect x="72" y="220" width="6" height="132" rx="3" fill="var(--blue2)"/>
+<text x="96" y="254" class="tiny">AI MODELS</text><text x="96" y="281" class="body">Reasoning, generation and classification</text><g><rect x="98" y="300" width="78" height="28" rx="14" class="pill"/><text x="137.0" y="318.5" text-anchor="middle" class="pillText">OpenAI</text></g><g><rect x="186" y="300" width="78" height="28" rx="14" class="pill"/><text x="225.0" y="318.5" text-anchor="middle" class="pillText">Claude</text></g><g><rect x="274" y="300" width="78" height="28" rx="14" class="pill"/><text x="313.0" y="318.5" text-anchor="middle" class="pillText">Gemini</text></g><g filter="url(#softShadow)"><rect x="630" y="205" width="340" height="132" rx="20" class="card"/></g>
+<rect x="630" y="205" width="6" height="132" rx="3" fill="var(--cyan)"/>
+<text x="654" y="239" class="tiny">WORKFLOW ENGINES</text><text x="654" y="266" class="body">Orchestrate tasks across applications</text><g><rect x="656" y="285" width="58" height="28" rx="14" class="pill"/><text x="685.0" y="303.5" text-anchor="middle" class="pillText">n8n</text></g><g><rect x="724" y="285" width="68" height="28" rx="14" class="pill"/><text x="758.0" y="303.5" text-anchor="middle" class="pillText">Make</text></g><g><rect x="802" y="285" width="76" height="28" rx="14" class="pill"/><text x="840.0" y="303.5" text-anchor="middle" class="pillText">Zapier</text></g><g><rect x="888" y="285" width="68" height="28" rx="14" class="pill"/><text x="922.0" y="303.5" text-anchor="middle" class="pillText">Custom</text></g><g filter="url(#softShadow)"><rect x="1190" y="220" width="338" height="156" rx="20" class="card"/></g>
+<rect x="1190" y="220" width="6" height="156" rx="3" fill="var(--lime)"/>
+<text x="1214" y="254" class="tiny">COMMUNICATION</text><text x="1214" y="281" class="body">Messages, calls and voice</text><g><rect x="1216" y="300" width="88" height="28" rx="14" class="pill"/><text x="1260" y="318.5" text-anchor="middle" class="pillText">WhatsApp</text></g><g><rect x="1312" y="300" width="62" height="28" rx="14" class="pill"/><text x="1343" y="318.5" text-anchor="middle" class="pillText">Email</text></g><g><rect x="1216" y="334" width="90" height="28" rx="14" class="pill"/><text x="1261" y="352.5" text-anchor="middle" class="pillText">Web forms</text></g><g><rect x="1314" y="334" width="58" height="28" rx="14" class="pill"/><text x="1343" y="352.5" text-anchor="middle" class="pillText">Voice</text></g><g filter="url(#softShadow)"><rect x="72" y="470" width="338" height="132" rx="20" class="card"/></g>
+<rect x="72" y="470" width="6" height="132" rx="3" fill="var(--cyan)"/>
+<text x="96" y="504" class="tiny">APIS &amp; EVENTS</text><text x="96" y="531" class="body">Secure connections between systems</text><g><rect x="98" y="550" width="82" height="28" rx="14" class="pill"/><text x="139.0" y="568.5" text-anchor="middle" class="pillText">REST APIs</text></g><g><rect x="188" y="550" width="88" height="28" rx="14" class="pill"/><text x="232.0" y="568.5" text-anchor="middle" class="pillText">Webhooks</text></g><g><rect x="284" y="550" width="70" height="28" rx="14" class="pill"/><text x="319.0" y="568.5" text-anchor="middle" class="pillText">OAuth</text></g><g filter="url(#softShadow)"><rect x="1190" y="470" width="338" height="162" rx="20" class="card"/></g>
+<rect x="1190" y="470" width="6" height="162" rx="3" fill="var(--blue2)"/>
+<text x="1214" y="504" class="tiny">BUSINESS SYSTEMS</text><text x="1214" y="531" class="body">Run connected business workflows</text><g><rect x="1216" y="550" width="55" height="28" rx="14" class="pill"/><text x="1243.5" y="568.5" text-anchor="middle" class="pillText">CRM</text></g><g><rect x="1279" y="550" width="52" height="28" rx="14" class="pill"/><text x="1305" y="568.5" text-anchor="middle" class="pillText">ERP</text></g><g><rect x="1339" y="550" width="74" height="28" rx="14" class="pill"/><text x="1376" y="568.5" text-anchor="middle" class="pillText">Finance</text></g><g><rect x="1216" y="584" width="46" height="28" rx="14" class="pill"/><text x="1239" y="602.5" text-anchor="middle" class="pillText">HR</text></g><g><rect x="1270" y="584" width="76" height="28" rx="14" class="pill"/><text x="1308" y="602.5" text-anchor="middle" class="pillText">Support</text></g><g filter="url(#softShadow)"><rect x="220" y="720" width="338" height="126" rx="20" class="card"/></g>
+<rect x="220" y="720" width="6" height="126" rx="3" fill="var(--lime)"/>
+<text x="244" y="754" class="tiny">DATA &amp; DOCUMENTS</text><text x="244" y="781" class="body">Structured data, files and knowledge</text><g><rect x="246" y="792" width="95" height="28" rx="14" class="pill"/><text x="293.5" y="810.5" text-anchor="middle" class="pillText">PostgreSQL</text></g><g><rect x="349" y="792" width="88" height="28" rx="14" class="pill"/><text x="393.0" y="810.5" text-anchor="middle" class="pillText">MongoDB</text></g><g><rect x="445" y="792" width="55" height="28" rx="14" class="pill"/><text x="472.5" y="810.5" text-anchor="middle" class="pillText">OCR</text></g><g filter="url(#softShadow)"><rect x="630" y="720" width="340" height="126" rx="20" class="card"/></g>
+<rect x="630" y="720" width="6" height="126" rx="3" fill="var(--cyan)"/>
+<text x="654" y="754" class="tiny">HUMAN CONTROL</text><text x="654" y="781" class="body">Approvals, permissions and escalation</text><g><rect x="656" y="792" width="70" height="28" rx="14" class="pill"/><text x="691.0" y="810.5" text-anchor="middle" class="pillText">Review</text></g><g><rect x="734" y="792" width="70" height="28" rx="14" class="pill"/><text x="769.0" y="810.5" text-anchor="middle" class="pillText">Policies</text></g><g><rect x="812" y="792" width="100" height="28" rx="14" class="pill"/><text x="862.0" y="810.5" text-anchor="middle" class="pillText">Audit trail</text></g><g filter="url(#softShadow)"><rect x="1042" y="720" width="338" height="126" rx="20" class="card"/></g>
+<rect x="1042" y="720" width="6" height="126" rx="3" fill="var(--blue2)"/>
+<text x="1066" y="754" class="tiny">OBSERVABILITY</text><text x="1066" y="781" class="body">Understand what ran and what needs attention</text><g><rect x="1068" y="792" width="56" height="28" rx="14" class="pill"/><text x="1096.0" y="810.5" text-anchor="middle" class="pillText">Logs</text></g><g><rect x="1132" y="792" width="62" height="28" rx="14" class="pill"/><text x="1163.0" y="810.5" text-anchor="middle" class="pillText">Alerts</text></g><g><rect x="1202" y="792" width="70" height="28" rx="14" class="pill"/><text x="1237.0" y="810.5" text-anchor="middle" class="pillText">Metrics</text></g><g><rect x="1280" y="792" width="82" height="28" rx="14" class="pill"/><text x="1321.0" y="810.5" text-anchor="middle" class="pillText">Recovery</text></g><g filter="url(#softShadow)"><rect x="588" y="365" width="424" height="296" rx="34" class="hubCore"/></g>
+<circle cx="800" cy="438" r="72" fill="#ffffff" opacity=".10"/>
+<circle cx="800" cy="438" r="61" fill="none" stroke="#b9f3ff" stroke-opacity=".7" stroke-width="1.4"/>
+<g transform="translate(800 438) scale(0.82)" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M-4 -48 C-28 -67 -51 -48 -48 -25 C-69 -9 -59 21 -39 25 C-39 47 -16 55 -1 39"/>
+      <path d="M4 -48 C28 -67 51 -48 48 -25 C69 -9 59 21 39 25 C39 47 16 55 1 39"/>
+      <path d="M0 -48V42 M-38 -20H-17L-8 -7 M38 -20H17L8 -7 M-39 17H-18L-7 7 M39 17H18L7 7"/>
+      <circle cx="-17" cy="-20" r="4" fill="#9ae72b" stroke="none"/><circle cx="17" cy="-20" r="4" fill="#6be2f2" stroke="none"/>
+      <circle cx="-18" cy="17" r="4" fill="#6be2f2" stroke="none"/><circle cx="18" cy="17" r="4" fill="#9ae72b" stroke="none"/>
+      <circle cx="0" cy="-4" r="5" fill="#ffffff" stroke="none"/>
+    </g>
+<text x="800" y="540" text-anchor="middle" class="hubText">TECHNATONIX INTELLIGENCE CORE</text>
+<text x="800" y="570" text-anchor="middle" class="hubSub">UNDERSTAND  ·  DECIDE  ·  ORCHESTRATE</text>
+<g transform="translate(677 597)"><rect width="246" height="34" rx="17" fill="#ffffff" opacity=".16" stroke="#ffffff" stroke-opacity=".3"/><text x="123" y="22" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="700">AI + WORKFLOWS + YOUR SYSTEMS</text></g>
+<circle cx="800" cy="365" r="6" fill="#9ae72b" class="nodePulse" filter="url(#glow)"/>
+<circle cx="588" cy="513" r="5" fill="#ffffff" class="nodePulse"/><circle cx="1012" cy="513" r="5" fill="#ffffff" class="nodePulse"/>
+<text x="800" y="882" text-anchor="middle" class="small">Illustrative architecture · Tools and integrations are selected for each project</text>
+</svg>

@@ -1,8 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaArrowRight, FaCheckCircle } from 'react-icons/fa';
+import {
+  FaArrowRight, FaBriefcase, FaBuilding, FaCheckCircle, FaClipboardList,
+  FaHeadset, FaIndustry, FaReceipt, FaShoppingCart, FaUserTie,
+} from 'react-icons/fa';
 import Layout from '@/components/Layout';
 import AutomationCapabilities from '@/components/AutomationCapabilities';
+import AutomationDiagram from '@/components/AutomationDiagram';
 import { SEOProps } from '@/types';
 import styles from '@/styles/Automation.module.scss';
 
@@ -26,14 +30,14 @@ const seo: SEOProps = {
 };
 
 const useCases = [
-  ['Sales teams', 'Capture and route leads, update CRM records and prepare follow-ups.'],
-  ['Customer support', 'Classify enquiries, draft responses and route complex cases to people.'],
-  ['Finance', 'Extract invoice information and send exceptions for approval.'],
-  ['Manufacturing', 'Coordinate purchase-order intake, supplier updates and operational alerts.'],
-  ['Real estate', 'Qualify enquiries, support scheduling and update customer records.'],
-  ['Professional services', 'Coordinate onboarding, document collection and status updates.'],
-  ['E-commerce', 'Connect order exceptions, customer notifications and inventory updates.'],
-  ['Field operations', 'Coordinate assignments, evidence submissions and reporting workflows.'],
+  { title: 'Sales teams', text: 'Capture and route leads, update CRM records and prepare follow-ups.', icon: FaUserTie, focus: 'Leads & CRM' },
+  { title: 'Customer support', text: 'Classify enquiries, draft responses and route complex cases to people.', icon: FaHeadset, focus: 'Enquiries & routing' },
+  { title: 'Finance', text: 'Extract invoice information and send exceptions for approval.', icon: FaReceipt, focus: 'Invoices & approvals' },
+  { title: 'Manufacturing', text: 'Coordinate purchase-order intake, supplier updates and operational alerts.', icon: FaIndustry, focus: 'Orders & suppliers' },
+  { title: 'Real estate', text: 'Qualify enquiries, support scheduling and update customer records.', icon: FaBuilding, focus: 'Enquiries & scheduling' },
+  { title: 'Professional services', text: 'Coordinate onboarding, document collection and status updates.', icon: FaBriefcase, focus: 'Onboarding & documents' },
+  { title: 'E-commerce', text: 'Connect order exceptions, customer notifications and inventory updates.', icon: FaShoppingCart, focus: 'Orders & inventory' },
+  { title: 'Field operations', text: 'Coordinate assignments, evidence submissions and reporting workflows.', icon: FaClipboardList, focus: 'Assignments & reporting' },
 ];
 
 const principles = [
@@ -68,15 +72,23 @@ const AiAutomationPage: React.FC = () => (
   <Layout seo={seo}>
     <div className={styles.page}>
       <section className={styles.pageHero}>
-        <div className="container">
-          <div className={styles.heroInner}>
-            <h1>AI Automation &amp; Intelligent Systems</h1>
-            <p className={styles.lead}>Make your systems work together, so your people can focus on work that matters.</p>
-            <p>We design AI-assisted workflows, integrations and custom software around your business processes, with practical safeguards and room for human judgment.</p>
-            <div className={styles.actions}>
-              <Link href="/contact?inquiry=automation" className={styles.primaryAction}>Discuss an Automation Project <FaArrowRight aria-hidden="true" /></Link>
-              <a href="#capabilities" className={styles.secondaryAction}>Explore Capabilities</a>
+        <div className={styles.wideContainer}>
+          <div className={styles.heroLayout}>
+            <div className={styles.heroInner}>
+              <p className={styles.eyebrow}>Connected intelligence for your business</p>
+              <h1>AI Automation &amp; Intelligent Systems</h1>
+              <p className={styles.lead}>Make your systems work together, so your people can focus on work that matters.</p>
+              <p>We design AI-assisted workflows, integrations and custom software around your business processes, with practical safeguards and room for human judgment.</p>
+              <div className={styles.actions}>
+                <Link href="/contact?inquiry=automation" className={styles.primaryAction}>Discuss an Automation Project <FaArrowRight aria-hidden="true" /></Link>
+                <a href="#capabilities" className={styles.secondaryAction}>Explore Capabilities</a>
+              </div>
             </div>
+            <AutomationDiagram
+              src="/images/svg-ai-automation/01-ai-intelligence-ecosystem.svg"
+              alt="An AI intelligence core connecting models, workflow engines, business systems, data, communication, monitoring and human approvals."
+              priority
+            />
           </div>
         </div>
       </section>
@@ -97,12 +109,63 @@ const AiAutomationPage: React.FC = () => (
           <div className={styles.sectionHeading}><p className={styles.kicker}>What we can design</p><h2>Capabilities that work together</h2><p>Each engagement is scoped around your goals, systems and constraints.</p></div>
           <AutomationCapabilities />
         </div>
+        <div className={styles.wideContainer}>
+          <div className={styles.diagramSection}>
+            <div className={styles.diagramCopy}>
+              <p className={styles.kicker}>Intelligent workflows</p>
+              <h2>From trigger to action, with oversight</h2>
+              <p>Bring orchestration, AI processing and your existing systems together in a workflow designed around the way your team works.</p>
+              <ul>
+                <li>Capture and route information as work begins.</li>
+                <li>Review sensitive decisions before action is taken.</li>
+                <li>Monitor outcomes and handle exceptions.</li>
+              </ul>
+            </div>
+            <AutomationDiagram
+              src="/images/svg-ai-automation/02-intelligent-workflow-lifecycle.svg"
+              alt="A workflow moving from business triggers through orchestration, AI processing and approvals to actions, with monitoring and recovery."
+            />
+          </div>
+        </div>
       </section>
 
       <section className={styles.lightSection}>
-        <div className="container">
-          <div className={styles.sectionHeading}><p className={styles.kicker}>Practical applications</p><h2>Start with a process, not a platform</h2><p>These are examples of workflows we can explore with your team, not claims of past delivery.</p></div>
-          <div className={styles.useCaseGrid}>{useCases.map(([title, text]) => <article key={title}><h3>{title}</h3><p>{text}</p></article>)}</div>
+        <div className={styles.wideContainer}>
+          <div className={styles.useCases}>
+            <div className={styles.sectionHeading}>
+              <p className={styles.kicker}>Practical applications</p>
+              <h2>Start with a process, not a platform</h2>
+              <p>Explore how connected workflows could support the people and processes across your business. These examples are starting points for discovery, not claims of past delivery.</p>
+            </div>
+            <div className={styles.useCaseGrid}>
+              {useCases.map(({ title, text, icon: Icon, focus }) => (
+                <article className={styles.useCaseCard} key={title}>
+                  <span className={styles.useCaseIcon}><Icon aria-hidden="true" /></span>
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                  <span className={styles.useCaseFocus}>{focus}</span>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className={styles.wideContainer}>
+          <div className={`${styles.diagramSection} ${styles.diagramSectionReverse}`}>
+            <div className={styles.diagramCopy}>
+              <p className={styles.kicker}>AI agents with oversight</p>
+              <h2>Specialized support, guided by your team</h2>
+              <p>Design agents around defined tasks in sales, support, finance and operations, while keeping people in control of important decisions.</p>
+              <ul>
+                <li>Give each agent a clear role and approved tools.</li>
+                <li>Apply permissions appropriate to the task.</li>
+                <li>Escalate sensitive decisions to your team.</li>
+              </ul>
+            </div>
+            <AutomationDiagram
+              src="/images/svg-ai-automation/04-supervised-ai-agent-workforce.svg"
+              alt="A central orchestrator coordinates specialized AI agents with shared permissions, monitoring and human oversight."
+            />
+          </div>
         </div>
       </section>
 
@@ -115,8 +178,8 @@ const AiAutomationPage: React.FC = () => (
 
       <section className={styles.lightSection}>
         <div className="container">
-          <div className={styles.sectionHeading}><p className={styles.kicker}>The right approach</p><h2>Technology in service of your process</h2><p>Depending on your requirements, a solution may combine workflow orchestration, AI services, APIs, webhooks, databases and custom backend software. We assess platform fit, access and support needs before recommending a stack.</p></div>
-          <div className={styles.tags}><span>Workflow orchestration</span><span>AI &amp; data</span><span>APIs &amp; webhooks</span><span>Custom software</span><span>Human approvals</span></div>
+          <div className={styles.sectionHeading}><p className={styles.kicker}>The right approach</p><h2>Technology in service of your process</h2><p>Depending on your requirements, a solution may use workflow tools such as n8n, Make or Zapier; AI services such as OpenAI or Claude; and business tools such as Notion, alongside APIs, webhooks and custom software. We assess platform fit, access, security and support needs before recommending a stack.</p></div>
+          <div className={styles.tags}><span>n8n</span><span>Make</span><span>Zapier</span><span>OpenAI</span><span>Claude</span><span>Notion</span><span>APIs &amp; webhooks</span><span>Custom software</span><span>Human approvals</span></div>
         </div>
       </section>
 

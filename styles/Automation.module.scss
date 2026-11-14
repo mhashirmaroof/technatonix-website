@@ -8,8 +8,8 @@
 }
 
 .feature {
-  padding: clamp(4.5rem, 8vw, 7rem) 0;
-  background: #fff;
+  padding: clamp(4rem, 7vw, 7rem) 0;
+  background: linear-gradient(135deg, #fff 45%, #f1f7fc);
   color: $dk-text;
 
   .featureDescription { color: $dk-text-2; }
@@ -22,19 +22,31 @@
   }
 }
 
-.featureIntro {
-  display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: clamp(2.5rem, 6vw, 5rem);
-  align-items: center;
+.wideContainer {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(1rem, 3.5vw, 3rem);
+}
 
+.featureIntro,
+.heroLayout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.4fr);
+  gap: clamp(2.5rem, 4vw, 5rem);
+  align-items: center;
+}
+
+.featureIntro {
   h2 {
-    font-size: clamp(2.3rem, 4vw, 3.8rem);
+    font-size: clamp(2.1rem, 3vw, 3.2rem);
     letter-spacing: -0.035em;
-    line-height: 1.1;
-    max-width: 720px;
+    line-height: 1.14;
   }
 }
+
+.featureCopy,
+.heroInner { min-width: 0; max-width: 520px; }
 
 .eyebrow,
 .kicker {
@@ -49,10 +61,10 @@
 .kicker { color: #0369a1; }
 
 .lead {
-  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  font-size: clamp(1.1rem, 1.35vw, 1.3rem);
   font-weight: 600;
   line-height: 1.5;
-  margin-top: 1.3rem;
+  margin-top: 1.15rem;
 }
 
 .featureDescription,
@@ -99,82 +111,55 @@
   &:hover { background: rgba(255, 255, 255, 0.14); }
 }
 
-.workflow {
-  padding: clamp(1.5rem, 3vw, 2.5rem);
-  border: 1px solid rgba(148, 197, 255, 0.26);
-  border-radius: 1.5rem;
-  color: #f8fafc;
-  background: linear-gradient(145deg, #1b3760, #0b1830);
-  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.2);
+.diagram {
+  min-width: 0;
+  width: 100%;
 }
 
-.workflowLabel {
-  color: #bae6fd;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  margin-bottom: 0.4rem;
+.diagramImage {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: clamp(0.75rem, 1.2vw, 1.25rem);
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
 }
 
-.workflowIntro {
-  color: #e2e8f0;
-  font-size: 0.9rem;
-  margin-bottom: 1.5rem;
-}
-
-.workflowSteps {
-  list-style: none;
+.diagramSection {
   display: grid;
-  gap: 1.6rem;
+  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+  max-width: 1360px;
+  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: clamp(3rem, 5vw, 4.5rem);
+  border-top: 1px solid #dbe5ed;
 }
 
-.workflowStep {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border: 1px solid rgba(148, 197, 255, 0.22);
-  border-radius: 0.85rem;
-  background: rgba(255, 255, 255, 0.07);
+.diagramCopy {
+  min-width: 0;
+  max-width: 430px;
 
-  &:not(:last-child)::after {
-    content: '↓';
-    position: absolute;
-    top: 100%;
-    left: 1.75rem;
-    height: 1.6rem;
-    color: #7dd3fc;
-    font-size: 1.2rem;
-    line-height: 1.6rem;
+  h2 {
+    color: #0f172a;
+    font-size: clamp(1.9rem, 2.5vw, 2.6rem);
+    letter-spacing: -0.025em;
+    line-height: 1.15;
   }
 
-  strong, small { display: block; }
-  strong { line-height: 1.3; }
-  small { color: #cbd5e1; margin-top: 0.25rem; line-height: 1.5; }
+  > p:not(.kicker) { color: #475569; line-height: 1.75; margin-top: 1rem; }
+  ul { display: grid; gap: 0.8rem; list-style: none; margin-top: 1.5rem; }
+  li { color: #334155; line-height: 1.5; padding-left: 1.25rem; position: relative; }
+  li::before { content: ''; position: absolute; left: 0; top: 0.6em; width: 0.45rem; height: 0.45rem; border-radius: 50%; background: #0284c7; }
 }
 
-.workflowIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.6rem;
-  height: 2.6rem;
-  border-radius: 0.75rem;
-  color: #bae6fd;
-  background: rgba(56, 189, 248, 0.15);
-  flex-shrink: 0;
-}
+.diagramSectionReverse {
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
 
-.workflowStage {
-  display: block;
-  color: #bae6fd;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.25rem;
+  .diagramCopy { grid-column: 2; grid-row: 1; }
+  .diagram { grid-column: 1; grid-row: 1; }
 }
 
 .capabilityGrid {
@@ -200,8 +185,14 @@
 .cardNumber { color: #64748b; font-size: 0.8rem; font-weight: 700; }
 .examples { border-top: 1px solid #dbe5ed; margin-top: 1.2rem; padding-top: 1rem; }
 
-.pageHero { padding: clamp(5rem, 9vw, 8rem) 0; background: radial-gradient(ellipse at 80% 30%, #193263, transparent 55%), #07142c; }
-.heroInner { max-width: 800px; h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); letter-spacing: -0.04em; line-height: 1.08; } }
+.pageHero { padding: clamp(4.5rem, 7vw, 7rem) 0; background: radial-gradient(ellipse at 80% 30%, #193263, transparent 55%), #07142c; }
+.heroLayout { grid-template-columns: minmax(0, 0.68fr) minmax(0, 1.5fr); }
+.heroInner {
+  h1 { font-size: clamp(2.2rem, 3.2vw, 3.5rem); letter-spacing: -0.04em; line-height: 1.1; }
+  .lead { font-size: clamp(1.05rem, 1.25vw, 1.2rem); }
+  > p:not(.eyebrow):not(.lead) { font-size: 0.95rem; }
+}
+.pageHero .diagramImage { box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24); }
 .lightSection, .tintedSection, .engineering { padding: clamp(4rem, 7vw, 6rem) 0; }
 .lightSection { background: #fff; }
 .tintedSection { background: #f4f8fc; }
@@ -209,9 +200,52 @@
 .engineering .sectionHeading > p:last-child { color: #cbd5e1; }
 .problemGrid, .useCaseGrid, .stepsGrid, .principleGrid { display: grid; gap: 1rem; }
 .problemGrid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.useCaseGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .stepsGrid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-.problemGrid article, .useCaseGrid article, .stepsGrid article { padding: 1.5rem; border: 1px solid #dbe5ed; border-radius: 1rem; background: #fff; h3 { color: #0f172a; font-size: 1.05rem; margin-bottom: 0.6rem; } p { color: #475569; font-size: 0.95rem; line-height: 1.65; } }
+.problemGrid article, .stepsGrid article { padding: 1.5rem; border: 1px solid #dbe5ed; border-radius: 1rem; background: #fff; h3 { color: #0f172a; font-size: 1.05rem; margin-bottom: 0.6rem; } p { color: #475569; font-size: 0.95rem; line-height: 1.65; } }
+.useCases {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
+.useCaseGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.15rem;
+}
+
+.useCaseCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+  padding: clamp(1.35rem, 2vw, 1.75rem);
+  border: 1px solid #dbe5ed;
+  border-radius: 1rem;
+  background: linear-gradient(155deg, #fff, #f7fafd);
+  box-shadow: 0 8px 24px rgba(15, 52, 83, 0.04);
+
+  h3 { color: #0f172a; font-size: 1.1rem; line-height: 1.35; margin: 1.1rem 0 0.55rem; }
+  p { color: #475569; font-size: 0.95rem; line-height: 1.65; }
+}
+
+.useCaseIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.8rem;
+  color: #0369a1;
+  background: #e4f2fb;
+}
+
+.useCaseFocus {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  color: #075985;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
 .stepsGrid article > span { display: block; color: #0369a1; font-weight: 700; margin-bottom: 1rem; }
 .principleGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); article { display: flex; gap: 1rem; padding: 1.3rem; border: 1px solid rgba(148, 197, 255, 0.2); border-radius: 0.9rem; } svg { color: #7dd3fc; margin-top: 0.3rem; flex-shrink: 0; } h3 { font-size: 1rem; margin-bottom: 0.35rem; } p { color: #cbd5e1; line-height: 1.6; } }
 .tags { display: flex; flex-wrap: wrap; gap: 0.75rem; span { padding: 0.55rem 1rem; border-radius: 999px; background: #eaf5fb; color: #075985; font-weight: 600; } }
@@ -219,9 +253,14 @@
 .finalCta { text-align: center; padding: 5rem 0; h2 { font-size: clamp(1.9rem, 3.5vw, 2.8rem); line-height: 1.2; } p { color: #cbd5e1; max-width: 650px; margin: 1rem auto 2rem; } }
 
 @media (max-width: 1024px) {
-  .featureIntro { grid-template-columns: 1fr; }
-  .workflow { max-width: 650px; width: 100%; }
+  .featureIntro, .heroLayout { grid-template-columns: 1fr; }
+  .featureCopy, .heroInner { max-width: 680px; }
   .useCaseGrid, .stepsGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .diagramSection, .diagramSectionReverse { grid-template-columns: 1fr; }
+  .diagramCopy { max-width: 680px; }
+  .diagramSectionReverse {
+    .diagramCopy, .diagram { grid-column: auto; grid-row: auto; }
+  }
 }
 
 @media (max-width: 768px) {

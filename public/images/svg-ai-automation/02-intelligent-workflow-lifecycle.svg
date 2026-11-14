@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="tnx-workflow-title tnx-workflow-desc">
+<title id="tnx-workflow-title">The Technatonix — Intelligent Workflow Automation Lifecycle</title>
+<desc id="tnx-workflow-desc">A five-stage automation process: business triggers enter an orchestration layer, AI interprets and plans, policies and human approvals govern sensitive actions, connected systems execute approved tasks, and monitoring feeds results back for continuous improvement.</desc>
+<defs>
+  <linearGradient id="hubGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1649d8"/><stop offset=".55" stop-color="#087fcd"/><stop offset="1" stop-color="#05a8c8"/></linearGradient>
+  <linearGradient id="blueGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#164de5"/><stop offset="1" stop-color="#12b9e2"/></linearGradient>
+  <radialGradient id="hubGlow"><stop offset="0" stop-color="#1c86ee" stop-opacity=".23"/><stop offset="1" stop-color="#1c86ee" stop-opacity="0"/></radialGradient>
+  <filter id="softShadow" x="-25%" y="-25%" width="150%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="13" flood-color="var(--shadow)" flood-opacity=".13"/></filter>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  <pattern id="dotGrid" width="34" height="34" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.2" fill="var(--grid)" opacity=".72"/></pattern>
+</defs>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f5f8ff;
+  --bg2: #edf3ff;
+  --surface: #ffffff;
+  --surface2: #edf4ff;
+  --surface3: #e4efff;
+  --text: #101c35;
+  --muted: #586985;
+  --soft: #7c8ba5;
+  --line: #d6e2f3;
+  --grid: #dce7f6;
+  --blue: #174de5;
+  --blue2: #167eea;
+  --cyan: #09a9d2;
+  --lime: #78d900;
+  --violet: #7457e8;
+  --green: #17a77a;
+  --shadow: #1e3b70;
+  --darkText: #f4f8ff;
+  --darkMuted: #bac9df;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #071329;
+    --bg2: #0a1b36;
+    --surface: #10213d;
+    --surface2: #142a4b;
+    --surface3: #19365d;
+    --text: #f3f7ff;
+    --muted: #b2c2dc;
+    --soft: #8ea3c2;
+    --line: #294568;
+    --grid: #16304f;
+    --blue: #79aaff;
+    --blue2: #3e9aff;
+    --cyan: #53d5ee;
+    --lime: #9ae72b;
+    --violet: #a99aff;
+    --green: #54d8ad;
+    --shadow: #000814;
+    --darkText: #f5f8ff;
+    --darkMuted: #b9c8df;
+  }
+}
+text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; }
+.bg { fill: var(--bg); }
+.bg2 { fill: var(--bg2); }
+.gridLine { stroke: var(--grid); stroke-width: 1; opacity: .72; }
+.eyebrow { fill: var(--blue2); font-size: 15px; font-weight: 800; letter-spacing: 2.4px; }
+.heading { fill: var(--text); font-size: 48px; font-weight: 780; letter-spacing: -1.8px; }
+.subheading { fill: var(--muted); font-size: 19px; font-weight: 450; }
+.card { fill: var(--surface); stroke: var(--line); stroke-width: 1.5; }
+.cardSoft { fill: var(--surface2); stroke: var(--line); stroke-width: 1.2; }
+.cardStrong { fill: var(--surface3); stroke: var(--line); stroke-width: 1.3; }
+.cardTitle { fill: var(--text); font-size: 19px; font-weight: 760; }
+.body { fill: var(--muted); font-size: 15px; font-weight: 500; }
+.small { fill: var(--muted); font-size: 13px; font-weight: 550; }
+.tiny { fill: var(--soft); font-size: 11px; font-weight: 750; letter-spacing: 1.4px; }
+.brand { fill: var(--text); font-size: 13px; font-weight: 850; letter-spacing: 2px; }
+.pill { fill: var(--surface2); stroke: var(--line); stroke-width: 1; }
+.pillText { fill: var(--muted); font-size: 12px; font-weight: 650; }
+.iconStroke { fill: none; stroke: var(--blue2); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.iconAccent { fill: none; stroke: var(--lime); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.iconFill { fill: var(--blue2); }
+.iconFill2 { fill: var(--surface3); stroke: var(--line); stroke-width: 1; }
+.connector { fill: none; stroke: var(--blue2); stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; opacity: .62; }
+.connectorAlt { fill: none; stroke: var(--cyan); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: .58; }
+.flow { fill: none; stroke: var(--cyan); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 8 12; animation: flow 2.1s linear infinite; }
+.flowBlue { fill: none; stroke: var(--blue2); stroke-width: 2.6; stroke-linecap: round; stroke-dasharray: 6 11; animation: flow 2.6s linear infinite; }
+.flowLime { fill: none; stroke: var(--lime); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 4 10; animation: flow 2.2s linear infinite; }
+.nodePulse { animation: pulse 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+.floatA { animation: float 4.2s ease-in-out infinite; }
+.floatB { animation: float 5s ease-in-out -1.2s infinite; }
+.hubCore { fill: url(#hubGradient); stroke: var(--blue2); stroke-width: 2; }
+.hubText { fill: #ffffff; font-size: 22px; font-weight: 850; letter-spacing: .5px; }
+.hubSub { fill: #d7eaff; font-size: 13px; font-weight: 600; }
+.badgeBlue { fill: var(--blue); }
+.badgeGreen { fill: var(--lime); }
+.badgeTextLight { fill: #ffffff; font-size: 11px; font-weight: 800; letter-spacing: 1px; }
+.orbit { fill: none; stroke: var(--blue2); stroke-width: 1.5; opacity: .22; stroke-dasharray: 5 10; }
+.separator { stroke: var(--line); stroke-width: 1.2; }
+@keyframes flow { to { stroke-dashoffset: -80; } }
+@keyframes pulse { 0%,100% { opacity: .68; transform: scale(.96); } 50% { opacity: 1; transform: scale(1.06); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) {
+  .flow, .flowBlue, .flowLime, .nodePulse, .floatA, .floatB { animation: none !important; }
+}
+</style>
+<rect width="1600" height="900" class="bg"/>
+<rect width="1600" height="900" fill="url(#dotGrid)" opacity=".52"/>
+<g transform="translate(72 58)">
+  <text class="eyebrow" x="0" y="0">FROM TRIGGER TO TRUSTED ACTION</text>
+  <text class="heading" x="0" y="62">Workflows that think, act and stay accountable.</text>
+  <text class="subheading" x="0" y="101">A connected process from the first business event to the final system update—with people in control where it matters.</text>
+</g><g filter="url(#softShadow)"><rect x="62" y="255" width="244" height="360" rx="22" class="card"/></g>
+<rect x="82" y="276" width="44" height="28" rx="14" class="badgeBlue"/><text x="104" y="295" text-anchor="middle" class="badgeTextLight">01</text>
+<text x="82" y="345" class="tiny">CAPTURE</text><text x="82" y="372" class="cardTitle">Business events</text><g filter="url(#softShadow)"><rect x="370" y="255" width="244" height="360" rx="22" class="card"/></g>
+<rect x="390" y="276" width="44" height="28" rx="14" class="badgeBlue"/><text x="412" y="295" text-anchor="middle" class="badgeTextLight">02</text>
+<text x="390" y="345" class="tiny">ORCHESTRATE</text><text x="390" y="372" class="cardTitle">Workflow engine</text><g filter="url(#softShadow)"><rect x="678" y="255" width="244" height="360" rx="22" class="card"/></g>
+<rect x="698" y="276" width="44" height="28" rx="14" class="badgeBlue"/><text x="720" y="295" text-anchor="middle" class="badgeTextLight">03</text>
+<text x="698" y="345" class="tiny">INTELLIGENCE</text><text x="698" y="372" class="cardTitle">AI reasoning</text><g filter="url(#softShadow)"><rect x="986" y="255" width="244" height="360" rx="22" class="card"/></g>
+<rect x="1006" y="276" width="44" height="28" rx="14" class="badgeBlue"/><text x="1028" y="295" text-anchor="middle" class="badgeTextLight">04</text>
+<text x="1006" y="345" class="tiny">GOVERN</text><text x="1006" y="372" class="cardTitle">Rules &amp; approval</text><g filter="url(#softShadow)"><rect x="1294" y="255" width="244" height="360" rx="22" class="card"/></g>
+<rect x="1314" y="276" width="44" height="28" rx="14" class="badgeBlue"/><text x="1336" y="295" text-anchor="middle" class="badgeTextLight">05</text>
+<text x="1314" y="345" class="tiny">EXECUTE</text><text x="1314" y="372" class="cardTitle">Business actions</text><rect x="82" y="414" width="204" height="48" rx="11" class="cardSoft"/><text x="98" y="434" class="body" font-weight="700">Web forms</text><text x="98" y="451" class="small">New enquiry received</text><rect x="82" y="478" width="204" height="48" rx="11" class="cardSoft"/><text x="98" y="498" class="body" font-weight="700">Email &amp; messages</text><text x="98" y="515" class="small">Inbound request</text><rect x="82" y="542" width="204" height="48" rx="11" class="cardSoft"/><text x="98" y="562" class="body" font-weight="700">CRM / schedules</text><text x="98" y="579" class="small">Event or time trigger</text><rect x="390" y="414" width="204" height="58" rx="12" class="cardSoft"/><text x="492" y="438" text-anchor="middle" class="cardTitle">n8n · Make · Zapier</text><text x="492" y="458" text-anchor="middle" class="small">Triggers, routing, retries</text>
+<rect x="390" y="488" width="204" height="86" rx="12" class="cardStrong"/><text x="492" y="516" text-anchor="middle" class="body" font-weight="750">Process orchestration</text><text x="492" y="540" text-anchor="middle" class="small">Conditions · Branches</text><text x="492" y="559" text-anchor="middle" class="small">Queues · Webhooks</text><circle cx="800" cy="458" r="52" fill="url(#hubGradient)" filter="url(#glow)"/>
+<g transform="translate(800 458)" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round"><path d="M-3 -27C-18 -40 -33 -24 -28 -10C-42 2 -28 22 -14 17C-10 31 1 30 0 17M3 -27C18 -40 33 -24 28 -10C42 2 28 22 14 17C10 31 -1 30 0 17M0 -25V23M-23 -10H-8M23 -10H8"/><circle cx="-8" cy="-10" r="2.5" fill="#9ae72b" stroke="none"/><circle cx="8" cy="-10" r="2.5" fill="#9ae72b" stroke="none"/></g>
+<text x="800" y="535" text-anchor="middle" class="cardTitle">AI reasoning layer</text>
+<text x="800" y="561" text-anchor="middle" class="small">Classify · Extract · Plan</text>
+<text x="800" y="583" text-anchor="middle" class="small">Retrieve · Summarise</text><rect x="1006" y="414" width="204" height="48" rx="11" class="cardSoft"/><text x="1022" y="435" class="body" font-weight="700">Business rules</text><text x="1022" y="452" class="small">Permissions and limits</text>
+<rect x="1006" y="478" width="204" height="48" rx="11" class="cardSoft"/><text x="1022" y="499" class="body" font-weight="700">Human approval</text><text x="1022" y="516" class="small">Sensitive actions</text>
+<rect x="1006" y="542" width="204" height="48" rx="11" class="cardSoft"/><text x="1022" y="563" class="body" font-weight="700">Exception routing</text><text x="1022" y="580" class="small">Escalate when unsure</text><rect x="1314" y="414" width="204" height="48" rx="11" class="cardSoft"/><text x="1330" y="434" class="body" font-weight="700">Update CRM / ERP</text><text x="1330" y="451" class="small">Records and tasks</text><rect x="1314" y="478" width="204" height="48" rx="11" class="cardSoft"/><text x="1330" y="498" class="body" font-weight="700">Notify or schedule</text><text x="1330" y="515" class="small">Email, SMS, voice</text><rect x="1314" y="542" width="204" height="48" rx="11" class="cardSoft"/><text x="1330" y="562" class="body" font-weight="700">Create / route work</text><text x="1330" y="579" class="small">Tickets and documents</text><path d="M316 440 H364" class="connector"/><path d="M316 440 H364" class="flow"/><path d="M355 432 L364 440 L355 448" class="iconStroke"/><path d="M624 440 H672" class="connector"/><path d="M624 440 H672" class="flow"/><path d="M663 432 L672 440 L663 448" class="iconStroke"/><path d="M932 440 H980" class="connector"/><path d="M932 440 H980" class="flow"/><path d="M971 432 L980 440 L971 448" class="iconStroke"/><path d="M1240 440 H1288" class="connector"/><path d="M1240 440 H1288" class="flow"/><path d="M1279 432 L1288 440 L1279 448" class="iconStroke"/><path d="M1416 615 V677 H800 V700" class="connectorAlt"/><path d="M800 615 V700" class="flowBlue"/>
+<rect x="125" y="700" width="1350" height="126" rx="22" class="cardSoft"/>
+<text x="160" y="738" class="tiny">CONTINUOUS OPERATIONS LAYER</text>
+<g transform="translate(160 760)">
+ <rect width="270" height="44" rx="12" class="card"/><text x="135" y="28" text-anchor="middle" class="body" font-weight="750">Execution logs &amp; visibility</text>
+ <rect x="290" width="270" height="44" rx="12" class="card"/><text x="425" y="28" text-anchor="middle" class="body" font-weight="750">Retries &amp; recovery</text>
+ <rect x="580" width="270" height="44" rx="12" class="card"/><text x="715" y="28" text-anchor="middle" class="body" font-weight="750">Human review queue</text>
+ <rect x="870" width="270" height="44" rx="12" class="card"/><text x="1005" y="28" text-anchor="middle" class="body" font-weight="750">Alerts &amp; improvement</text>
+</g>
+<text x="800" y="865" text-anchor="middle" class="small">Automation is scoped around each process, with human review and safeguards where required.</text>
+</svg>
