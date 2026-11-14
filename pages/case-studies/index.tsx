@@ -14,7 +14,7 @@ interface CaseStudiesProps {
 }
 
 const seo: SEOProps = {
-  title: 'Projects & Experience | Technatonix',
+  title: 'Projects & Case Studies | The Technatonix',
   description: 'Explore Technatonix projects and products alongside our team’s personal software engineering experience.',
   canonical: 'https://technatonix.com/case-studies',
 };

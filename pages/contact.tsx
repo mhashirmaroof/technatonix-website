@@ -432,13 +432,12 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
 
 export const getServerSideProps: GetServerSideProps<ContactProps> = async () => {
   const seo: SEOProps = {
-    title: 'Contact Technatonix - Leading Software House | Get Custom Software Development Quote',
-    description: 'Contact Technatonix for custom software development, SaaS products, web and mobile apps, CRM, ERP and IT services. Free consultation, 24-hour response. Based in Lahore, Pakistan.',
+    title: 'Contact The Technatonix | Discuss Your Project',
+    description: 'Connect with The Technatonix to discuss software development, AI automation, integrations and business technology projects.',
     canonical: 'https://technatonix.com/contact',
     openGraph: {
       title: 'Contact Leading Software House - Technatonix | Software Development Services',
       description: 'Get in touch with expert software developers. Free consultation for custom software, SaaS, web and mobile apps, and enterprise solutions.',
-      image: '/images/contact-og.jpg',
       type: 'website'
     }
   };

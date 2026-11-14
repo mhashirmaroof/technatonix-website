@@ -6,17 +6,26 @@ import Layout from '@/components/Layout';
 import ProjectImage from '@/components/ProjectImage';
 import { getProjectExperience, ProjectExperience } from '@/lib/project-experience';
 import { SEOProps } from '@/types';
+import { getFeaturedSocialImage } from '@/lib/social-image';
+import { breadcrumbs } from '@/lib/structured-data';
 import styles from '@/styles/CaseStudy.module.scss';
 
 interface ProjectProps {
   project: ProjectExperience | null;
+  socialImage: Awaited<ReturnType<typeof getFeaturedSocialImage>>;
 }
 
-const CaseStudyDetail: React.FC<ProjectProps> = ({ project }) => {
+const CaseStudyDetail: React.FC<ProjectProps> = ({ project, socialImage }) => {
   const seo: SEOProps = project ? {
     title: `${project.title} | Project Experience - Technatonix`,
     description: project.seoDescription || project.overview,
     canonical: `https://technatonix.com/case-studies/${project.slug}`,
+    openGraph: { socialImage },
+    jsonLd: breadcrumbs([
+      { name: 'Home', path: '/' },
+      { name: 'Projects & Experience', path: '/case-studies' },
+      { name: project.title, path: `/case-studies/${project.slug}` },
+    ]),
   } : {
     title: 'Projects temporarily unavailable | Technatonix',
     description: 'Project information is temporarily unavailable.',
@@ -83,11 +92,11 @@ export const getServerSideProps: GetServerSideProps<ProjectProps> = async ({ par
     const projects = await getProjectExperience();
     const project = projects.find((item) => item.slug === params?.slug);
     if (!project) return { notFound: true };
-    return { props: { project } };
+    return { props: { project, socialImage: await getFeaturedSocialImage(project.imageUrl) } };
   } catch (error) {
     console.error('Failed to fetch project experience:', error);
     res.statusCode = 503;
-    return { props: { project: null } };
+    return { props: { project: null, socialImage: null } };
   }
 };
 

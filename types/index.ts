@@ -130,6 +130,16 @@ export interface SEOProps {
     description?: string;
     image?: string;
     type?: string;
+    publishedTime?: string;
+    modifiedTime?: string | null;
+    author?: string;
+    generatedImage?: string;
+    socialImage?: {
+      url: string;
+      type: 'image/png' | 'image/jpeg';
+      width: number;
+      height: number;
+    } | null;
   };
   jsonLd?: Record<string, any>;
 }

@@ -182,7 +182,6 @@ export const getServerSideProps: GetServerSideProps<BlogProps> = async () => {
       openGraph: {
         title: 'Software Development & ERP Technology Blog | Technatonix Software House',
         description: 'Expert insights on software development, ERP systems, mobile apps, web development, and technology trends from leading software house.',
-        image: '/images/blog-og.jpg',
         type: 'website'
       }
     };

@@ -380,14 +380,13 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }];
 
   const seo: SEOProps = {
-    title: 'Products | KREVIX ERP & EFWRSX Cloud | Technatonix Software House',
-    description: 'Explore Technatonix products: KREVIX ERP for manufacturing (inventory, production, quality, finance) and EFWRSX Cloud, a field work evidence and reporting platform for service professionals.',
+    title: 'Our Software Products | KREVIX ERP & EFWRSX Cloud',
+    description: 'Explore The Technatonix’s software products in development for manufacturing operations and field-work reporting.',
     canonical: 'https://technatonix.com/products',
     openGraph: {
       title: 'KREVIX ERP & EFWRSX Cloud - Software Products by Technatonix',
       description: 'KREVIX ERP for manufacturing excellence and EFWRSX Cloud for field work reporting, built by Technatonix.',
       type: 'website',
-      image: '/images/og-krevix-erp.jpg'
     },
     jsonLd: {
       '@context': 'https://schema.org',
@@ -395,12 +394,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       name: 'KREVIX ERP',
       applicationCategory: 'Enterprise Resource Planning',
       operatingSystem: 'Web-based',
-      description: 'Inventory-first ERP solution designed specifically for manufacturing industries',
-      offers: {
-        '@type': 'Offer',
-        priceCurrency: 'USD',
-        availability: 'https://schema.org/InStock'
-      }
+      description: 'Inventory-first ERP solution designed specifically for manufacturing industries'
     }
   };
 

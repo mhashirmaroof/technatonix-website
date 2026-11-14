@@ -286,13 +286,12 @@ const About: React.FC<AboutProps> = ({ seo }) => {
 
 export const getServerSideProps: GetServerSideProps<AboutProps> = async () => {
   const seo: SEOProps = {
-    title: 'About Technatonix - Leading Software House | Software Development Company',
-    description: 'Technatonix is a premier software house and software development company delivering custom software development, SaaS products, web and mobile apps, CRM, ERP and IT services across industries. Trusted by 14+ clients worldwide.',
+    title: 'About The Technatonix | Technology & Software Solutions',
+    description: 'Learn about The Technatonix, our technology capabilities, engineering approach and commitment to building solutions around business needs.',
     canonical: 'https://technatonix.com/about',
     openGraph: {
       title: 'About Technatonix - Premier Software House & Development Company',
       description: 'Full-service software house providing custom software, SaaS, web and mobile apps and IT services. Serving 14+ clients globally.',
-      image: '/images/about-og.jpg',
       type: 'website'
     }
   };

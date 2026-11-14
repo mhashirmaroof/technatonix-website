@@ -358,13 +358,12 @@ const Services: React.FC<ServicesProps> = ({ seo }) => {
 
 export const getServerSideProps: GetServerSideProps<ServicesProps> = async () => {
   const seo: SEOProps = {
-    title: 'Software Development & IT Services | Custom Software, SaaS, Web & Mobile Apps - Technatonix',
-    description: 'Technatonix offers end-to-end IT services: custom software development, SaaS products, web and mobile apps, CRM, ERP, HRTech, PropTech, Fintech, healthcare software, cloud migration, AI and IoT solutions.',
+    title: 'Software Development & IT Services | The Technatonix',
+    description: 'Explore custom software development, ERP solutions, web and mobile applications, integrations and intelligent business technology services.',
     canonical: 'https://technatonix.com/services',
     openGraph: {
       title: 'Software Development & IT Services | Technatonix',
       description: 'Full-service software house providing custom software, SaaS, web and mobile apps, CRM, ERP and industry solutions. Transform your business with our expert IT services.',
-      image: '/images/services-og.jpg',
       type: 'website'
     }
   };

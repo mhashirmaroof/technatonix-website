@@ -121,6 +121,18 @@ routes. Project modification dates use Firestore document update times; blog
 dates use their stored `updatedAt` values when available. Keep the Google
 verification file in `public/` so ownership verification remains valid.
 
+## Social sharing metadata
+
+The shared `SEOHead` component uses `lib/site-metadata.ts` for canonical
+production URLs, page-specific sharing text, and the branded 1200 x 630 images
+in `public/images/og/`. Public page metadata is rendered in the initial HTML.
+Published blog posts use validated featured images when available; otherwise
+`/social-image/blog/[slug]` generates a title-specific preview. Project pages
+use a validated featured image when available and the default image otherwise.
+Featured images must be publicly accessible JPEG or PNG files of at least
+600 x 315 pixels, hosted in the site's `/images/` directory or Firebase
+Storage. Check image availability after changing or deleting an asset.
+
 ## Useful commands
 
 | Command | Description |

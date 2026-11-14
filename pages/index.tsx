@@ -431,13 +431,12 @@ const Home: React.FC<HomeProps> = ({ caseStudies, seo }) => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const seo: SEOProps = {
-    title: 'Technatonix - Software Development & IT Services Company | Custom Software, SaaS, Web & Mobile Apps',
-    description: 'Technatonix is a full-service software house and IT services company delivering custom software development, SaaS products, web and mobile apps, CRM, ERP, HRTech, PropTech, Fintech, healthcare software, cloud, AI and IoT solutions for clients worldwide.',
+    title: 'The Technatonix | Custom Software, AI Automation & Intelligent Systems',
+    description: 'The Technatonix helps businesses grow through custom software development, intelligent automation, business applications and integrated technology solutions.',
     canonical: 'https://technatonix.com',
     openGraph: {
       title: 'Technatonix - Software Development & IT Services | SaaS, CRM, ERP & Custom Software',
       description: 'Full-service software house delivering custom software, SaaS products, web and mobile apps, CRM, ERP and industry solutions. Trusted by businesses worldwide.',
-      image: '/images/og-homepage.jpg',
       type: 'website'
     },
     jsonLd: [
@@ -447,8 +446,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
         name: 'Technatonix',
         alternateName: 'Technatonix Software House',
         description: 'Full-service software development and IT services company offering custom software, SaaS products, web and mobile applications, CRM, ERP, HRTech, PropTech, Fintech, healthcare software, cloud, AI and IoT solutions.',
-        url: 'https://technatonix.com',
-        logo: 'https://technatonix.com/images/logo.png',
+        url: 'https://www.technatonix.com/',
+        logo: 'https://www.technatonix.com/logo.png',
         foundingDate: '2021',
         numberOfEmployees: '50-100',
         industry: 'Software Development',
@@ -471,6 +470,12 @@ export const getServerSideProps: GetServerSideProps = async () => {
             streetAddress: 'International Market, M Block, Model Town',
             addressLocality: 'Lahore',
             addressCountry: 'PK'
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'WebSite',
+            name: 'The Technatonix',
+            url: 'https://www.technatonix.com/',
           },
           {
             '@type': 'PostalAddress',

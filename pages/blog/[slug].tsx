@@ -4,6 +4,9 @@ import Link from 'next/link';
 import Layout from '../../components/Layout';
 import { SEOProps } from '../../types';
 import { getPublishedBlogs, PublishedBlog } from '@/lib/blogs';
+import { getFeaturedSocialImage } from '@/lib/social-image';
+import { SITE_METADATA } from '@/lib/site-metadata';
+import { breadcrumbs } from '@/lib/structured-data';
 import { FaArrowLeft, FaCalendar, FaUser, FaClock, FaTag } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 
@@ -103,16 +106,40 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
     // Get related posts (exclude current post, limit to 3)
     const relatedPosts = blogs.filter((p) => p.slug !== post.slug).slice(0, 3);
+    const socialImage = await getFeaturedSocialImage(post.featuredImage);
+    const articleUrl = `${SITE_METADATA.origin}/blog/${post.slug}`;
+    const description = post.excerpt.trim() || post.content.replace(/[#*_`\[\]]/g, '').replace(/\s+/g, ' ').trim().slice(0, 160) || `Read ${post.title} on The Technatonix blog.`;
 
     const seo: SEOProps = {
       title: `${post.title} - Technatonix Blog`,
-      description: post.excerpt,
+      description,
       canonical: `https://technatonix.com/blog/${post.slug}`,
       openGraph: {
         title: `${post.title} - Technatonix Blog`,
-        description: post.excerpt,
-        type: 'article'
-      }
+        description,
+        type: 'article',
+        publishedTime: post.actualPublishedAt || undefined,
+        modifiedTime: post.updatedAt,
+        author: post.author,
+        socialImage,
+        generatedImage: `/social-image/blog/${post.slug}`
+      },
+      jsonLd: [{
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: post.title,
+        description,
+        url: articleUrl,
+        ...(post.actualPublishedAt ? { datePublished: post.actualPublishedAt } : {}),
+        ...(post.updatedAt ? { dateModified: post.updatedAt } : {}),
+        ...(post.author ? { author: { '@type': 'Person', name: post.author } } : {}),
+        image: socialImage?.url || `${SITE_METADATA.origin}/social-image/blog/${post.slug}`,
+        publisher: { '@type': 'Organization', name: SITE_METADATA.siteName, logo: { '@type': 'ImageObject', url: `${SITE_METADATA.origin}${SITE_METADATA.logo}` } },
+      }, breadcrumbs([
+        { name: 'Home', path: '/' },
+        { name: 'Blog', path: '/blog' },
+        { name: post.title, path: `/blog/${post.slug}` },
+      ])],
     };
 
     return {

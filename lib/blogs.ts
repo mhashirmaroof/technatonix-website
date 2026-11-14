@@ -11,6 +11,7 @@ export interface PublishedBlog {
   tags: string[];
   published: true;
   publishedAt: string;
+  actualPublishedAt: string | null;
   createdAt: string;
   updatedAt: string | null;
   readTime: number;
@@ -49,6 +50,7 @@ export async function getPublishedBlogs(): Promise<PublishedBlog[]> {
       tags: Array.isArray(data.tags) ? data.tags.filter((tag: unknown): tag is string => typeof tag === 'string') : [],
       published: true,
       publishedAt: timestamp(data.publishedAt) || createdAt,
+      actualPublishedAt: timestamp(data.publishedAt),
       createdAt,
       updatedAt: timestamp(data.updatedAt),
       readTime: typeof data.readTime === 'number' ? data.readTime : 5,

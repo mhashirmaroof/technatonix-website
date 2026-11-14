@@ -7,13 +7,21 @@ import { SEOProps } from '@/types';
 import styles from '@/styles/Automation.module.scss';
 
 const seo: SEOProps = {
-  title: 'AI Automation & Intelligent Systems | Technatonix',
-  description: 'Explore AI agents, intelligent workflows, voice automation and business system integrations designed to streamline operations with appropriate human oversight.',
+  title: 'AI Automation & Intelligent Systems | The Technatonix',
+  description: 'Explore AI agents, intelligent workflows, sales automation, voice systems, document processing and enterprise integrations.',
   canonical: 'https://technatonix.com/ai-automation',
   openGraph: {
     title: 'AI Automation & Intelligent Systems | Technatonix',
     description: 'Connect your systems and automate business processes with intelligent, human-centered solutions.',
     type: 'website',
+  },
+  jsonLd: {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'AI Automation & Intelligent Systems',
+    description: 'AI-assisted workflows, business system integrations and custom software with appropriate human oversight.',
+    url: 'https://www.technatonix.com/ai-automation',
+    provider: { '@type': 'Organization', name: 'The Technatonix', url: 'https://www.technatonix.com/' },
   },
 };
 
