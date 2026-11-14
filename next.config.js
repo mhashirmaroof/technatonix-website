@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  transpilePackages: ['react-markdown'],
   experimental: {
     typedRoutes: true,
   },
@@ -46,14 +47,6 @@ const nextConfig = {
             value: '1; mode=block',
           },
         ],
-      },
-    ];
-  },
-  async rewrites() {
-    return [
-      {
-        source: '/sitemap.xml',
-        destination: '/api/sitemap.xml',
       },
     ];
   },

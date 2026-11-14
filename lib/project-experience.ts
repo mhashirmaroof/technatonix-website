@@ -11,6 +11,7 @@ export interface ProjectExperience {
   companyWebsite: string;
   imageUrl: string;
   order: number;
+  lastModified: string | null;
 }
 
 interface FirestoreValue {
@@ -23,6 +24,7 @@ interface FirestoreValue {
 interface FirestoreDocument {
   name: string;
   fields?: Record<string, FirestoreValue>;
+  updateTime?: string;
 }
 
 interface FirestoreResponse {
@@ -88,6 +90,9 @@ export async function getProjectExperience(): Promise<ProjectExperience[]> {
         companyWebsite: safeUrl(companyWebsite),
         imageUrl: safeUrl(imageUrl),
         order: Number.isFinite(order) ? order : Number.MAX_SAFE_INTEGER,
+        lastModified: document.updateTime && !Number.isNaN(Date.parse(document.updateTime))
+          ? new Date(document.updateTime).toISOString()
+          : null,
       });
     }
     pageToken = data.nextPageToken || '';

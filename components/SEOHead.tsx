@@ -15,6 +15,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({ seo }) => {
     jsonLd
   } = seo;
 
+  const canonicalUrl = canonical?.replace(/^https:\/\/technatonix\.com(?=\/|$)/, 'https://www.technatonix.com');
+
   return (
     <Head>
       {/* Basic Meta Tags */}
@@ -22,7 +24,7 @@ const SEOHead: React.FC<SEOHeadProps> = ({ seo }) => {
       <meta name="description" content={description} />
       
       {/* Canonical URL */}
-      {canonical && <link rel="canonical" href={canonical} />}
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl === 'https://www.technatonix.com' ? `${canonicalUrl}/` : canonicalUrl} />}
       
       {/* Open Graph Tags */}
       <meta property="og:title" content={openGraph?.title || title} />

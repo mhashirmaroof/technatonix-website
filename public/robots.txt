@@ -14,7 +14,7 @@ Disallow: /admin*
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://technatonix.com/sitemap.xml
+Sitemap: https://www.technatonix.com/sitemap.xml
 
 # Crawl delay (optional)
 Crawl-delay: 1

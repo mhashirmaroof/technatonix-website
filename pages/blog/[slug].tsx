@@ -2,14 +2,15 @@ import React from 'react';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
 import Layout from '../../components/Layout';
-import { BlogPost, SEOProps } from '../../types';
+import { SEOProps } from '../../types';
+import { getPublishedBlogs, PublishedBlog } from '@/lib/blogs';
 import { FaArrowLeft, FaCalendar, FaUser, FaClock, FaTag } from 'react-icons/fa';
 import ReactMarkdown from 'react-markdown';
 
 interface BlogDetailProps {
-  post: BlogPost;
+  post: PublishedBlog;
   seo: SEOProps;
-  relatedPosts: BlogPost[];
+  relatedPosts: PublishedBlog[];
 }
 
 const BlogDetail: React.FC<BlogDetailProps> = ({ post, seo, relatedPosts }) => {
@@ -91,12 +92,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
     const { slug } = context.params!;
     
-    // Fetch blog posts from API
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/admin/blogs`);
-    const data = await response.json();
-    
-    // Find post by slug
-    const post = data.blogs?.find((p: any) => p.slug === slug) || null;
+    const blogs = await getPublishedBlogs();
+    const post = blogs.find((p) => p.slug === slug) || null;
 
     if (!post) {
       return {
@@ -105,9 +102,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     }
 
     // Get related posts (exclude current post, limit to 3)
-    const relatedPosts = data.blogs
-      ?.filter((p: any) => p.slug !== post.slug && p.published)
-      ?.slice(0, 3) || [];
+    const relatedPosts = blogs.filter((p) => p.slug !== post.slug).slice(0, 3);
 
     const seo: SEOProps = {
       title: `${post.title} - Technatonix Blog`,
@@ -129,9 +124,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   } catch (error) {
     console.error('Failed to fetch blog post:', error);
-    return {
-      notFound: true,
-    };
+    throw error;
   }
 };
 

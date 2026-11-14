@@ -1,84 +1,23 @@
 import { GetServerSideProps } from 'next';
-import { getProjectExperience } from '@/lib/project-experience';
+import { getSitemapDocuments } from '@/lib/sitemap';
+import { createSitemapIndex } from '@/lib/sitemap-xml';
 
 const Sitemap = () => null;
 
 export const getServerSideProps: GetServerSideProps = async ({ res }) => {
-  const baseUrl = 'https://technatonix.com';
-  
-  // Static pages with priorities optimized for software house SEO
-  const staticPages = [
-    { url: '', priority: '1.0', changefreq: 'weekly' },
-    { url: '/services', priority: '0.9', changefreq: 'weekly' },
-    { url: '/ai-automation', priority: '0.9', changefreq: 'monthly' },
-    { url: '/products', priority: '0.9', changefreq: 'monthly' },
-    { url: '/about', priority: '0.8', changefreq: 'monthly' },
-    { url: '/contact', priority: '0.8', changefreq: 'monthly' },
-    { url: '/case-studies', priority: '0.7', changefreq: 'weekly' },
-    { url: '/blog', priority: '0.6', changefreq: 'daily' },
-  ];
-
-  let sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`;
-
-  // Add static pages
-  for (const page of staticPages) {
-    sitemap += `
-  <url>
-    <loc>${baseUrl}${page.url}</loc>
-    <lastmod>${new Date().toISOString()}</lastmod>
-    <changefreq>${page.changefreq}</changefreq>
-    <priority>${page.priority}</priority>
-  </url>`;
-  }
-
   try {
-    for (const project of await getProjectExperience()) {
-      sitemap += `
-  <url>
-    <loc>${baseUrl}/case-studies/${project.slug}</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>`;
-    }
+    const documents = await getSitemapDocuments();
+    const xml = documents.length === 1 ? documents[0] : createSitemapIndex(documents.length);
+    res.setHeader('Content-Type', 'application/xml; charset=utf-8');
+    res.setHeader('Cache-Control', 's-maxage=300, stale-while-revalidate=60');
+    res.end(xml);
   } catch (error) {
-    console.error('Error fetching projects for sitemap:', error);
+    console.error('Failed to generate sitemap:', error);
     res.statusCode = 503;
+    res.setHeader('Content-Type', 'text/plain; charset=utf-8');
+    res.end('Sitemap temporarily unavailable');
   }
-
-  try {
-    // Fetch blog posts
-    const blogResponse = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/admin/blogs`);
-    if (blogResponse.ok) {
-      const blogData = await blogResponse.json();
-      const blogs = blogData.blogs?.filter((blog: any) => blog.published) || [];
-      
-      for (const blog of blogs) {
-        sitemap += `
-  <url>
-    <loc>${baseUrl}/blog/${blog.slug}</loc>
-    <lastmod>${blog.updatedAt || blog.createdAt}</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>`;
-      }
-    }
-
-  } catch (error) {
-    console.error('Error generating sitemap:', error);
-  }
-
-  sitemap += `
-</urlset>`;
-
-  res.setHeader('Content-Type', 'application/xml');
-  res.setHeader('Cache-Control', 's-maxage=86400, stale-while-revalidate');
-  res.write(sitemap);
-  res.end();
-
-  return {
-    props: {},
-  };
+  return { props: {} };
 };
 
 export default Sitemap;

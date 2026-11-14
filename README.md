@@ -108,6 +108,19 @@ The Firestore rules must permit public reads of `project-experience` while
 restricting writes to authorized administrators. Firebase web API keys are not
 authentication and do not protect the collection.
 
+## Search indexing
+
+`/sitemap.xml` lists canonical public pages, the service detail routes, and
+published entries from the Firestore `project-experience` and `blogs`
+collections. It returns an error rather than a partial sitemap if a data source
+is unavailable. Large sitemaps are split into indexed parts. The existing
+`public/robots.txt` directives advertise the production sitemap.
+
+The KREVIX ERP and EFWRSX Cloud views are tabs on `/products`, not separate
+routes. Project modification dates use Firestore document update times; blog
+dates use their stored `updatedAt` values when available. Keep the Google
+verification file in `public/` so ownership verification remains valid.
+
 ## Useful commands
 
 | Command | Description |
@@ -117,6 +130,7 @@ authentication and do not protect the collection.
 | `npm start` | Serve the production build |
 | `npm run lint` | Run Next.js linting |
 | `npm run type-check` | Check TypeScript types |
+| `node --test tests/sitemap-xml.test.cjs` | Test sitemap XML generation and limits |
 
 ## Project layout
 

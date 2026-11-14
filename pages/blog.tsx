@@ -5,25 +5,10 @@ import { SEOProps } from '@/types';
 import styles from '@/styles/Blog.module.scss';
 import Link from 'next/link';
 import { FaCalendar, FaUser, FaTag, FaArrowRight, FaClock } from 'react-icons/fa';
-
-interface BlogPost {
-  id: string;
-  slug: string;
-  title: string;
-  excerpt: string;
-  content: string;
-  author: string;
-  publishedAt: string;
-  readTime: number;
-  tags: string[];
-  published: boolean;
-  featuredImage?: string;
-  createdAt: string;
-  updatedAt: string;
-}
+import { getPublishedBlogs, PublishedBlog } from '@/lib/blogs';
 
 interface BlogProps {
-  blogPosts: BlogPost[];
+  blogPosts: PublishedBlog[];
   seo: SEOProps;
 }
 
@@ -188,19 +173,7 @@ const Blog: React.FC<BlogProps> = ({ blogPosts, seo }) => {
 
 export const getServerSideProps: GetServerSideProps<BlogProps> = async () => {
   try {
-    // Fetch blog posts from API
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}/api/admin/blogs`);
-    const data = await response.json();
-    
-    // Filter only published blog posts
-    const blogPosts: BlogPost[] = data.blogs
-      ?.filter((blog: any) => blog.published)
-      ?.map((blog: any) => ({
-        ...blog,
-        publishedAt: blog.publishedAt || blog.createdAt,
-        createdAt: blog.createdAt,
-        updatedAt: blog.updatedAt,
-      })) || [];
+    const blogPosts = await getPublishedBlogs();
 
     const seo: SEOProps = {
       title: 'Software Development Blog | ERP Systems & Technology Insights - Technatonix',
