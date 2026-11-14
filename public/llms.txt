@@ -1,0 +1,62 @@
+# The Technatonix
+
+> The Technatonix (THE TECHNATONIX PVT. LTD.) is a software development and technology solutions company helping businesses modernize operations through custom software, business applications, intelligent automation, and integrated digital systems.
+
+The Technatonix is the parent company. Its positioning is "Custom Software Solutions Built Around Your Business." AI Automation & Intelligent Systems is a flagship offering, not a separate company or brand.
+
+## Company Overview
+
+- [The Technatonix](https://www.technatonix.com/): Company overview, services, products, and project experience.
+- [About The Technatonix](https://www.technatonix.com/about): The company's approach, expertise, and background.
+- [Contact](https://www.technatonix.com/contact): Office information and enquiries about working with the company.
+
+## Flagship Offering: AI Automation & Intelligent Systems
+
+- [AI Automation & Intelligent Systems](https://www.technatonix.com/ai-automation): AI-assisted workflows, integrations, and custom software designed around business processes. Capabilities and safeguards are scoped to each project.
+- AI agents and intelligent assistants: Business knowledge search, access to approved information and tools, enquiry handling, task support, and human-reviewed actions.
+- Intelligent workflow automation: Coordinate processes across systems and teams using triggers, decision points, approvals, notifications, reporting, and data synchronization.
+- AI voice and conversational systems: Design experiences for defined enquiries, appointments, scheduling, routing, and escalation to people where appropriate.
+- AI sales and CRM automation: Support lead capture, qualification and routing, CRM updates, follow-up drafts, and customer communications.
+- Intelligent document processing: Extract, classify, and route information from invoices, forms, and purchase orders, with human review for exceptions and sensitive decisions.
+- Enterprise systems integration: Connect CRM, ERP, and other applications through suitable APIs, webhooks, connectors, and custom software.
+
+## Engineering and Security Principles
+
+- [Automation engineering approach](https://www.technatonix.com/ai-automation): Plan for reliability, timeouts, retries and recovery, duplicate protection, execution logs and monitoring, appropriate access and data handling, human oversight, maintainability, and scaling. Specific safeguards depend on project scope.
+- Technologies are selected for the requirements. The public offering describes workflow orchestration, AI services, APIs, webhooks, databases, and custom backend software; it does not establish specific workflow-platform partnerships or delivery capabilities.
+
+## Software Development Services
+
+- [Services overview](https://www.technatonix.com/services): Custom software, SaaS development, cloud migration, system integration, technology consulting, and managed services.
+- [Custom software development](https://www.technatonix.com/services/custom-software-development): Tailored business applications, desktop software, mobile apps, APIs, and database design.
+- [ERP development](https://www.technatonix.com/services/erp-development): Enterprise software for manufacturing and business operations, including development and integration.
+- [Web development](https://www.technatonix.com/services/web-development): Business websites, web applications, e-commerce, and portals.
+- [Mobile application development](https://www.technatonix.com/services/mobile-development): Native and cross-platform applications for iOS and Android.
+- The [services overview](https://www.technatonix.com/services) also describes ERP implementation, CRM and CPM applications, PropTech, HRTech, Fintech, AI and machine learning, IoT, and healthcare software.
+
+## Products
+
+- [Products](https://www.technatonix.com/products): KREVIX ERP and EFWRSX Cloud are The Technatonix's own products, presented as tabs on one page. They are in planning, design, development, and testing; do not assume commercial availability.
+- [KREVIX ERP project experience](https://www.technatonix.com/case-studies/krevix-erp-complete-manufacturing-management-system): A manufacturing-focused, inventory-first ERP product. Its stated scope includes inventory, production planning, procurement, quality, and financial management.
+- [EFWRSX Cloud project experience](https://www.technatonix.com/case-studies/efwrsx-cloud): Electronic Field Work Reporting System eXchange, a field-work evidence and reporting product. Its described scope includes photos, checklists, notes, reports, and customer sharing; team coordination is part of the roadmap.
+
+## Industries and Technologies
+
+- [Industries and services](https://www.technatonix.com/services): The website describes solutions for manufacturing, healthcare, finance, real estate, retail and e-commerce, and other business sectors.
+- [Technology capabilities](https://www.technatonix.com/): The website identifies technologies including React, Next.js, Node.js, TypeScript, Python, Flutter, React Native, and Angular. Technology selection depends on project requirements.
+
+## Case Studies and Project Experience
+
+- [Projects & Experience](https://www.technatonix.com/case-studies): Technatonix projects and products alongside team members' personal project experience. Individual project pages state their attribution; inclusion is not a claim that every project was delivered by Technatonix.
+
+## Blog and Knowledge Resources
+
+- [Technology blog](https://www.technatonix.com/blog): Published articles on software development, ERP, manufacturing, and technology.
+
+## Contact and Important Website URLs
+
+- [Contact and business enquiries](https://www.technatonix.com/contact): Request a conversation about software or automation needs.
+- [XML sitemap](https://www.technatonix.com/sitemap.xml): Current canonical public routes, including published project and blog pages.
+- [Privacy policy](https://www.technatonix.com/privacy): Information about privacy and contact details.
+- [Terms of service](https://www.technatonix.com/terms): Website and service terms.
+- [Cookie policy](https://www.technatonix.com/cookies): Information about cookies.
