@@ -70,7 +70,7 @@ const Header: React.FC = () => {
                   Request Demo
                 </Link>
               )}
-              <Link href="/contact?inquiry=quote" className="btn-primary">
+              <Link href="/contact?inquiry=quote" className="btn-primary" data-analytics-cta="Get Quote" data-analytics-location="header">
                 Get Quote
               </Link>
             </div>
@@ -104,7 +104,7 @@ const Header: React.FC = () => {
                     Request Demo
                   </Link>
                 )}
-                <Link href="/contact?inquiry=quote" className="btn-primary" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/contact?inquiry=quote" className="btn-primary" data-analytics-cta="Get Quote" data-analytics-location="mobile_header" onClick={() => setIsMenuOpen(false)}>
                   Get Quote
                 </Link>
               </div>

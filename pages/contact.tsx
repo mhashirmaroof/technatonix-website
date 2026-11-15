@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
 import { GetServerSideProps } from 'next';
 import Layout from '@/components/Layout';
 import { SEOProps } from '@/types';
+import { analyticsEvent, analyticsLocation } from '@/lib/analytics';
 import styles from '@/styles/Contact.module.scss';
 import { FaPhone, FaEnvelope, FaMapMarkerAlt, FaClock, FaLinkedin, FaFacebook, FaInstagram, FaPaperPlane, FaExclamationTriangle } from 'react-icons/fa';
 
@@ -22,18 +23,26 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
   });
 
   const router = useRouter();
+  const started = useRef(false);
+  const submitting = useRef(false);
+  const inquiry = router.query.inquiry;
+  const isQuote = inquiry === 'quote';
 
   useEffect(() => {
-    if (!router.isReady || (router.query.inquiry !== 'quote' && router.query.inquiry !== 'automation')) return;
-    const message = router.query.inquiry === 'automation'
-      ? 'I would like to discuss an AI automation project.'
-      : 'I would like to request a quote for my project.';
+    if (!router.isReady || !['quote', 'automation', 'product-demo', 'product-efwrsx'].includes(String(inquiry))) return;
+    const messages: Record<string, string> = {
+      automation: 'I would like to discuss an AI automation project.',
+      quote: 'I would like to request a quote for my project.',
+      'product-demo': 'I would like to request a KREVIX ERP demo.',
+      'product-efwrsx': 'I would like to enquire about EFWRSX Cloud.',
+    };
+    const message = messages[String(inquiry)];
     setFormData(prev => ({
       ...prev,
       shortMessage: prev.shortMessage || message
     }));
     document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, [router.isReady, router.query.inquiry]);
+  }, [router.isReady, inquiry]);
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -68,6 +77,10 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+    if (!started.current) {
+      started.current = true;
+      analyticsEvent(isQuote ? 'quote_form_start' : 'contact_form_start', analyticsLocation(router.asPath));
+    }
     setFormData(prev => ({
       ...prev,
       [name]: value
@@ -89,6 +102,9 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
       return;
     }
 
+    if (submitting.current) return;
+    submitting.current = true;
+    analyticsEvent(isQuote ? 'quote_form_submit' : 'contact_form_submit', analyticsLocation(router.asPath));
     setIsSubmitting(true);
     setSubmitStatus('idle');
     setErrorMessage('');
@@ -104,7 +120,12 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
 
       const result = await response.json();
 
-      if (response.ok) {
+      if (response.ok && result.success === true) {
+        const parameters = analyticsLocation(router.asPath);
+        analyticsEvent(isQuote ? 'quote_form_success' : 'contact_form_success', parameters);
+        if (inquiry === 'automation') analyticsEvent('automation_project_enquiry', { ...parameters, service_category: 'ai_automation' });
+        if (inquiry === 'product-demo') analyticsEvent('product_demo_request', { ...parameters, service_category: 'krevix' });
+        if (inquiry === 'product-efwrsx') analyticsEvent('product_enquiry', { ...parameters, service_category: 'efwrsx' });
         setSubmitStatus('success');
         setFormData({
           name: '',
@@ -123,6 +144,7 @@ const Contact: React.FC<ContactProps> = ({ seo }) => {
       setSubmitStatus('error');
       setErrorMessage('Network error. Please check your connection and try again.');
     } finally {
+      submitting.current = false;
       setIsSubmitting(false);
     }
   };

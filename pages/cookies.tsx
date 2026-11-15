@@ -64,9 +64,8 @@ const Cookies: React.FC<CookiesProps> = ({ seo }) => {
                 <div className={styles.cookieType}>
                   <h3>Analytics Cookies</h3>
                   <p>
-                    We use Google Analytics to understand how visitors use our website. These cookies 
-                    collect information in an anonymous form, including the number of visitors to the 
-                    site and where visitors have come to the site from.
+                    We use Google Analytics to understand website usage and traffic sources. Analytics
+                    is currently disabled unless you choose to enable it through your analytics preferences.
                   </p>
                 </div>
 
@@ -85,6 +84,9 @@ const Cookies: React.FC<CookiesProps> = ({ seo }) => {
                 <p>
                   You can control and/or delete cookies as you wish. You can delete all cookies that 
                   are already on your computer and you can set most browsers to prevent them from being placed.
+                </p>
+                <p>
+                  You can also <button type="button" onClick={() => window.dispatchEvent(new Event('open-analytics-preferences'))}>change your analytics preferences</button> at any time.
                 </p>
                 
                 <div className={styles.browserInstructions}>

@@ -289,7 +289,7 @@ const Products: React.FC<ProductsProps> = ({ products, seo }) => {
                 your manufacturing operations.
               </p>
               <div className={styles.ctaButtons}>
-                <Link href="/contact" className="btn-primary">
+                <Link href="/contact?inquiry=product-demo" className="btn-primary" data-analytics-cta="Schedule Demo" data-analytics-location="products_cta" data-analytics-category="krevix">
                   Schedule Demo
                 </Link>
                 <Link href="/case-studies" className="btn-secondary">

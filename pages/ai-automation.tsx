@@ -80,8 +80,8 @@ const AiAutomationPage: React.FC = () => (
               <p className={styles.lead}>Make your systems work together, so your people can focus on work that matters.</p>
               <p>We design AI-assisted workflows, integrations and custom software around your business processes, with practical safeguards and room for human judgment.</p>
               <div className={styles.actions}>
-                <Link href="/contact?inquiry=automation" className={styles.primaryAction}>Discuss an Automation Project <FaArrowRight aria-hidden="true" /></Link>
-                <a href="#capabilities" className={styles.secondaryAction}>Explore Capabilities</a>
+                <Link href="/contact?inquiry=automation" className={styles.primaryAction} data-analytics-cta="Discuss an Automation Project" data-analytics-location="automation_hero" data-analytics-category="ai_automation">Discuss an Automation Project <FaArrowRight aria-hidden="true" /></Link>
+                <a href="#capabilities" className={styles.secondaryAction} data-analytics-cta="Explore Capabilities" data-analytics-location="automation_hero" data-analytics-category="ai_automation">Explore Capabilities</a>
               </div>
             </div>
             <AutomationDiagram
@@ -202,7 +202,7 @@ const AiAutomationPage: React.FC = () => (
         <div className="container">
           <h2>Have a process your team repeats every day?</h2>
           <p>Tell us how it works today. Together, we can explore where automation could make a meaningful difference.</p>
-          <Link href="/contact?inquiry=automation" className={styles.primaryAction}>Discuss an Automation Project <FaArrowRight aria-hidden="true" /></Link>
+          <Link href="/contact?inquiry=automation" className={styles.primaryAction} data-analytics-cta="Discuss an Automation Project" data-analytics-location="automation_footer" data-analytics-category="ai_automation">Discuss an Automation Project <FaArrowRight aria-hidden="true" /></Link>
         </div>
       </section>
     </div>

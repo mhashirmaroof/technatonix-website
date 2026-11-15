@@ -17,8 +17,8 @@ const AutomationFeature: React.FC = () => (
             around your processes to reduce repetitive work and help your team move forward.
           </p>
           <div className={styles.actions}>
-            <Link href="/contact?inquiry=automation" className={styles.primaryAction}>Discuss an Automation Project <FaArrowRight aria-hidden="true" /></Link>
-            <Link href="/ai-automation" className={styles.secondaryAction}>Explore Our Capabilities</Link>
+            <Link href="/contact?inquiry=automation" className={styles.primaryAction} data-analytics-cta="Discuss an Automation Project" data-analytics-location="home_automation" data-analytics-category="ai_automation">Discuss an Automation Project <FaArrowRight aria-hidden="true" /></Link>
+            <Link href="/ai-automation" className={styles.secondaryAction} data-analytics-cta="Explore Capabilities" data-analytics-location="home_automation" data-analytics-category="ai_automation">Explore Our Capabilities</Link>
           </div>
         </div>
         <AutomationDiagram

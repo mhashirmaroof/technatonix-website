@@ -93,7 +93,8 @@ const Privacy: React.FC<PrivacyProps> = ({ seo }) => {
                 <h2>6. Cookies and Tracking</h2>
                 <p>
                   We use cookies and similar tracking technologies to improve your experience 
-                  on our website. You can control cookies through your browser settings.
+                  on our website. Google Analytics is currently disabled unless you choose to enable it.
+                  You can change your analytics choice in our cookie policy or through your browser settings.
                 </p>
               </div>
 

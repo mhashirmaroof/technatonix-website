@@ -227,10 +227,10 @@ const Home: React.FC<HomeProps> = ({ caseStudies, seo }) => {
               solutions that help businesses streamline operations, connect systems and scale with confidence.
             </p>
             <div className={styles.heroButtons}>
-              <Link href="/contact" className={styles.btnGlow}>
+              <Link href="/contact" className={styles.btnGlow} data-analytics-cta="Start Your Project" data-analytics-location="home_hero">
                 Start Your Project <FaArrowRight />
               </Link>
-              <Link href="/services" className={styles.btnGhost}>
+              <Link href="/services" className={styles.btnGhost} data-analytics-cta="Explore Services" data-analytics-location="home_hero">
                 <FaPlay /> Explore Services
               </Link>
             </div>

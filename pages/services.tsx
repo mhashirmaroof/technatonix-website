@@ -342,7 +342,7 @@ const Services: React.FC<ServicesProps> = ({ seo }) => {
             <h2>Ready to Transform Your Business?</h2>
             <p>Let's discuss how our software solutions can accelerate your growth and improve efficiency.</p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact" className="btn-primary" data-analytics-cta="Start Your Project" data-analytics-location="services_cta">
                 Start Your Project
               </Link>
               <Link href="/case-studies" className="btn-secondary">

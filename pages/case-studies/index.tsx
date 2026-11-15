@@ -69,7 +69,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ projects, loadError }) => (
             <h2>Ready to Start Your Project?</h2>
             <p>Tell us about your business and the software you want to build.</p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact" className="btn-primary">Start Your Project <FaExternalLinkAlt /></Link>
+              <Link href="/contact" className="btn-primary" data-analytics-cta="Start Your Project" data-analytics-location="case_studies_cta">Start Your Project <FaExternalLinkAlt /></Link>
               <Link href="/products" className="btn-secondary">Explore Solutions</Link>
             </div>
           </div>

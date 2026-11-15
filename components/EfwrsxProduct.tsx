@@ -67,7 +67,7 @@ const EfwrsxProduct: React.FC = () => (
               link for the customer.
             </p>
             <div className={styles.heroButtons}>
-              <Link href="/contact" className="btn-primary">
+              <Link href="/contact?inquiry=product-efwrsx" className="btn-primary" data-analytics-cta="Join the Early Access List" data-analytics-location="product_hero" data-analytics-category="efwrsx">
                 <FaPlay /> Join the Early Access List
               </Link>
             </div>
@@ -159,7 +159,7 @@ const EfwrsxProduct: React.FC = () => (
             workflow, give feedback, or be among the first to try it.
           </p>
           <div className={styles.ctaButtons}>
-            <Link href="/contact" className="btn-primary">
+            <Link href="/contact?inquiry=product-efwrsx" className="btn-primary" data-analytics-cta="Contact Us" data-analytics-location="product_cta" data-analytics-category="efwrsx">
               Contact Us
             </Link>
           </div>

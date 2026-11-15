@@ -154,8 +154,8 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({ service, seo }) => {
                 <Link href="/contact" legacyBehavior>
                   <a className={styles.primaryButton}>Get Free Consultation</a>
                 </Link>
-                <Link href="/contact" legacyBehavior>
-                  <a className={styles.secondaryButton}>Request Quote</a>
+                <Link href="/contact?inquiry=quote" legacyBehavior>
+                  <a className={styles.secondaryButton} data-analytics-cta="Get Quote" data-analytics-location="service_detail">Request Quote</a>
                 </Link>
               </div>
             </div>
