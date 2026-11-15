@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="1380" viewBox="0 0 400 1380" role="img" aria-labelledby="title description">
+  <title id="title">The Technatonix connected intelligence ecosystem</title>
+  <desc id="description">An AI intelligence core connects models, workflow engines, communication, APIs, business systems, data, human oversight and monitoring. Tools are selected for each project.</desc>
+  <defs>
+    <linearGradient id="core" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#1649d8"/>
+      <stop offset=".55" stop-color="#087fcd"/>
+      <stop offset="1" stop-color="#05a8c8"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-30%" width="140%" height="170%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#1e3b70" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <style>
+    text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif; }
+    .eyebrow { fill: #167eea; font-size: 11px; font-weight: 800; letter-spacing: 1.4px; }
+    .heading { fill: #101c35; font-size: 24px; font-weight: 750; letter-spacing: -.5px; }
+    .subheading { fill: #586985; font-size: 14px; }
+    .card { fill: #fff; stroke: #d6e2f3; }
+    .label { fill: #586985; font-size: 12px; font-weight: 800; letter-spacing: 1px; }
+    .body { fill: #243650; font-size: 15px; font-weight: 600; }
+    .examples { fill: #075985; font-size: 13px; font-weight: 600; }
+    .connector { fill: none; stroke: #51b8d5; stroke-width: 2; stroke-dasharray: 4 5; }
+  </style>
+  <rect width="400" height="1380" fill="#f5f8ff"/>
+  <text x="24" y="38" class="eyebrow">TECHNATONIX AI · CONNECTED INTELLIGENCE</text>
+  <text x="24" y="74" class="heading">One intelligent core.</text>
+  <text x="24" y="104" class="heading">Your business connected.</text>
+  <text x="24" y="130" class="subheading">AI, workflows and your existing systems.</text>
+
+  <rect x="24" y="155" width="352" height="154" rx="20" fill="url(#core)" filter="url(#shadow)"/>
+  <circle cx="200" cy="199" r="27" fill="#fff" opacity=".14"/>
+  <g transform="translate(200 199) scale(.38)" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-4 -48 C-28 -67 -51 -48 -48 -25 C-69 -9 -59 21 -39 25 C-39 47 -16 55 -1 39"/>
+    <path d="M4 -48 C28 -67 51 -48 48 -25 C69 -9 59 21 39 25 C39 47 16 55 1 39"/>
+    <path d="M0 -48V42 M-38 -20H-17L-8 -7 M38 -20H17L8 -7 M-39 17H-18L-7 7 M39 17H18L7 7"/>
+  </g>
+  <text x="200" y="252" text-anchor="middle" fill="#fff" font-size="17" font-weight="800">TECHNATONIX AI CORE</text>
+  <text x="200" y="277" text-anchor="middle" fill="#e1f4ff" font-size="12" font-weight="700">UNDERSTAND · DECIDE · ORCHESTRATE</text>
+  <path d="M200 309 V326 H34 V1234" class="connector"/>
+
+  <g transform="translate(48 326)">
+    <rect width="328" height="104" rx="15" class="card" filter="url(#shadow)"/>
+    <rect width="5" height="104" rx="2.5" fill="#167eea"/>
+    <text x="20" y="27" class="label">AI MODELS</text>
+    <text x="20" y="53" class="body">Reasoning and classification</text>
+    <text x="20" y="80" class="examples">OpenAI  ·  Claude  ·  Gemini</text>
+  </g>
+  <g transform="translate(48 442)">
+    <rect width="328" height="104" rx="15" class="card" filter="url(#shadow)"/>
+    <rect width="5" height="104" rx="2.5" fill="#09a9d2"/>
+    <text x="20" y="27" class="label">WORKFLOW ENGINES</text>
+    <text x="20" y="53" class="body">Orchestrate tasks across apps</text>
+    <text x="20" y="80" class="examples">n8n  ·  Make  ·  Zapier  ·  Custom</text>
+  </g>
+  <g transform="translate(48 558)">
+    <rect width="328" height="104" rx="15" class="card" filter="url(#shadow)"/>
+    <rect width="5" height="104" rx="2.5" fill="#78d900"/>
+    <text x="20" y="27" class="label">COMMUNICATION</text>
+    <text x="20" y="53" class="body">Messages, calls and voice</text>
+    <text x="20" y="80" class="examples">WhatsApp  ·  Email  ·  Web  ·  Voice</text>
+  </g>
+  <g transform="translate(48 674)">
+    <rect width="328" height="104" rx="15" class="card" filter="url(#shadow)"/>
+    <rect width="5" height="104" rx="2.5" fill="#09a9d2"/>
+    <text x="20" y="27" class="label">APIS &amp; EVENTS</text>
+    <text x="20" y="53" class="body">Connections between systems</text>
+    <text x="20" y="80" class="examples">REST APIs  ·  Webhooks  ·  OAuth</text>
+  </g>
+  <g transform="translate(48 790)">
+    <rect width="328" height="104" rx="15" class="card" filter="url(#shadow)"/>
+    <rect width="5" height="104" rx="2.5" fill="#167eea"/>
+    <text x="20" y="27" class="label">BUSINESS SYSTEMS</text>
+    <text x="20" y="53" class="body">Connected business workflows</text>
+    <text x="20" y="80" class="examples">CRM  ·  ERP  ·  Finance  ·  HR  ·  Support</text>
+  </g>
+  <g transform="translate(48 906)">
+    <rect width="328" height="104" rx="15" class="card" filter="url(#shadow)"/>
+    <rect width="5" height="104" rx="2.5" fill="#78d900"/>
+    <text x="20" y="27" class="label">DATA &amp; DOCUMENTS</text>
+    <text x="20" y="53" class="body">Structured data, files and knowledge</text>
+    <text x="20" y="80" class="examples">PostgreSQL  ·  MongoDB  ·  OCR</text>
+  </g>
+  <g transform="translate(48 1022)">
+    <rect width="328" height="104" rx="15" class="card" filter="url(#shadow)"/>
+    <rect width="5" height="104" rx="2.5" fill="#09a9d2"/>
+    <text x="20" y="27" class="label">HUMAN CONTROL</text>
+    <text x="20" y="53" class="body">Approvals and escalation</text>
+    <text x="20" y="80" class="examples">Review  ·  Policies  ·  Audit trail</text>
+  </g>
+  <g transform="translate(48 1138)">
+    <rect width="328" height="104" rx="15" class="card" filter="url(#shadow)"/>
+    <rect width="5" height="104" rx="2.5" fill="#167eea"/>
+    <text x="20" y="27" class="label">OBSERVABILITY</text>
+    <text x="20" y="53" class="body">Monitor runs, alerts and exceptions</text>
+    <text x="20" y="80" class="examples">Logs  ·  Alerts  ·  Metrics  ·  Recovery</text>
+  </g>
+  <text x="24" y="1290" class="subheading">Illustrative architecture.</text>
+  <text x="24" y="1312" class="subheading">Tools are selected for each project.</text>
+</svg>

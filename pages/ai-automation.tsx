@@ -86,6 +86,7 @@ const AiAutomationPage: React.FC = () => (
             </div>
             <AutomationDiagram
               src="/images/svg-ai-automation/01-ai-intelligence-ecosystem.svg"
+              mobileSrc="/images/svg-ai-automation/01-ai-intelligence-ecosystem-mobile.svg"
               alt="An AI intelligence core connecting models, workflow engines, business systems, data, communication, monitoring and human approvals."
               priority
             />

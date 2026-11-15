@@ -186,11 +186,13 @@
 .examples { border-top: 1px solid #dbe5ed; margin-top: 1.2rem; padding-top: 1rem; }
 
 .pageHero { padding: clamp(4.5rem, 7vw, 7rem) 0; background: radial-gradient(ellipse at 80% 30%, #193263, transparent 55%), #07142c; }
-.heroLayout { grid-template-columns: minmax(0, 0.68fr) minmax(0, 1.5fr); }
+.heroLayout { grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.42fr); }
 .heroInner {
-  h1 { font-size: clamp(2.2rem, 3.2vw, 3.5rem); letter-spacing: -0.04em; line-height: 1.1; }
-  .lead { font-size: clamp(1.05rem, 1.25vw, 1.2rem); }
-  > p:not(.eyebrow):not(.lead) { font-size: 0.95rem; }
+  h1 { max-width: 16ch; font-size: clamp(2rem, 3vw, 3.25rem); letter-spacing: -0.035em; line-height: 1.13; }
+  .eyebrow { line-height: 1.5; }
+  .lead { max-width: 35ch; font-size: clamp(1.05rem, 1.25vw, 1.2rem); line-height: 1.55; }
+  > p:not(.eyebrow):not(.lead) { max-width: 49ch; color: #e2e8f0; font-size: 1rem; line-height: 1.7; }
+  .actions { margin-top: 1.75rem; }
 }
 .pageHero .diagramImage { box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24); }
 .lightSection, .tintedSection, .engineering { padding: clamp(4rem, 7vw, 6rem) 0; }
@@ -271,6 +273,14 @@
   .capabilityGrid, .problemGrid, .useCaseGrid, .stepsGrid, .principleGrid { grid-template-columns: 1fr; }
   .actions { flex-direction: column; align-items: stretch; }
   .primaryAction, .secondaryAction { text-align: center; }
+  .pageHero { padding: 3.5rem 0 4rem; }
+  .heroLayout { gap: 2rem; }
+  .heroInner {
+    h1 { font-size: clamp(1.9rem, 8vw, 2.4rem); }
+    .eyebrow { font-size: 0.7rem; margin-bottom: 0.8rem; }
+    .lead { margin-top: 1rem; }
+    .actions { gap: 0.75rem; margin-top: 1.5rem; }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
