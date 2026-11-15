@@ -15,9 +15,9 @@ loaded.paths = module.paths;
 loaded._compile(compiled, filename);
 const { analyticsRegionPolicy, regionalAnalyticsRules } = loaded.exports;
 
-const denied = { analyticsStorage: 'denied', prompt: false };
+const denied = { analyticsStorage: 'denied', prompt: true };
 
-test('no regional exceptions are enabled', () => {
+test('visitors are prompted for consent when no regional exceptions are enabled', () => {
   assert.deepEqual(regionalAnalyticsRules, []);
   for (const country of [undefined, 'AA', 'BB', 'ZZ', 'invalid']) {
     assert.deepEqual(analyticsRegionPolicy(country, undefined), denied);

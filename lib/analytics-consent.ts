@@ -12,7 +12,7 @@ export function analyticsRegionPolicy(
   subdivision: string | undefined,
   rules: readonly RegionalAnalyticsRule[] = regionalAnalyticsRules,
 ): { analyticsStorage: 'denied' | 'granted'; prompt: boolean } {
-  const fallback = { analyticsStorage: 'denied', prompt: false } as const;
+  const fallback = { analyticsStorage: 'denied', prompt: true } as const;
   if (!country || !/^[A-Z]{2}$/.test(country)) return fallback;
   const countryRules = rules.filter(rule => rule.region.startsWith(`${country}-`));
   if (subdivision && !/^[A-Z0-9]{1,3}$/.test(subdivision)) return fallback;

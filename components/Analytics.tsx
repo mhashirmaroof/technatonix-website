@@ -7,7 +7,7 @@ import styles from './Analytics.module.scss';
 
 type Consent = 'accepted' | 'rejected' | null;
 type RegionPolicy = { analyticsStorage: 'denied' | 'granted'; prompt: boolean };
-const conservativePolicy: RegionPolicy = { analyticsStorage: 'denied', prompt: false };
+const conservativePolicy: RegionPolicy = { analyticsStorage: 'denied', prompt: true };
 const isPrivate = (path: string) => /^\/admin(?:[/?#]|$)/.test(path);
 
 export default function Analytics() {
