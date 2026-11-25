@@ -14,11 +14,13 @@ User-agent: Claude-SearchBot
 User-agent: Claude-User
 User-agent: Applebot
 Allow: /
+Allow: /service-history
 Disallow: /admin*
 Disallow: /api/
 
 User-agent: *
 Allow: /
+Allow: /service-history
 Disallow: /admin*
 Disallow: /api/
 

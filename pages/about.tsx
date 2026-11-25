@@ -273,8 +273,8 @@ const About: React.FC<AboutProps> = ({ seo }) => {
               <Link href="/contact" className="btn-primary">
                 Start Your Journey
               </Link>
-              <Link href="/case-studies" className="btn-secondary">
-                See Success Stories
+              <Link href="/service-history" className="btn-secondary">
+                View Service History
               </Link>
             </div>
           </div>

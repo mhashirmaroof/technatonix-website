@@ -50,6 +50,20 @@ const nextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      {
+        source: '/case-studies',
+        destination: '/service-history',
+        permanent: true,
+      },
+      {
+        source: '/case-studies/:slug',
+        destination: '/service-history/:slug',
+        permanent: true,
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig

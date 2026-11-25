@@ -383,9 +383,9 @@ const Home: React.FC<HomeProps> = ({ caseStudies, seo }) => {
         <section id="success-stories" className={styles.casesSection}>
           <div className="container">
             <div className={styles.sectionHeader} data-reveal>
-              <span className={styles.kicker}>Project Experience</span>
-              <h2>Projects We've Worked On</h2>
-              <p>Technatonix projects and products, alongside our team's personal experience.</p>
+              <span className={styles.kicker}>Service History</span>
+              <h2>Software Projects We've Worked On</h2>
+              <p>Explore Technatonix projects, products and our team's project experience.</p>
             </div>
             <div className={styles.caseStudiesGrid}>
               {featuredCaseStudies.map((project) => (
@@ -393,8 +393,8 @@ const Home: React.FC<HomeProps> = ({ caseStudies, seo }) => {
                   <h3>{project.title}</h3>
                   <p className={styles.clientName}>{project.attribution}</p>
                   <p className={styles.caseStudyExcerpt}>{project.overview}</p>
-                  <Link href={`/case-studies/${project.slug}`} className={styles.textLink}>
-                    View Project <FaArrowRight />
+                  <Link href={`/service-history/${project.slug}`} className={styles.textLink}>
+                    View Service History <FaArrowRight />
                   </Link>
                 </div>
               ))}
@@ -417,8 +417,8 @@ const Home: React.FC<HomeProps> = ({ caseStudies, seo }) => {
               <Link href="/contact" className={styles.btnGlow}>
                 Get Started Today <FaArrowRight />
               </Link>
-              <Link href="/case-studies" className={styles.btnGhost}>
-                View Success Stories
+              <Link href="/service-history" className={styles.btnGhost}>
+                View Service History
               </Link>
             </div>
           </div>

@@ -292,8 +292,8 @@ const Products: React.FC<ProductsProps> = ({ products, seo }) => {
                 <Link href="/contact?inquiry=product-demo" className="btn-primary" data-analytics-cta="Schedule Demo" data-analytics-location="products_cta" data-analytics-category="krevix">
                   Schedule Demo
                 </Link>
-                <Link href="/case-studies" className="btn-secondary">
-                  View Success Stories
+                <Link href="/service-history" className="btn-secondary">
+                  View Service History
                 </Link>
               </div>
             </div>

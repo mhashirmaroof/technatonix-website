@@ -345,8 +345,8 @@ const Services: React.FC<ServicesProps> = ({ seo }) => {
               <Link href="/contact" className="btn-primary" data-analytics-cta="Start Your Project" data-analytics-location="services_cta">
                 Start Your Project
               </Link>
-              <Link href="/case-studies" className="btn-secondary">
-                View Success Stories
+              <Link href="/service-history" className="btn-secondary">
+                View Service History
               </Link>
             </div>
           </div>

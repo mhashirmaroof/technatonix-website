@@ -15,20 +15,20 @@ interface ProjectProps {
   socialImage: Awaited<ReturnType<typeof getFeaturedSocialImage>>;
 }
 
-const CaseStudyDetail: React.FC<ProjectProps> = ({ project, socialImage }) => {
+const ServiceHistoryDetail: React.FC<ProjectProps> = ({ project, socialImage }) => {
   const seo: SEOProps = project ? {
-    title: `${project.title} | Project Experience - Technatonix`,
+    title: `${project.title} | Service History - Technatonix`,
     description: project.seoDescription || project.overview,
-    canonical: `https://technatonix.com/case-studies/${project.slug}`,
+    canonical: `https://www.technatonix.com/service-history/${project.slug}`,
     openGraph: { socialImage },
     jsonLd: breadcrumbs([
       { name: 'Home', path: '/' },
-      { name: 'Projects & Experience', path: '/case-studies' },
-      { name: project.title, path: `/case-studies/${project.slug}` },
+      { name: 'Service History', path: '/service-history' },
+      { name: project.title, path: `/service-history/${project.slug}` },
     ]),
   } : {
-    title: 'Projects temporarily unavailable | Technatonix',
-    description: 'Project information is temporarily unavailable.',
+    title: 'Service history temporarily unavailable | Technatonix',
+    description: 'Service history information is temporarily unavailable.',
   };
 
   return (
@@ -36,8 +36,8 @@ const CaseStudyDetail: React.FC<ProjectProps> = ({ project, socialImage }) => {
       <div className={styles.caseStudyDetail}>
         <section className={styles.hero}>
           <div className="container">
-            <Link href="/case-studies" className={styles.backLink}>
-              <FaArrowLeft /> Back to Projects &amp; Experience
+            <Link href="/service-history" className={styles.backLink}>
+              <FaArrowLeft /> Back to Service History
             </Link>
             {project ? (
               <div className={styles.heroContent}>
@@ -100,4 +100,4 @@ export const getServerSideProps: GetServerSideProps<ProjectProps> = async ({ par
   }
 };
 
-export default CaseStudyDetail;
+export default ServiceHistoryDetail;

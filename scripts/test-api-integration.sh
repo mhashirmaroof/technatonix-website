@@ -19,14 +19,14 @@ echo ""
 echo "🌐 Testing Frontend Pages:"
 echo "- Homepage status: $(curl -s -o /dev/null -w "%{http_code}" $BASE_URL/)"
 echo "- Blog page status: $(curl -s -o /dev/null -w "%{http_code}" $BASE_URL/blog)"
-echo "- Case studies page status: $(curl -s -o /dev/null -w "%{http_code}" $BASE_URL/case-studies)"
+echo "- Service history page status: $(curl -s -o /dev/null -w "%{http_code}" $BASE_URL/service-history)"
 
 # Test individual pages with actual slugs
 BLOG_SLUG=$(curl -s $BASE_URL/api/admin/blogs | jq -r '.blogs[0].slug')
 CASE_STUDY_SLUG=$(curl -s $BASE_URL/api/admin/case-studies | jq -r '.caseStudies[0].slug')
 
 echo "- Individual blog page status: $(curl -s -o /dev/null -w "%{http_code}" $BASE_URL/blog/$BLOG_SLUG)"
-echo "- Individual case study page status: $(curl -s -o /dev/null -w "%{http_code}" $BASE_URL/case-studies/$CASE_STUDY_SLUG)"
+echo "- Individual service history page status: $(curl -s -o /dev/null -w "%{http_code}" $BASE_URL/service-history/$CASE_STUDY_SLUG)"
 
 echo ""
 echo "✅ API Integration testing completed!"

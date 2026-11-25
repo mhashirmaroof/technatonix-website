@@ -35,10 +35,10 @@ export const LANDING_SOCIAL: Record<string, { title: string; description: string
     description: 'Learn about The Technatonix, our technology capabilities, engineering approach and commitment to building solutions around business needs.',
     image: '/images/og/about.jpg',
   },
-  '/case-studies': {
-    title: 'Projects & Case Studies | The Technatonix',
-    description: 'Explore Technatonix projects and products alongside our team’s personal project experience.',
-    image: '/images/og/case-studies.jpg',
+  '/service-history': {
+    title: 'Service History | The Technatonix Projects & Experience',
+    description: 'Explore The Technatonix service history, software projects, products and our team’s verified project experience.',
+    image: '/images/og/service-history.jpg',
   },
   '/contact': {
     title: 'Contact The Technatonix | Discuss Your Project',

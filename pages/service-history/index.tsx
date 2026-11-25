@@ -8,26 +8,26 @@ import { getProjectExperience, ProjectExperience } from '@/lib/project-experienc
 import { SEOProps } from '@/types';
 import styles from '@/styles/CaseStudies.module.scss';
 
-interface CaseStudiesProps {
+interface ServiceHistoryProps {
   projects: ProjectExperience[];
   loadError: boolean;
 }
 
 const seo: SEOProps = {
-  title: 'Projects & Case Studies | The Technatonix',
-  description: 'Explore Technatonix projects and products alongside our team’s personal software engineering experience.',
-  canonical: 'https://technatonix.com/case-studies',
+  title: 'Service History | The Technatonix Projects & Experience',
+  description: 'Explore The Technatonix service history, software projects, products and our team’s verified project experience.',
+  canonical: 'https://www.technatonix.com/service-history',
 };
 
-const CaseStudies: React.FC<CaseStudiesProps> = ({ projects, loadError }) => (
+const ServiceHistory: React.FC<ServiceHistoryProps> = ({ projects, loadError }) => (
   <Layout seo={seo}>
     <div className={styles.caseStudiesPage}>
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.heroContent}>
-            <h1 className={styles.title}>Projects &amp; Experience</h1>
+            <h1 className={styles.title}>Service History</h1>
             <p className={styles.subtitle}>
-              Explore Technatonix projects and products alongside our team's personal project experience.
+              Explore our software services history, company projects, products and team project experience.
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ projects, loadError }) => (
       <section className={styles.caseStudiesSection}>
         <div className="container">
           {loadError ? (
-            <p role="alert">Projects are temporarily unavailable. Please try again later.</p>
+            <p role="alert">Service history is temporarily unavailable. Please try again later.</p>
           ) : projects.length === 0 ? (
             <p>No projects have been published yet.</p>
           ) : (
@@ -52,8 +52,8 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ projects, loadError }) => (
                     <div className={styles.section}><p>{project.overview}</p></div>
                   </div>
                   <div className={styles.cardFooter}>
-                    <Link href={`/case-studies/${project.slug}`} className={styles.readMoreButton}>
-                      View Project <FaArrowRight />
+                    <Link href={`/service-history/${project.slug}`} className={styles.readMoreButton}>
+                      View Service History <FaArrowRight />
                     </Link>
                   </div>
                 </article>
@@ -69,7 +69,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ projects, loadError }) => (
             <h2>Ready to Start Your Project?</h2>
             <p>Tell us about your business and the software you want to build.</p>
             <div className={styles.ctaButtons}>
-              <Link href="/contact" className="btn-primary" data-analytics-cta="Start Your Project" data-analytics-location="case_studies_cta">Start Your Project <FaExternalLinkAlt /></Link>
+              <Link href="/contact" className="btn-primary" data-analytics-cta="Start Your Project" data-analytics-location="service_history_cta">Start Your Project <FaExternalLinkAlt /></Link>
               <Link href="/products" className="btn-secondary">Explore Solutions</Link>
             </div>
           </div>
@@ -79,7 +79,7 @@ const CaseStudies: React.FC<CaseStudiesProps> = ({ projects, loadError }) => (
   </Layout>
 );
 
-export const getServerSideProps: GetServerSideProps<CaseStudiesProps> = async ({ res }) => {
+export const getServerSideProps: GetServerSideProps<ServiceHistoryProps> = async ({ res }) => {
   try {
     return { props: { projects: await getProjectExperience(), loadError: false } };
   } catch (error) {
@@ -89,4 +89,4 @@ export const getServerSideProps: GetServerSideProps<CaseStudiesProps> = async ({
   }
 };
 
-export default CaseStudies;
+export default ServiceHistory;

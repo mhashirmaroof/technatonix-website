@@ -17,7 +17,7 @@ const Header: React.FC = () => {
     { name: 'AI Automation', href: '/ai-automation' },
     { name: 'Services', href: '/services' },
     { name: 'Products', href: '/products' },
-    { name: 'Case Studies', href: '/case-studies' },
+    { name: 'Service History', href: '/service-history' },
     { name: 'Blog', href: '/blog' },
     { name: 'About', href: '/about' },
     { name: 'Contact', href: '/contact' },
