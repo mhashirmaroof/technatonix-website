@@ -185,14 +185,14 @@ export default function Analytics() {
 
   if (!ready || (!showPreferences && !(consent === null && regionPolicy.prompt)) || isPrivate(router.asPath)) return null;
   return (
-    <aside className={styles.banner} aria-label="Analytics cookie preferences">
+    <aside className={styles.banner} aria-label="Cookie preferences">
       <div>
-        <h2>Analytics preferences</h2>
-        <p>With your permission, we use Google Analytics to understand how our website is used. You can change your choice at any time. See our <Link href="/cookies">cookie policy</Link>.</p>
+        <h2>Cookie preferences</h2>
+        <p>Essential cookies are always on. With your permission, we also use optional cookies, including Google Analytics cookies, to understand how visitors use our website. You can change your choice at any time. See our <Link href="/cookies">Cookie Policy</Link>.</p>
       </div>
       <div className={styles.actions}>
-        <button type="button" onClick={() => choose('rejected')}>Reject analytics</button>
-        <button type="button" onClick={() => choose('accepted')}>Accept analytics</button>
+        <button type="button" onClick={() => choose('rejected')}>Deny cookies</button>
+        <button type="button" onClick={() => choose('accepted')}>Accept cookies</button>
       </div>
     </aside>
   );

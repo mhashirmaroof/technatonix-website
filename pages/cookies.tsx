@@ -64,17 +64,16 @@ const Cookies: React.FC<CookiesProps> = ({ seo }) => {
                 <div className={styles.cookieType}>
                   <h3>Analytics Cookies</h3>
                   <p>
-                    We use Google Analytics to understand website usage and traffic sources. Analytics
-                    is currently disabled unless you choose to enable it through your analytics preferences.
+                    With your permission, Google Analytics uses optional cookies to help us understand
+                    website visits and traffic sources. These cookies stay disabled unless you accept
+                    optional cookies in the cookie preferences.
                   </p>
                 </div>
 
                 <div className={styles.cookieType}>
                   <h3>Marketing Cookies</h3>
                   <p>
-                    These cookies may be set through our site by our advertising partners. They may be 
-                    used by those companies to build a profile of your interests and show you relevant 
-                    adverts on other sites.
+                    We do not currently use advertising or marketing cookies on this website.
                   </p>
                 </div>
               </div>
@@ -86,7 +85,7 @@ const Cookies: React.FC<CookiesProps> = ({ seo }) => {
                   are already on your computer and you can set most browsers to prevent them from being placed.
                 </p>
                 <p>
-                  You can also <button type="button" onClick={() => window.dispatchEvent(new Event('open-analytics-preferences'))}>change your analytics preferences</button> at any time.
+                  You can also <button type="button" onClick={() => window.dispatchEvent(new Event('open-analytics-preferences'))}>change your cookie preferences</button> at any time.
                 </p>
                 
                 <div className={styles.browserInstructions}>
