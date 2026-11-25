@@ -12,42 +12,54 @@ import {
   FaShieldAlt,
   FaMobileAlt,
   FaUsers,
+  FaBriefcase,
+  FaListAlt,
+  FaCommentDots,
+  FaBell,
+  FaRocket,
 } from 'react-icons/fa';
 
 const benefits = [
-  { icon: FaCamera, title: 'Evidence Capture', text: 'Capture photos, checklist answers and notes on site, right from your phone.' },
-  { icon: FaClipboardCheck, title: 'Required-Evidence Validation', text: 'Checklists make sure the required evidence is present before a job can be completed.' },
-  { icon: FaFilePdf, title: 'Branded PDF Reports', text: 'Generate a customer-ready PDF report with your own branding.' },
-  { icon: FaShareAlt, title: 'Secure Share Links', text: 'Share an expiring, revocable web link so customers can view the report.' },
-  { icon: FaWifi, title: 'Offline-First', text: 'Keep working without signal. Drafts are saved locally and synced safely when you are back online.' },
-  { icon: FaShieldAlt, title: 'Tenant Isolation', text: 'Every account is isolated on the server from day one, with private storage for evidence.' },
+  { icon: FaCamera, title: 'Evidence Capture', text: 'Capture photos with the camera or gallery, add checklist answers, notes and dictated notes, with device-reported capture time kept.' },
+  { icon: FaClipboardCheck, title: 'Required-Evidence Validation', text: 'An evidence gate flags missing checklist items or photos before submission, and the server validates the requirements again.' },
+  { icon: FaFilePdf, title: 'Branded PDF Reports', text: 'Generate a PDF with your logo, accent colour and sign-off text, plus job details, checklist results, notes and photos.' },
+  { icon: FaShareAlt, title: 'Secure Share Links', text: 'Share a report through a public link that expires after 1–90 days and can be revoked at any time.' },
+  { icon: FaWifi, title: 'Offline Drafts & Sync', text: 'Save report drafts and photos locally. A sync queue retries safely and shows Saved Locally, Syncing, Synced or Action Required.' },
+  { icon: FaShieldAlt, title: 'Secure by Design', text: 'Per-account data isolation, backend authorization on protected records, and hashed, expiring, revocable invitation tokens.' },
+  { icon: FaUsers, title: 'Client–Worker Connections', text: 'Connect by email invitation or personal code, with a separate text conversation for each active connection.' },
+  { icon: FaBriefcase, title: 'Jobs & Proposals', text: 'Clients create work requests and invite a worker. Proposals can be revised, accepted or rejected, and acceptance assigns the worker.' },
+  { icon: FaListAlt, title: 'Report Templates', text: 'Five built-in industry templates plus private custom templates with 0–50 minimum photos and up to 50 required or optional steps.' },
+  { icon: FaCommentDots, title: 'Messaging', text: 'Text conversations for job invitations, active jobs and connections, with unread badges. Completed jobs become read-only.' },
+  { icon: FaBell, title: 'In-App Notifications', text: 'A notification bell covers invitations, proposals, status changes, report reviews and incoming messages, with optional sound.' },
+  { icon: FaCheckCircle, title: 'Review & Completion', text: 'Clients review the report, request changes or acknowledge it, and then separately complete the job.' },
 ];
 
-const roadmap = [
-  {
-    name: 'V1.0 — Solo-First',
-    description: 'Fast onboarding and self-service for individual service professionals.',
-    features: [
-      'Email, Google and Apple sign-up',
-      '5 prebuilt industry templates',
-      'Quick-report flow built for speed',
-      'Offline drafts with safe sync',
-      'Background PDF rendering',
-      'Expiring share links',
-    ],
-  },
-  {
-    name: 'V2.0 — Teams & Enterprise',
-    description: 'Coordination and oversight for growing field teams.',
-    features: [
-      'Roles and permissions',
-      'Invitations and team management',
-      'Customer and site directory with CSV import/export',
-      'Visual template builder with versioning',
-      'Review and approval queue',
-      'Audit trail, webhooks and API',
-    ],
-  },
+const currentFeatures = [
+  'Email and password accounts with email verification and password reset',
+  'Separate client and worker dashboards, with light, dark and system themes',
+  'Client–worker connections by email invitation or connection code',
+  'Work requests with templates, expiring invitation links and worker assignment',
+  'Proposals with revision history, acceptance and assignment',
+  '5 built-in industry templates and private custom templates',
+  'Photo and checklist evidence capture with a required-evidence gate',
+  'Offline drafts with a persistent, retrying sync queue',
+  'Signed photo uploads with size and checksum verification',
+  'Background branded PDF generation with preview, download and sharing',
+  'Expiring, revocable public report links',
+  'Worker branding: logo, accent colour and sign-off text',
+];
+
+const futureGoals = [
+  'Organizations, employee hierarchies, roles and permissions',
+  'Multi-worker jobs, team scheduling and manager-controlled assignment',
+  'Customer and site directory with CSV import and export',
+  'Visual template builder with conditional requirements, sharing and versioning',
+  'Manager review queue with approval rules and correction requests',
+  'Faster updates, push notifications and optional SMS invitations',
+  'Customer report portal with acknowledgements, signatures or ratings',
+  'Multi-factor authentication, audit interface and configurable data retention',
+  'Webhooks, external API access, reporting and analytics',
+  'Cloud storage and a durable background job queue',
 ];
 
 const audiences = ['Cleaners', 'Handymen', 'Mobile Detailers', 'Airbnb Turnover', 'HVAC', 'Plumbing'];
@@ -113,23 +125,33 @@ const EfwrsxProduct: React.FC = () => (
       <div className="container">
         <div className={styles.sectionHeader}>
           <h2>Product Roadmap</h2>
-          <p>Starting with solo operators, growing into team and enterprise workflows</p>
+          <p>Starting with solo operators and client–worker jobs, growing into team and enterprise workflows</p>
         </div>
         <div className={styles.modulesGrid}>
-          {roadmap.map((phase) => (
-            <div key={phase.name} className={styles.moduleCard}>
-              <h3>{phase.name}</h3>
-              <p>{phase.description}</p>
-              <ul className={styles.featureList}>
-                {phase.features.map((feature) => (
-                  <li key={feature}>
-                    <FaCheckCircle className={styles.checkIcon} />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          <div className={styles.moduleCard}>
+            <h3>V1 — Current Features</h3>
+            <p>Implemented in the current product while native-device, email delivery and deployment testing continue.</p>
+            <ul className={styles.featureList}>
+              {currentFeatures.map((feature) => (
+                <li key={feature}>
+                  <FaCheckCircle className={styles.checkIcon} />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.moduleCard}>
+            <h3>V2 — Future Goals</h3>
+            <p>Proposed direction for teams and organizations. These are goals, not release commitments or dates.</p>
+            <ul className={styles.featureList}>
+              {futureGoals.map((feature) => (
+                <li key={feature}>
+                  <FaRocket className={styles.checkIcon} />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
